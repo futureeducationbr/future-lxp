@@ -204,7 +204,7 @@ en:
       team_coaches: Team Coaches
       total_targets_completed: Total Targets Completed
     CurriculumEditor:
-      create_level: Create Level
+      create_level: Criar Nível
       create_target_group: Create target group
       edit_selected_level: Edit selected level
     CurriculumEditor__ContentBlockCreator:

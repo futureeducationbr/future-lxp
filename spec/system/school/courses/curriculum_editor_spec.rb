@@ -63,7 +63,7 @@ feature 'Curriculum Editor', js: true do
     expect(page).not_to have_text(target_2.title)
 
     # he should be able to create a new level
-    click_button 'Create Level'
+    click_button 'Criar Nível'
     expect(page).to have_text('Level Name')
     fill_in 'Level Name', with: new_level_name
     fill_in 'Unlock level on', with: date.iso8601

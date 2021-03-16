@@ -8,17 +8,17 @@
 %>
 
 <% content_for :title do %>
-  Daily digest from <%= school_name %>
+  Resumo diário de <%= school_name %>
 <% end %>
 
 <% content_for :title_button_text do %>
-  Visit <%= school_name %> dashboard
+  Continue sua aprendizagem em <%= school_name %> 
 <% end %>
 
 <% content_for(:title_button_link, dashboard_url) %>
 
 <% content_for :salutation do %>
-  Hello <%= recipient_name %>,
+  Olá <%= recipient_name %>,
 <% end %>
 
 <% content_for :body do %>
@@ -48,7 +48,7 @@
 
   <% if @updates[:community_new].present? %>
     <p style="margin-top: 15px;">
-      Latest topics posted on your communities:
+    Últimos tópicos postados em suas comunidades:
     </p>
 
     <% @updates[:community_new].each do |topic| %>
@@ -68,7 +68,7 @@
 
   <% if @updates[:community_reactivated].present? %>
     <p style="margin-top: 15px;">
-      Older, popular topics that have seen new activity:
+    Tópicos mais antigos e populares que viram novas atividades:
     </p>
 
     <% @updates[:community_reactivated].each do |topic| %>
@@ -88,7 +88,7 @@
   <% end %>
 
   <p style="font-size: 75%; text-align: center; margin-top: 15px;">
-    You can control these emails from <%= link_to "your profile edit page", edit_user_url %>.
+  Você pode controlar esses e-mails acessando <%= link_to "your profile edit page", edit_user_url %>.
   </p>
 <% end %>
 
