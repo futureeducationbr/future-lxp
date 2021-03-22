@@ -48,14 +48,14 @@ let navSection = (view, setView, communities, issuedCertificates) =>
     <div className="flex max-w-4xl mx-auto px-3 lg:px-0">
       <button
         className={navButtonClasses(view == ShowCourses)} onClick={_ => setView(_ => ShowCourses)}>
-        <i className="fas fa-book text-xs md:text-sm mr-2" /> <span> {"My Courses" |> str} </span>
+        <i className="fas fa-book text-xs md:text-sm mr-2" /> <span> {"Meus cursos" |> str} </span>
       </button>
       {communities |> ArrayUtils.isNotEmpty
         ? <button
             className={navButtonClasses(view == ShowCommunities)}
             onClick={_ => setView(_ => ShowCommunities)}>
             <i className="fas fa-users text-xs md:text-sm mr-2" />
-            <span> {"Communities" |> str} </span>
+            <span> {"Comunidades" |> str} </span>
           </button>
         : React.null}
       {issuedCertificates |> ArrayUtils.isNotEmpty
