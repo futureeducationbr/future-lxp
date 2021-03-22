@@ -6,7 +6,7 @@ module Schools
       property :title, validates: { presence: true, length: { maximum: 250 } }, virtual: true
       property :connect_link
       property :public
-      property :image, virtual: true, validates: { image: true, file_size: { less_than: 5.megabytes }, allow_blank: true }
+      property :image, virtual: true, validates: { image: true, file_size: { less_than: 30.megabytes }, allow_blank: true }
       property :school_id, virtual: true, validates: { presence: true }
       property :affiliation, virtual: true
 
