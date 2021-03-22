@@ -2,7 +2,7 @@ module MarkdownAttachments
   class CreateForm < Reform::Form
     attr_accessor :current_user
 
-    property :file, virtual: true, validates: { presence: true, file_size: { less_than: 5.megabytes } }
+    property :file, virtual: true, validates: { presence: true, file_size: { less_than: 30.megabytes } }
 
     validate :prevent_abuse
 
