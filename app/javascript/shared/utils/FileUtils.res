@@ -1,4 +1,4 @@
-let defaultMaxSize = 5 * 1024 * 1024
+let defaultMaxSize = 30 * 1024 * 1024
 let defaultVideoMaxSize = 500 * 1024 * 1024
 
 let hasValidSize = (~maxSize, file) => file["size"] <= maxSize

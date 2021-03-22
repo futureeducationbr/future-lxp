@@ -421,7 +421,7 @@ let attachFile = (fileFormId, oldValue, state, send, onChange, event) =>
   | [] => ()
   | files =>
     let file = files[0]
-    let maxFileSize = 5 * 1024 * 1024
+    let maxFileSize = 30 * 1024 * 1024
 
     let error =
       file["size"] > maxFileSize
