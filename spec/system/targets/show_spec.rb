@@ -166,7 +166,7 @@ feature 'Target Overlay', js: true do
       sign_in_user student.user, referrer: target_path(target_l1)
 
       # There should be a mark as complete button on the learn page.
-      expect(page).to have_button('Marcar como Concluído')
+      expect(page).to have_button('Marcar como Conclu&iacute;do')
 
       # Completion instructions should be show on learn section for auto-verified targets
       expect(page).to have_text('Antes de marcar como completo')
@@ -176,10 +176,10 @@ feature 'Target Overlay', js: true do
       expect(page).not_to have_selector('.complete-button-selected')
 
       # Clicking the mark as complete tab option should highlight the button.
-      find('.course-overlay__body-tab-item', text: 'Marcar como Concluído').click
+      find('.course-overlay__body-tab-item', text: 'Marcar como Conclu&iacute;do').click
       expect(page).to have_selector('.complete-button-selected')
 
-      click_button 'Marcar como Concluído'
+      click_button 'Marcar como Conclu&iacute;do'
 
       # The button should be replaced with a 'completed' marker.
       expect(page).to have_selector('.complete-button-selected', text: 'Concluído')
@@ -630,7 +630,7 @@ feature 'Target Overlay', js: true do
         sign_in_user school_admin.user, referrer: target_path(target_l1)
 
         # There should be a mark as complete button on the learn page.
-        expect(page).to have_button('Marcar como concluído', disabled: true)
+        expect(page).to have_button('Marcar como Conclu&iacute;do', disabled: true)
       end
     end
 
@@ -675,21 +675,21 @@ feature 'Target Overlay', js: true do
 
     expect(page).to have_text(target_l1.title)
 
-    expect(page).not_to have_link('Previous Target')
-    click_link 'Próximo módulo'
+    expect(page).not_to have_link('M&oacute;dulo Anterior')
+    click_link 'Próximo M&oacute;dulo'
 
     expect(page).to have_text(prerequisite_target.title)
 
-    click_link 'Próximo módulo'
+    click_link 'Próximo M&oacute;dulo'
 
     expect(page).to have_text(quiz_target.title)
-    expect(page).not_to have_link('Next Target')
+    expect(page).not_to have_link('Próximo M&oacute;dulo')
 
-    click_link 'Módulo anterior'
+    click_link 'M&oacute;dulo anterior'
 
     expect(page).to have_text(prerequisite_target.title)
 
-    click_link 'Módulo anterior'
+    click_link 'M&oacute;dulo anterior'
 
     expect(page).to have_text(target_l1.title)
   end

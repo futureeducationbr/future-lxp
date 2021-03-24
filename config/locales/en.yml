@@ -115,7 +115,7 @@ en:
       completion_tab_complete: Completo
       completion_tab_completed: Concluído
       completion_tab_locked: Bloqueado
-      completion_tab_mark_complete: Marcar como concluído
+      completion_tab_mark_complete: Marcar como Conclu&iacute;do
       completion_tab_quiz_result: Resultado do questionário
       completion_tab_submissions: Envios e feedback
       completion_tab_take_quiz: Faça o teste
@@ -143,7 +143,7 @@ en:
       average_grades: Notas médias
       average_quiz_score: Average Quiz Score
       course_completed: Curso concluído!
-      incomplete_targets: 'Incomplete: %{targetsCount}'
+      incomplete_targets: 'Incompleto: %{targetsCount}'
       level_progress: Progresso
       personal_coaches: Personal Coaches
       quiz: Questionário

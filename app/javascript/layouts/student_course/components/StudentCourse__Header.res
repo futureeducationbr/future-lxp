@@ -98,12 +98,12 @@ let make = (~currentCourseId, ~courses, ~additionalLinks, ~coverImage) => {
           className="bg-white border-transparent flex justify-between overflow-x-auto md:overflow-hidden lg:max-w-3xl mx-auto shadow md:rounded-lg mt-0 md:-mt-7 z-10 relative">
           {additionalLinks |> List.append(list{"curriculum"}) |> List.map(l => {
             let (title, suffix) = switch l {
-            | "curriculum" => ("Currículo", "curriculum")
-            | "calendar" => ("Calendário", "calendar")
+            | "curriculum" => ("Curr&iacute;culo", "curriculum")
+            | "calendar" => ("Calend&aacute;rio", "calendar")
             | "leaderboard" => ("Classificação", "leaderboard")
-            | "review" => ("Análise", "review")
+            | "review" => ("An&aacute;lise", "review")
             | "students" => ("Alunos", "students")
-            | "report" => ("Relatório", "report")
+            | "report" => ("Relat&oacute;rio", "report")
             | _unknown => ("Unknown", "")
             }
 

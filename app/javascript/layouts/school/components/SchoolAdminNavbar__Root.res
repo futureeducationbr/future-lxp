@@ -108,7 +108,7 @@ let secondaryNav = (courses, userRole, selectedOption) =>
           "/school/courses/" ++ (courseId ++ "/curriculum"),
           courseSelection,
           Curriculum,
-          "Currículo",
+          "Curr&iacute;culo",
         )}
         {switch userRole {
         | SchoolAdmin =>
