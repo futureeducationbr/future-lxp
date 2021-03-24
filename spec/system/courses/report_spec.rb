@@ -71,16 +71,16 @@ feature 'Students view performance report and submissions overview', js: true do
   scenario 'student visits course report link' do
     sign_in_user student.user, referrer: report_course_path(course)
 
-    expect(page).to have_text('Level Progress')
+    expect(page).to have_text('Progresso')
     expect(page).to have_selector('.courses-report-overview__student-level', count: course.levels.where.not(number: 0).count)
 
     # Targets Overview
-    expect(page).to have_text('Targets Overview')
+    expect(page).to have_text('Visão Geral dos Módulos')
 
     within("div[aria-label='target-completion-status']") do
-      expect(page).to have_content('Incomplete: 1')
-      expect(page).to have_content('Pending Review: 1')
-      expect(page).to have_content('Completed: 4')
+      expect(page).to have_content('Incompleto: 1')
+      expect(page).to have_content('Revisão pendente: 1')
+      expect(page).to have_content('Concluído: 4')
       expect(page).to have_content('66%')
     end
 
@@ -91,7 +91,7 @@ feature 'Students view performance report and submissions overview', js: true do
     end
 
     # Average Grades
-    expect(page).to have_text('Average Grades')
+    expect(page).to have_text('Notas médias')
 
     within("div[aria-label='average-grade-for-criterion-#{evaluation_criterion_1.id}']") do
       expect(page).to have_content(evaluation_criterion_1.name)
@@ -109,7 +109,7 @@ feature 'Students view performance report and submissions overview', js: true do
     expect(page).to_not have_content(course_coach.name)
 
     # Checks submissions
-    click_button 'Submissions'
+    click_button 'Envios'
 
     expect(page).to have_link(target_l1.title, href: "/targets/#{target_l1.id}")
     expect(page).to_not have_content(target_4.title)
@@ -126,7 +126,7 @@ feature 'Students view performance report and submissions overview', js: true do
 
     # Filter submissions by target status
     fill_in 'filter', with: 'status'
-    click_button 'Status: Pending Review'
+    click_button 'Status: Pendente de Revisão'
 
     expect(page).not_to have_text(target_l1.title)
     expect(page).to have_link(target_l3.title, href: "/targets/#{target_l3.id}")
@@ -140,10 +140,10 @@ feature 'Students view performance report and submissions overview', js: true do
     end
 
     sign_in_user student.user, referrer: report_course_path(course)
-    expect(page).to have_text('Targets Overview')
-    click_button 'Submissions'
-    expect(page).to have_button('Load More...')
-    click_button('Load More...')
+    expect(page).to have_text('Visão Geral dos Módulos')
+    click_button 'Envios'
+    expect(page).to have_button('Carregar mais...')
+    click_button('Carregar mais...')
 
     total_submissions = student.timeline_events.evaluated_by_faculty.count + student.timeline_events.pending_review.count
 
@@ -152,8 +152,8 @@ feature 'Students view performance report and submissions overview', js: true do
     end
 
     # Switching tabs should preserve already loaded submissions
-    click_button 'Overview'
-    click_button 'Submissions'
+    click_button 'Visão Geral'
+    click_button 'Envios'
 
     within("div[aria-label='student-submissions']") do
       expect(page).to have_selector('a', count: total_submissions)
@@ -173,7 +173,7 @@ feature 'Students view performance report and submissions overview', js: true do
       sign_in_user student.user, referrer: report_course_path(course)
 
       # Switch to submissions tab
-      click_button 'Submissions'
+      click_button 'Envios'
 
       # The main link should point to the "backup" submission page.
       expect(page).to have_link(target_l1.title, href: "/submissions/#{submission_target_l1_1.id}")
@@ -182,7 +182,7 @@ feature 'Students view performance report and submissions overview', js: true do
         expect(page).to have_content("This submission is not considered towards its target's completion")
 
         # There should be an additional link to the target as well.
-        expect(page).to have_link('View Target', href: "/targets/#{target_l1.id}")
+        expect(page).to have_link('Ver Módulo', href: "/targets/#{target_l1.id}")
       end
     end
   end
@@ -198,9 +198,9 @@ feature 'Students view performance report and submissions overview', js: true do
       # Check that level zero targets are not counted in the targets overview
       within("div[aria-label='target-completion-status']") do
         expect(page).to have_content('66%')
-        expect(page).to have_content('Incomplete: 1')
-        expect(page).to have_content('Pending Review: 1')
-        expect(page).to have_content('Completed: 4')
+        expect(page).to have_content('Incompleto: 1')
+        expect(page).to have_content('Revisão pendente: 1')
+        expect(page).to have_content('Concluído: 4')
       end
     end
   end
@@ -216,9 +216,9 @@ feature 'Students view performance report and submissions overview', js: true do
       # Check that level zero targets are not counted in the targets overview
       within("div[aria-label='target-completion-status']") do
         expect(page).to have_content('100%')
-        expect(page).to have_content('Incomplete: 0')
-        expect(page).to have_content('Pending Review: 0')
-        expect(page).to have_content('Completed: 4')
+        expect(page).to have_content('Incompleto: 0')
+        expect(page).to have_content('Revisão pendente: 0')
+        expect(page).to have_content('Concluído: 4')
       end
     end
   end

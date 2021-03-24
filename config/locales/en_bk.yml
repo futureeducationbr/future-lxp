@@ -111,11 +111,11 @@ en:
       team_members_pending_description: You have completed all required milestone targets, but one or more of your team-mates haven't. Please ask them to sign in and check for incomplete milestone targets.
       team_members_pending_title: Check With Your Team
     CoursesCurriculum__Overlay:
-      close_button: Close
+      close_button: Fechar
       completion_tab_complete: Complete
       completion_tab_completed: Completed
       completion_tab_locked: Bloqueado
-      completion_tab_mark_complete: Mark as Complete
+      completion_tab_mark_complete: Marcar como Concluído
       completion_tab_quiz_result: Quiz Result
       completion_tab_submissions: Submissions & Feedback
       completion_tab_take_quiz: Take Quiz

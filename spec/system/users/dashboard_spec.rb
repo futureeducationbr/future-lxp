@@ -73,7 +73,7 @@ feature 'User Dashboard', js: true do
       expect(page).to have_text(course_3.name)
       expect(page).to have_text(course_3.description)
       expect(page).to have_link("Ver Currículo", href: curriculum_course_path(course_3))
-      expect(page).to have_text("Course Ended")
+      expect(page).to have_text("Curso concluído")
     end
 
     # Course from which student has dropped out.
@@ -84,7 +84,7 @@ feature 'User Dashboard', js: true do
       expect(page).not_to have_link("Ver Currículo", href: curriculum_course_path(course_4))
     end
 
-    click_button 'Communities'
+    click_button 'Comunidades'
 
     # Students should have access to communities which are linked to their courses,
     # regardless of whether the course is active...
@@ -112,7 +112,7 @@ feature 'User Dashboard', js: true do
     expect(page).not_to have_text(course_3.name)
     expect(page).not_to have_text(course_4.name)
 
-    click_button 'Communities'
+    click_button 'Comunidades'
 
     # course_coach has access to all communities in school
     expect(page).to have_text(community_1.name)
@@ -134,7 +134,7 @@ feature 'User Dashboard', js: true do
     expect(page).not_to have_text(course_3.name)
     expect(page).not_to have_text(course_4.name)
 
-    click_button 'Communities'
+    click_button 'Comunidades'
 
     # team_coach has access to all communities in school
     expect(page).to have_text(community_1.name)
@@ -157,7 +157,7 @@ feature 'User Dashboard', js: true do
     expect(page).to have_link("Ver Curso", href: curriculum_course_path(course_3))
     expect(page).to have_link("Ver Curso", href: curriculum_course_path(course_4))
 
-    click_button 'Communities'
+    click_button 'Comunidades'
     # school admin has access to all communities in school
     expect(page).to have_text(community_1.name)
     expect(page).to have_text(community_2.name)

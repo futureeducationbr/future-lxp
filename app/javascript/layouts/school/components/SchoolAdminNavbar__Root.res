@@ -108,7 +108,7 @@ let secondaryNav = (courses, userRole, selectedOption) =>
           "/school/courses/" ++ (courseId ++ "/curriculum"),
           courseSelection,
           Curriculum,
-          "Curriculum",
+          "Currículo",
         )}
         {switch userRole {
         | SchoolAdmin =>
@@ -250,7 +250,7 @@ let make = (
         | SchoolAdmin =>
           <ul>
             <li>
-              {topLink(selectedOption, Overview, "/school", shrunk, "fas fa-eye", "Overview")}
+              {topLink(selectedOption, Overview, "/school", shrunk, "fas fa-eye", "Visão Geral")}
             </li>
             <li>
               {topLink(
@@ -259,7 +259,7 @@ let make = (
                 "/school/coaches",
                 shrunk,
                 "fas fa-chalkboard-teacher",
-                "Coaches",
+                "Mentores",
               )}
             </li>
             <li>
@@ -269,7 +269,7 @@ let make = (
                 "/school/customize",
                 shrunk,
                 "fas fa-cog",
-                "Settings",
+                "Configurações",
               )}
             </li>
             <li>
@@ -279,7 +279,7 @@ let make = (
                 "/school/courses",
                 shrunk,
                 "fas fa-book",
-                "Courses",
+                "Cursos",
               )}
               {shrunk
                 ? React.null
@@ -305,7 +305,7 @@ let make = (
                 "/school/communities",
                 shrunk,
                 "fas fa-users",
-                "Communities",
+                "Comunidades",
               )}
             </li>
           </ul>
