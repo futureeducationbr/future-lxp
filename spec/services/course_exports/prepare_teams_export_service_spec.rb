@@ -93,7 +93,7 @@ describe CourseExports::PrepareTeamsExportService do
           ['ID', "L1T#{target_l1_mark_as_complete.id}", "L1T#{target_l1_quiz.id}", "L1T#{target_l1_evaluated.id}", "L2T#{target_l2_evaluated.id}"],
           ['Level', 1, 1, 1, 2],
           ['Name', target_l1_mark_as_complete.title, target_l1_quiz.title, target_l1_evaluated.title, target_l2_evaluated.title],
-          ['Completion Method', 'Mark as Complete', 'Take Quiz', 'Graded', 'Graded'],
+          ['Completion Method', 'Marcar como Concluído', 'Faça o teste', 'Graded', 'Graded'],
           ['Milestone?', 'No', 'Yes', 'Yes', 'Yes'],
           ['Teams with submissions', 2, 2, 2, 1],
           ['Teams pending review', 0, 0, 0, 1],

@@ -87,11 +87,11 @@ feature 'Target Overlay', js: true do
     expect(page).to have_link(file_title)
   end
 
-  scenario 'student submits work on a target' do
+  scenario 'aluno envia trabalho em um módulo' do
     sign_in_user student.user, referrer: target_path(target_l1)
 
     # This target should have a 'Complete' section.
-    find('.course-overlay__body-tab-item', text: 'Complete').click
+    find('.course-overlay__body-tab-item', text: 'Concluído').click
     # completion instructions should be show on complete section for evaluated targets
     expect(page).to have_text(target_l1.completion_instructions)
     long_answer = Faker::Lorem.sentence
@@ -470,7 +470,7 @@ feature 'Target Overlay', js: true do
       end
 
       # The submissions & feedback sections should be visible.
-      find('.course-overlay__body-tab-item', text: 'Submissions & Feedback').click
+      find('.course-overlay__body-tab-item', text: 'Envios e Feedback').click
 
       # The submissions should mention that review is pending.
       expect(page).to have_content('Revisão Pendente')
@@ -512,11 +512,11 @@ feature 'Target Overlay', js: true do
       sign_in_user student.user, referrer: target_path(target_l1)
 
       # Overlay should have a discuss tab that lists linked communities.
-      find('.course-overlay__body-tab-item', text: 'Discussão').click
+      find('.course-overlay__body-tab-item', text: 'Discuss&atilde;o').click
       expect(page).to have_text(community_1.name)
       expect(page).to have_text(community_2.name)
       expect(page).to have_link('Ir para a comunidade', count: 2)
-      expect(page).to have_link('Criar um tópico', count: 2)
+      expect(page).to have_link('Criar um t&oacute;pico', count: 2)
       expect(page).to have_text("There's been no recent discussion about this target.", count: 1)
 
       # Check the presence of existing topics
@@ -527,24 +527,24 @@ feature 'Target Overlay', js: true do
       find("a[title='Crie um tópico na comunidade #{community_1.name}'").click
 
       expect(page).to have_text(target_l1.title)
-      expect(page).to have_text('Criar um novo tópico de discussão')
+      expect(page).to have_text('Criar um novo tópico de discuss&atilde;o')
 
       # Try clearing the linking.
       click_link 'Limpar'
 
       expect(page).not_to have_text(target_l1.title)
-      expect(page).to have_text('Criar um novo tópico de discussão')
+      expect(page).to have_text('Criar um novo t&oacute;pico de discuss&atilde;o')
 
       # Let's go back to linked state and try creating a linked question.
       visit(new_topic_community_path(community_1, target_id: target_l1.id))
 
       fill_in 'Title', with: topic_title
       replace_markdown(topic_body)
-      click_button 'Criar tópico'
+      click_button 'Criar T&oacute;pico'
 
       expect(page).to have_text(topic_title)
       expect(page).to have_text(topic_body)
-      expect(page).not_to have_text('Criar um novo tópico de discussão')
+      expect(page).not_to have_text('Criar um novo t&oacute;pico de discuss&atilde;o')
 
       # The question should have been linked to the target.
       expect(Topic.where(title: topic_title).first.target).to eq(target_l1)
@@ -558,13 +558,13 @@ feature 'Target Overlay', js: true do
 
       # Student can filter all questions linked to the target.
       find("a[title='Browse all topics about this target in the #{community_1.name} community'").click
-      expect(page).to have_text('Clear Filter')
+      expect(page).to have_text('Limpar Filtro')
       expect(page).to have_text(topic_title)
       expect(page).not_to have_text(topic_1.title)
       expect(page).not_to have_text(topic_2.title)
 
       # Student see all questions in the community by clearing the filter.
-      click_link 'Clear Filter'
+      click_link 'Limpar Filtro'
       expect(page).to have_text(topic_title)
       expect(page).to have_text(topic_1.title)
       expect(page).to have_text(topic_2.title)

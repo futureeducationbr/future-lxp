@@ -118,7 +118,7 @@ let emailAddress = email =>
   switch email {
   | Some(email) =>
     <div className="text-xs font-semibold mt-4">
-      {"Reach us at " |> str} <span className="font-bold"> {email |> str} </span>
+      {"Atendimento " |> str} <span className="font-bold"> {email |> str} </span>
     </div>
   | None =>
     <div
@@ -332,7 +332,7 @@ let make = (~authenticityToken, ~customizations, ~schoolName, ~schoolAbout) => {
       </div>
       <div className="mx-auto text-center pt-8 mt-8">
         <h2 className="school-customize__featured-courses-header relative text-2xl font-bold">
-          {"Featured Courses" |> str}
+          {"Seus Cursos" |> str}
         </h2>
         <div className="text-sm"> {"Featured courses will be listed here" |> str} </div>
         <div className="max-w-2xl bg-gray-100 rounded-lg mx-auto p-3 mt-4">

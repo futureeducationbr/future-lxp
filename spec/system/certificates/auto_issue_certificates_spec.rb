@@ -34,7 +34,7 @@ feature 'Automatic issuance of certificates', js: true do
   def complete_first_target
     sign_in_user student_1.user, referrer: target_path(target_l2)
 
-    click_button 'Mark As Complete'
+    click_button 'Marcar como Concluído'
 
     expect(page).to have_text('Target has been marked as complete')
 
@@ -50,7 +50,7 @@ feature 'Automatic issuance of certificates', js: true do
     scenario 'student completes the last milestone target' do
       sign_in_user student_1.user, referrer: target_path(target_l1)
 
-      click_button 'Mark As Complete'
+      click_button 'Marcar como Concluído'
 
       expect(page).to have_text('Target has been marked as complete')
 
@@ -65,7 +65,7 @@ feature 'Automatic issuance of certificates', js: true do
     scenario 'student receives certificate upon completion of sole milestone target' do
       sign_in_user student_1.user, referrer: target_path(target_l2)
 
-      click_button 'Mark As Complete'
+      click_button 'Marcar como Concluído'
 
       expect(page).to have_text('Target has been marked as complete', wait: 10)
 
@@ -97,7 +97,7 @@ feature 'Automatic issuance of certificates', js: true do
         scenario 'student completed second and final milestone target' do
           complete_first_target
 
-          click_button 'Mark As Complete'
+          click_button 'Marcar como Concluído'
 
           expect(page).to have_text('Target has been marked as complete')
 
@@ -189,18 +189,18 @@ feature 'Automatic issuance of certificates', js: true do
       scenario 'each student completes the last target' do
         sign_in_user student_1.user, referrer: target_path(target_l2)
 
-        click_button 'Mark As Complete'
+        click_button 'Marcar como Concluído'
 
-        expect(page).to have_text('Target has been marked as complete', wait: 10)
+        expect(page).to have_text('Módulo foi marcado como concluído', wait: 10)
 
         # No certificate should be issued, yet.
         expect(IssuedCertificate.count).to eq(0)
 
         sign_in_user student_2.user, referrer: target_path(target_l2)
 
-        click_button 'Mark As Complete'
+        click_button 'Marcar como Concluído'
 
-        expect(page).to have_text('Target has been marked as complete')
+        expect(page).to have_text('Módulo foi marcado como concluído')
 
         # Both students get certificate when the last student in team completes the target.
         expect(IssuedCertificate.pluck(:user_id)).to contain_exactly(student_1.user.id, student_2.user.id)
@@ -213,9 +213,9 @@ feature 'Automatic issuance of certificates', js: true do
       scenario 'students never receive certificates upon completion' do
         sign_in_user student_1.user, referrer: target_path(target_l2)
 
-        click_button 'Mark As Complete'
+        click_button 'Marcar como Concluído'
 
-        expect(page).to have_text('Target has been marked as complete')
+        expect(page).to have_text('Módulo foi marcado como concluído')
 
         # An active certificate is necessary for the automatic issuance of certificates.
         expect(IssuedCertificate.count).to eq(0)
@@ -228,9 +228,9 @@ feature 'Automatic issuance of certificates', js: true do
       scenario 'students never receive certificates' do
         sign_in_user student_1.user, referrer: target_path(target_l2)
 
-        click_button 'Mark As Complete'
+        click_button 'Marcar como Concluído'
 
-        expect(page).to have_text('Target has been marked as complete')
+        expect(page).to have_text('Módulo foi marcado como concluído')
 
         # At least one milestone is required in the final level for the issuance of certificates.
         expect(IssuedCertificate.count).to eq(0)

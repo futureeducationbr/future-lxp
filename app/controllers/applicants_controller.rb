@@ -6,10 +6,10 @@ class ApplicantsController < ApplicationController
     if valid_applicant?
       student = Applicants::CreateStudentService.new(@applicant).create(session[:applicant_tag] || 'Public Signup')
       sign_in student.user
-      flash[:success] = "Welcome to #{current_school.name}!"
+      flash[:success] = "Bem Vindo(a) #{current_school.name}!"
       redirect_to after_sign_in_path_for(student.user)
     else
-      flash[:error] = "That one-time link has expired, or is invalid. If you have already completed enrollment, please sign in."
+      flash[:error] = "Esse link único expirou ou é inválido. Se você já concluiu a inscrição, faça login."
       redirect_to new_user_session_path
     end
   end

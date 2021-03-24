@@ -69,7 +69,7 @@ let previewLinkToComplete = link =>
     href=link
     target="_blank"
     className="block text-primary-500 w-full text-center bg-gray-200 hover:bg-gray-300 hover:text-primary-600 p-4 rounded text-lg font-bold">
-    <span> <FaIcon classes="fas fa-external-link-alt mr-2" /> {"Visit Link " |> str} </span>
+    <span> <FaIcon classes="fas fa-external-link-alt mr-2" /> {"Visitar link " |> str} </span>
   </a>
 
 let autoVerify = (target, linkToComplete, saving, setSaving, addSubmissionCB, preview) =>
@@ -82,9 +82,9 @@ let autoVerify = (target, linkToComplete, saving, setSaving, addSubmissionCB, pr
       className="flex rounded btn-success text-lg justify-center w-full font-bold p-4  "
       onClick={createAutoVerifySubmission(target, linkToComplete, setSaving, addSubmissionCB)}>
       {switch (saving, linkToComplete) {
-      | (true, _) => completeButtonText("Saving", "fas fa-spinner fa-spin")
-      | (false, Some(_)) => completeButtonText("Visit Link To Complete", "fas fa-external-link-alt")
-      | (false, None) => completeButtonText("Mark As Complete", "fas fa-check-square")
+      | (true, _) => completeButtonText("Salvando", "fas fa-spinner fa-spin")
+      | (false, Some(_)) => completeButtonText("Visitar link para concluir", "fas fa-external-link-alt")
+      | (false, None) => completeButtonText("Marcar como Concluído", "fas fa-check-square")
       }}
     </button>
   }
@@ -101,7 +101,7 @@ let statusBar = (string, linkToComplete) => {
     </div>
   let visitLink = link =>
     <a className="text-right w-full" href=link target="_blank">
-      <i className="fas fa-external-link-alt mr-2" /> {"Visit Link" |> str}
+      <i className="fas fa-external-link-alt mr-2" /> {"Visitar link" |> str}
     </a>
 
   <div className=defaultClasses>
@@ -131,7 +131,7 @@ let make = (~target, ~targetDetails, ~targetStatus, ~addSubmissionCB, ~preview) 
       {switch targetStatus |> TargetStatus.status {
       | Pending => autoVerify(target, linkToComplete, saving, setSaving, addSubmissionCB, preview)
       | Locked(_) => React.null
-      | _ => statusBar("Completed", linkToComplete)
+      | _ => statusBar("Concluído", linkToComplete)
       }}
     </div>,
   ] |> React.array

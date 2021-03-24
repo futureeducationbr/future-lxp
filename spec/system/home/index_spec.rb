@@ -20,25 +20,25 @@ feature 'Index spec', js: true do
 
       expect(page).to have_text(school.name)
       expect(page).to have_text(school.about)
-      expect(page).to have_text("Featured Courses")
+      expect(page).to have_text("Seus Cursos")
 
       within("div[aria-label=\"#{course_1.name}\"]") do
         expect(page).to have_text(course_1.name)
         expect(page).to have_text(course_1.description)
-        expect(page).to have_link("Learn more", href: course_path(course_1))
+        expect(page).to have_link("Saiba mais", href: course_path(course_1))
       end
 
       within("div[aria-label=\"#{course_2.name}\"]") do
         expect(page).to have_text(course_2.name)
         expect(page).to have_text(course_2.description)
-        expect(page).to have_link("Get started", href: course_path(course_2))
+        expect(page).to have_link("Começar", href: course_path(course_2))
       end
 
       expect(page).not_to have_text(course_3.name)
       expect(page).not_to have_text(course_4.name)
 
-      expect(page).not_to have_link("Get started", href: course_path(course_3))
-      expect(page).not_to have_link("Learn more", href: course_path(course_4))
+      expect(page).not_to have_link("Começar", href: course_path(course_3))
+      expect(page).not_to have_link("Saiba mais", href: course_path(course_4))
     end
   end
 
@@ -50,7 +50,7 @@ feature 'Index spec', js: true do
 
       within("div[aria-label=\"#{course_1.name}\"]") do
         expect(page).to have_text(course_1.name)
-        expect(page).to have_link("Learn more", href: course_path(course_1))
+        expect(page).to have_link("Saiba mais", href: course_path(course_1))
       end
     end
   end
@@ -63,7 +63,7 @@ feature 'Index spec', js: true do
       visit root_path
 
       expect(page).to have_text(school.name)
-      expect(page).not_to have_text("Featured Courses")
+      expect(page).not_to have_text("Seus Cursos")
 
       expect(page).not_to have_text(course_1.name)
       expect(page).not_to have_text(course_2.name)
@@ -80,7 +80,7 @@ feature 'Index spec', js: true do
     scenario 'students can jump directly into the course curriculum' do
       sign_in_user student.user, referrer: root_path
 
-      expect(page).to have_link('Continue course', href: curriculum_course_path(course_1))
+      expect(page).to have_link('Continuar o curso', href: curriculum_course_path(course_1))
     end
 
     scenario 'student can review content of courses where access has ended' do
@@ -96,7 +96,7 @@ feature 'Index spec', js: true do
 
       sign_in_user student.user, referrer: root_path
 
-      expect(page).not_to have_link('Continue course')
+      expect(page).not_to have_link('Continuar o curso')
 
       within("div[aria-label='#{course_1.name}'") do
         expect(page).to have_text('Dropped out')

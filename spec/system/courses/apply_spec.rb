@@ -34,9 +34,9 @@ feature "Apply for public courses", js: true do
     expect(page).to have_selector("input[value='#{name}']")
     expect(page).to have_selector("input[value='#{email}']")
 
-    click_button 'Apply'
+    click_button 'Aplicar'
 
-    expect(page).to have_content("We've sent you a verification mail")
+    expect(page).to have_content("Enviamos um e-mail de verificação para você")
 
     applicant = Applicant.where(email: email).first
 
@@ -50,7 +50,7 @@ feature "Apply for public courses", js: true do
 
     visit enroll_applicants_path(applicant.login_token)
 
-    expect(page).to have_content("Welcome to #{school.name}!")
+    expect(page).to have_content("Bem vindo(a) a #{school.name}!")
     expect(page).to have_content(applicant.name)
     expect(page).to have_content(public_course.name)
 
@@ -69,7 +69,7 @@ feature "Apply for public courses", js: true do
     fill_in 'Name', with: name_2
     click_button 'Apply'
 
-    expect(page).to have_content("We've sent you a verification mail")
+    expect(page).to have_content("Enviamos um e-mail de verificação para você")
 
     visit apply_course_path(public_course)
 
@@ -86,11 +86,11 @@ feature "Apply for public courses", js: true do
     visit apply_course_path(public_course, name: name, email: email)
     click_button 'Apply'
 
-    expect(page).to have_content("We've sent you a verification mail")
+    expect(page).to have_content("Enviamos um e-mail de verificação para você")
 
     visit enroll_applicants_path(Applicant.last.login_token)
 
-    expect(page).to have_content("Welcome to #{school.name}!")
+    expect(page).to have_content("Bem vindo(a) a #{school.name}!")
     expect(Startup.last.tag_list).to include('Public Signup')
   end
 
@@ -98,11 +98,11 @@ feature "Apply for public courses", js: true do
     visit apply_course_path(public_course, name: name, email: email, tag: 'An unknown tag')
     click_button 'Apply'
 
-    expect(page).to have_content("We've sent you a verification mail")
+    expect(page).to have_content("Enviamos um e-mail de verificação para você")
 
     visit enroll_applicants_path(Applicant.last.login_token)
 
-    expect(page).to have_content("Welcome to #{school.name}!")
+    expect(page).to have_content("Bem vindo(a) a #{school.name}!")
 
     team = Startup.last
 
@@ -122,7 +122,7 @@ feature "Apply for public courses", js: true do
     visit apply_course_path(public_course, name: name, email: email)
     click_button 'Apply'
 
-    expect(page).to have_content("We've sent you a verification mail")
+    expect(page).to have_content("Enviamos um e-mail de verificação para você")
 
     visit enroll_applicants_path(Applicant.last.login_token)
 

@@ -277,13 +277,13 @@ let make = (~communityId, ~target, ~topicCategories) => {
                 <span className="font-semibold block text-xs"> {"Linked Target: " |> str} </span>
                 <span> {target |> TopicsShow__LinkedTarget.title |> str} </span>
               </p>
-              <a href="./new_topic" className="btn btn-default"> {"Clear" |> str} </a>
+              <a href="./new_topic" className="btn btn-default"> {"Limpar" |> str} </a>
             </div>
           </div>
         | None => React.null
         }}
         <h4 className="max-w-3xl w-full mx-auto pb-2 mt-2 px-3 lg:px-0">
-          {"Crie um novo tópico de discussão" |> str}
+          {"Crie um novo t&oacute;pico de discuss&atilde;o" |> str}
         </h4>
         <div className="md:px-3">
           <div
@@ -370,7 +370,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
                         state.selectedCategory,
                       )}
                       className="btn btn-primary border border-transparent w-full md:w-auto">
-                      {"Criar Tópico" |> str}
+                      {"Criar T&oacute;pico" |> str}
                     </button>
                   </div>
                 </div>
