@@ -34,7 +34,7 @@ feature 'Automatic issuance of certificates', js: true do
   def complete_first_target
     sign_in_user student_1.user, referrer: target_path(target_l2)
 
-    click_button 'Marcar como Conclu&iacute;do'
+    click_button 'Marcar como Concluído'
 
     expect(page).to have_text('Target has been marked as complete')
 
@@ -50,7 +50,7 @@ feature 'Automatic issuance of certificates', js: true do
     scenario 'student completes the last milestone target' do
       sign_in_user student_1.user, referrer: target_path(target_l1)
 
-      click_button 'Marcar como Conclu&iacute;do'
+      click_button 'Marcar como Concluído'
 
       expect(page).to have_text('Target has been marked as complete')
 
@@ -65,7 +65,7 @@ feature 'Automatic issuance of certificates', js: true do
     scenario 'student receives certificate upon completion of sole milestone target' do
       sign_in_user student_1.user, referrer: target_path(target_l2)
 
-      click_button 'Marcar como Conclu&iacute;do'
+      click_button 'Marcar como Concluído'
 
       expect(page).to have_text('Target has been marked as complete', wait: 10)
 
@@ -97,7 +97,7 @@ feature 'Automatic issuance of certificates', js: true do
         scenario 'student completed second and final milestone target' do
           complete_first_target
 
-          click_button 'Marcar como Conclu&iacute;do'
+          click_button 'Marcar como Concluído'
 
           expect(page).to have_text('Target has been marked as complete')
 
@@ -189,7 +189,7 @@ feature 'Automatic issuance of certificates', js: true do
       scenario 'each student completes the last target' do
         sign_in_user student_1.user, referrer: target_path(target_l2)
 
-        click_button 'Marcar como Conclu&iacute;do'
+        click_button 'Marcar como Concluído'
 
         expect(page).to have_text('Módulo foi marcado como concluído', wait: 10)
 
@@ -198,7 +198,7 @@ feature 'Automatic issuance of certificates', js: true do
 
         sign_in_user student_2.user, referrer: target_path(target_l2)
 
-        click_button 'Marcar como Conclu&iacute;do'
+        click_button 'Marcar como Concluído'
 
         expect(page).to have_text('Módulo foi marcado como concluído')
 
@@ -213,7 +213,7 @@ feature 'Automatic issuance of certificates', js: true do
       scenario 'students never receive certificates upon completion' do
         sign_in_user student_1.user, referrer: target_path(target_l2)
 
-        click_button 'Marcar como Conclu&iacute;do'
+        click_button 'Marcar como Concluído'
 
         expect(page).to have_text('Módulo foi marcado como concluído')
 
@@ -228,7 +228,7 @@ feature 'Automatic issuance of certificates', js: true do
       scenario 'students never receive certificates' do
         sign_in_user student_1.user, referrer: target_path(target_l2)
 
-        click_button 'Marcar como Conclu&iacute;do'
+        click_button 'Marcar como Concluído'
 
         expect(page).to have_text('Módulo foi marcado como concluído')
 

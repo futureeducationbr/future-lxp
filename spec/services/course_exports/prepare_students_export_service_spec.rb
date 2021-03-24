@@ -153,7 +153,7 @@ describe CourseExports::PrepareStudentsExportService do
           ],
           [
             'Completion Method',
-            'Marcar como Concluído',
+            'Marcar como concluído',
             'Take Quiz',
             'Graded',
             'Graded'
