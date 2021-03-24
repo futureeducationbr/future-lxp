@@ -129,7 +129,7 @@ feature "Student's view of Course Curriculum", js: true do
     expect(page).to have_selector('.curriculum__target-group', count: 2)
 
     # ...and only one of thoese should be a milestone target group.
-    expect(page).to have_selector('.curriculum__target-group', text: 'MILESTONE TARGETS', count: 1)
+    expect(page).to have_selector('.curriculum__target-group', text: 'MÓDULO', count: 1)
 
     # Open the level selector dropdown.
     click_button "L4: #{level_4.name}"
@@ -170,16 +170,16 @@ feature "Student's view of Course Curriculum", js: true do
     expect(page).to have_text('This target has pre-requisites that are incomplete.')
     expect(page).to have_link(l5_non_reviewed_target.title)
 
-    click_button 'Close'
+    click_button 'Fechar'
 
     # Non-reviewed targets that do not have prerequisites should be unlocked for completion.
     click_link l5_non_reviewed_target.title
-    click_button 'Mark As Complete'
+    click_button 'Marcar como concluído'
 
     expect(page).to have_text('Target has been marked as complete')
 
     dismiss_notification
-    click_button 'Close'
+    click_button 'Fechar'
 
     # Completing the prerequisite should unlock the previously locked non-reviewed target.
     expect(page).to have_selector('.curriculum__target-status--locked', count: 1)
@@ -187,16 +187,16 @@ feature "Student's view of Course Curriculum", js: true do
     click_link l5_non_reviewed_target_with_prerequisite.title
 
     expect(page).not_to have_text('This target has pre-requisites that are incomplete.')
-    expect(page).to have_button 'Mark As Complete'
+    expect(page).to have_button 'Marcar como concluído'
 
-    click_button 'Close'
+    click_button 'Fechar'
 
     # Reviewed targets, even those without prerequisites, must be locked.
     click_link l5_reviewed_target.title
 
     expect(page).to have_content('You must level up to complete this target')
 
-    click_button 'Close'
+    click_button 'Fechar'
   end
 
   scenario 'student opens a locked level' do

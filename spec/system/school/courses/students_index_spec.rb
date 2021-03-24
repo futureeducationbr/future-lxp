@@ -166,7 +166,7 @@ feature 'School students index', js: true do
       open_email(student_1_user.email)
 
       expect(current_email.subject).to include("You have been added as a student in #{school.name}")
-      expect(current_email.body).to have_link('Sign in to View Course')
+      expect(current_email.body).to have_link('Entrar para ver o curso')
 
       open_email(student_2_user.email)
 
@@ -208,7 +208,7 @@ feature 'School students index', js: true do
       scenario 'School admin adds a coach as a student' do
         sign_in_user school_admin.user, referrer: school_course_students_path(course)
 
-        click_button 'Add New Students'
+        click_button 'Adicionar Novo Aluno'
 
         expect do
           # First, an existing student.
@@ -216,8 +216,8 @@ feature 'School students index', js: true do
           fill_in 'Email', with: coach_user.email
           fill_in 'Title', with: Faker::Job.title
           fill_in 'Affiliation', with: Faker::Company.name
-          click_button 'Add to List'
-          click_button 'Save List'
+          click_button 'Adicionar a lista'
+          click_button 'Salvar lista'
 
           expect(page).to have_text('All students were created successfully')
           dismiss_notification
@@ -232,8 +232,8 @@ feature 'School students index', js: true do
 
         open_email(coach_user.email)
 
-        expect(current_email.subject).to include("You have been added as a student in #{school.name}")
-        expect(current_email.body).to have_link('Sign in to View Course')
+        expect(current_email.subject).to include("Você foi adicionado como aluno em #{school.name}")
+        expect(current_email.body).to have_link('Entrar para ver o curso')
       end
     end
 
@@ -258,15 +258,15 @@ feature 'School students index', js: true do
           fill_in 'Email', with: email_1
           fill_in 'Title', with: Faker::Job.title
           fill_in 'Affiliation', with: Faker::Company.name
-          click_button 'Add to List'
+          click_button 'Adicionar a lista'
 
           # Then a new student.
           fill_in 'Name', with: name_3
           fill_in 'Email', with: Faker::Internet.email(name: name_3)
-          click_button 'Add to List'
+          click_button 'Adicionar a lista'
 
           # Try to save both.
-          click_button 'Save List'
+          click_button 'Salvar lista'
 
           expect(page).to have_text('1 of 2 students were added. Remaining students are already a part of the course')
           dismiss_notification
@@ -311,7 +311,7 @@ feature 'School students index', js: true do
         fill_in 'Title', with: new_title
         fill_in 'Affiliation', with: ''
         find('button[title="Exclude this student from the leaderboard"]').click
-        click_button 'Update Student'
+        click_button 'Alterar aluno'
 
         expect(page).to have_text('Student updated successfully')
         dismiss_notification

@@ -58,21 +58,21 @@ feature 'User Dashboard', js: true do
     within("div[aria-label=\"#{course_1.name}\"]") do
       expect(page).to have_text(course_1.name)
       expect(page).to have_text(course_1.description)
-      expect(page).to have_link("View Course", href: curriculum_course_path(course_1))
+      expect(page).to have_link("Ver Curso", href: curriculum_course_path(course_1))
     end
 
     # A course which is going on.
     within("div[aria-label=\"#{course_2.name}\"]") do
       expect(page).to have_text(course_2.name)
       expect(page).to have_text(course_2.description)
-      expect(page).to have_link("View Course", href: curriculum_course_path(course_2))
+      expect(page).to have_link("Ver Curso", href: curriculum_course_path(course_2))
     end
 
     # A course which has ended.
     within("div[aria-label=\"#{course_3.name}\"]") do
       expect(page).to have_text(course_3.name)
       expect(page).to have_text(course_3.description)
-      expect(page).to have_link("View Curriculum", href: curriculum_course_path(course_3))
+      expect(page).to have_link("Ver Currículo", href: curriculum_course_path(course_3))
       expect(page).to have_text("Course Ended")
     end
 
@@ -81,7 +81,7 @@ feature 'User Dashboard', js: true do
       expect(page).to have_text(course_4.name)
       expect(page).to have_text(course_4.description)
       expect(page).to have_text("Dropped out")
-      expect(page).not_to have_link("View Curriculum", href: curriculum_course_path(course_4))
+      expect(page).not_to have_link("Ver Currículo", href: curriculum_course_path(course_4))
     end
 
     click_button 'Communities'
@@ -104,9 +104,9 @@ feature 'User Dashboard', js: true do
 
     expect(page).to have_text(course_1.name)
     expect(page).to have_text(course_1.description)
-    expect(page).to have_link("View Curriculum", href: curriculum_course_path(course_1))
-    expect(page).to have_link("Review Submissions", href: review_course_path(course_1))
-    expect(page).to have_link("My Students", href: students_course_path(course_1))
+    expect(page).to have_link("Ver Currículo", href: curriculum_course_path(course_1))
+    expect(page).to have_link("Revisar Submissões", href: review_course_path(course_1))
+    expect(page).to have_link("Meus Alunos", href: students_course_path(course_1))
 
     expect(page).not_to have_text(course_2.name)
     expect(page).not_to have_text(course_3.name)
@@ -126,9 +126,9 @@ feature 'User Dashboard', js: true do
 
     expect(page).to have_text(course_2.name)
     expect(page).to have_text(course_2.description)
-    expect(page).to have_link("View Curriculum", href: curriculum_course_path(course_2))
-    expect(page).to have_link("Review Submissions", href: review_course_path(course_2))
-    expect(page).to have_link("My Students", href: students_course_path(course_2))
+    expect(page).to have_link("Ver Currículo", href: curriculum_course_path(course_2))
+    expect(page).to have_link("Revisar Submissões", href: review_course_path(course_2))
+    expect(page).to have_link("Meus Alunos", href: students_course_path(course_2))
 
     expect(page).not_to have_text(course_1.name)
     expect(page).not_to have_text(course_3.name)
@@ -152,10 +152,10 @@ feature 'User Dashboard', js: true do
     expect(page).to have_text(course_4.name)
 
     # school admin can preview all courses in school
-    expect(page).to have_link("View Course", href: curriculum_course_path(course_1))
-    expect(page).to have_link("View Course", href: curriculum_course_path(course_2))
-    expect(page).to have_link("View Course", href: curriculum_course_path(course_3))
-    expect(page).to have_link("View Course", href: curriculum_course_path(course_4))
+    expect(page).to have_link("Ver Curso", href: curriculum_course_path(course_1))
+    expect(page).to have_link("Ver Curso", href: curriculum_course_path(course_2))
+    expect(page).to have_link("Ver Curso", href: curriculum_course_path(course_3))
+    expect(page).to have_link("Ver Curso", href: curriculum_course_path(course_4))
 
     click_button 'Communities'
     # school admin has access to all communities in school
@@ -173,8 +173,8 @@ feature 'User Dashboard', js: true do
     expect(page).not_to have_text(course_3.name)
     expect(page).not_to have_text(course_4.name)
 
-    expect(page).to have_link("Edit Curriculum", href: curriculum_school_course_path(course_1))
-    expect(page).to have_link("View Curriculum", href: curriculum_course_path(course_1))
+    expect(page).to have_link("Alterar Currículo", href: curriculum_school_course_path(course_1))
+    expect(page).to have_link("Ver Currículo", href: curriculum_course_path(course_1))
   end
 
   context 'when the student has been issued some certificates' do
