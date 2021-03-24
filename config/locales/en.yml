@@ -4,27 +4,27 @@ en:
       button_about: Sobre
       button_connect: Conectar
       filter_input_label: Filtrar por
-      filter_input_placeholder: Search by name, or select a course
-      filter_label_name_like: Name Like
-      filter_label_teaches_course: Teaches Course
+      filter_input_placeholder: Pesquise por nome ou selecione um curso
+      filter_label_name_like: Nome como
+      filter_label_teaches_course: Professores do curso
       filter_result_empty: The filters you've applied does not match any coach. Please change the filter and try again.
-      filter_search_string_course: teaches course %{name}
+      filter_search_string_course: ensina o curso %{name}
       heading: Mentores
     CommunitiesShow__Root:
       all_categories_button: Todas as categorias
       button_load_more: Carregar Mais...
-      empty_topics: There's no discussion here yet.
+      empty_topics: Não há discussão aqui ainda.
       filter_input_label: 'Filtrar por:'
       filter_input_placeholder_categories: Filter by category, solution or search within topics
       filter_input_placeholder_default: Search within topics or filter by solution
-      sort_criterion_input_label: 'Sort by:'
-      sort_criterion_last_activity: Last Activity
-      sort_criterion_posted_at: Posted At
-      sort_criterion_views: Views
-      topic_last_updated_text: Last updated
-      topic_posted_by_text: Posted by
+      sort_criterion_input_label: 'Ordenar por:'
+      sort_criterion_last_activity: Última atividade
+      sort_criterion_posted_at: Postado em
+      sort_criterion_views: Visualizações
+      topic_last_updated_text: Última atualização
+      topic_posted_by_text: Postado por
       topic_stats_likes: Like
-      topic_stats_replies: Reply
+      topic_stats_replies: Responder
       topic_stats_views: Visualizar
       topics_fully_loaded_text: Showing all %{total_topics} topics
       topics_partially_loaded_text: Showing %{loaded_topics_count} of %{total_topics} topics
@@ -41,10 +41,10 @@ en:
       active_label: Should students be automatically issued this certificate?
       cannot_be_auto_issued_warning: Please note that the last level of this course does not have any milestone targets. This certificate will be auto-issued only if the last level has at least one milestone target.
       edit_action: Edit Certificate
-      font_size_label: Font Size
-      margin_label: Margin
-      name_error: Name can't be blank
-      name_label: Name
+      font_size_label: Tamanho da fonte
+      margin_label: Margem
+      name_error: Nome não pode ficar em branco
+      name_label: Nome
       name_offset_top_label: Name Offset (from top)
       name_placeholder: A short name for this certificate
       qr_bottom_left_label: Bottom Left
@@ -71,30 +71,30 @@ en:
         zero: Never issued
       no_certificates: You haven't created any certificates yet!
     CoursesCurriculum:
-      edit_level_button: Edit Level
+      edit_level_button: Alterar nível
       edit_target_button_title: Edit target %{title}
       empty_level_content_notice: There's no published content on this level.
       issued_certificate_button: View Certificate
       issued_certificate_heading: Congratulations! You have been issued a certificate.
-      level_locked: Level locked
+      level_locked: Nível bloqueado
       level_locked_explanation: You can access the content on %{date}.
       level_locked_for_students_notice: This level is still locked for students, and will be unlocked on <strong>%{date}</strong>.
       level_locked_notice: The level is currently locked!
       milestone_targets: Milestone targets
-      nav_next_level: Next Level
-      nav_previous_level: Previous Level
+      nav_next_level: Próximo Nível
+      nav_previous_level: Nível Anterior
     CoursesCurriculum__Learn:
-      edit_target_button: Edit Content
+      edit_target_button: Alterar conteúdo
     CoursesCurriculum__LevelUpButton:
-      button_text_level_up: Level Up
-      button_text_saving: Saving
+      button_text_level_up: Subir
+      button_text_saving: Salvando
     CoursesCurriculum__NoticeManager:
-      access_ended_description: Your access to this course has ended.
-      access_ended_title: Access Ended
+      access_ended_description: Seu acesso a este curso terminou.
+      access_ended_title: Acesso Finalizado
       course_complete_description: You've completed our coursework. Feel free to complete targets that you might have left out, and read up at attached links.
-      course_complete_title: Congratulations! You have completed all milestone targets in the final level.
-      course_ended_description: The course has ended and submissions are disabled for all targets!
-      course_ended_title: Course Ended
+      course_complete_title: Parabéns! Você completou todos os módulos.
+      course_ended_description: O curso terminou e as inscrições estão desativadas para todos os módulos!
+      course_ended_title: Curso Terminado
       level_up_blocked:
         body_middle_pending_review: 'are pending review by a coach. '
         body_middle_rejected: 'have been rejected. '
@@ -107,72 +107,72 @@ en:
       level_up_limited_title: Level Up Blocked
       level_up_title: Ready to Level Up!
       preview_mode_description: You are accessing the preview mode for this course
-      preview_mode_title: Preview Mode
+      preview_mode_title: Modo de visualização
       team_members_pending_description: You have completed all required milestone targets, but one or more of your team-mates haven't. Please ask them to sign in and check for incomplete milestone targets.
       team_members_pending_title: Check With Your Team
     CoursesCurriculum__Overlay:
       close_button: Fechar
-      completion_tab_complete: Complete
-      completion_tab_completed: Completed
-      completion_tab_locked: Locked
-      completion_tab_mark_complete: Mark as Complete
-      completion_tab_quiz_result: Quiz Result
-      completion_tab_submissions: Submissions & Feedback
-      completion_tab_take_quiz: Take Quiz
-      completion_tab_visit_link: Visit Link to Complete
-      discuss_tab: Discuss
-      learn_tab: Learn
-      next_target_button: Next Target
+      completion_tab_complete: Completo
+      completion_tab_completed: Concluído
+      completion_tab_locked: Bloqueado
+      completion_tab_mark_complete: Marcar como concluído
+      completion_tab_quiz_result: Resultado do questionário
+      completion_tab_submissions: Envios e feedback
+      completion_tab_take_quiz: Faça o teste
+      completion_tab_visit_link: Visite o link para concluir
+      discuss_tab: Discussão
+      learn_tab: Aprenda
+      next_target_button: Próxima Lição
       pending_team_members_notice: 'You have team members who are yet to complete this target:'
       preview_mode_text: You are currently looking at a preview of this course.
-      previous_target_button: Previous Target
-      scroll_to_top: Scroll to Top
+      previous_target_button: Lição Anterior
+      scroll_to_top: Role para cima
     CoursesCurriculum__TargetStatus:
       access_locked: Your access to this course has ended.
       course_locked: The course has ended and submissions are disabled for all target!
       level_locked: You must level up to complete this target.
       prerequisites_incomplete: This target has pre-requisites that are incomplete.
       status:
-        completed: Completed
-        locked: Locked
-        pending: Pending
-        pending_review: Pending Review
-        rejected: Rejected
+        completed: Concluído
+        locked: Bloqueado
+        pending: Pendente
+        pending_review: Revisão pendente
+        rejected: Rejeitado
     CoursesReport__Overview:
-      attempted: ' Attempted'
-      average_grades: Average Grades
+      attempted: ' Tentativa'
+      average_grades: Notas médias
       average_quiz_score: Average Quiz Score
-      course_completed: Course Completed!
+      course_completed: Curso concluído!
       incomplete_targets: 'Incomplete: %{targetsCount}'
-      level_progress: Level Progress
+      level_progress: Progresso
       personal_coaches: Personal Coaches
-      quiz: Quiz
-      schedule_coaching_session: Schedule a coaching session
+      quiz: Questionário
+      schedule_coaching_session: Agende uma sessão de coaching
       targets_completed: 'Completed: %{targetsCount}'
-      targets_overview: Targets Overview
-      targets_pending_review: 'Pending Review: %{targetsCount}'
+      targets_overview: Visão geral dos módulos
+      targets_pending_review: 'Revisão pendente: %{targetsCount}'
     CoursesReport__SubmissionsList:
-      completed: Completed
+      completed: Concluído
       filter_by_another_level: Filter by another level
       filter_by_another_level_or_status: Filter by another level, or by status
       filter_by_level: Filter by level
       filter_by_level_or_status: Filter by level, or by status
-      load_more: Load More...
-      no_submissions_to_show: 'No submissions to show '
-      pending_review: Pending Review
-      rejected: Rejected
-      sort_by: 'Sort by:'
+      load_more: Carregar mais...
+      no_submissions_to_show: 'Nenhum envio para mostrar '
+      pending_review: Revisão pendente
+      rejected: Rejeitado
+      sort_by: 'Ordenar por:'
       status: Status
-      submission_not_considered: This submission is not considered towards its target's completion.
+      submission_not_considered: Este envio não é considerado para a conclusão do seu módulo.
       submission_not_considered_help: This is a <em>team</em> target, and this submission is not linked to some members of your team. This can happen if a target is changed after your individual submission, to require a <em>team</em> submission, or if your team's composition changed after a <em>team</em> submission was created.
-      submitted_at: Submitted At
-      submitted_on: Submitted on %{date}
-      view: 'View '
+      submitted_at: Enviado em
+      submitted_on: Enviado em %{date}
+      view: 'Visualizar '
     CoursesReview__Root:
-      assigned_to: Assigned to
-      assigned_to_coach: 'assigned to '
-      assigned_to_me: ' assigned to me'
-      filter_by: 'Filter by:'
+      assigned_to: Atribuído a
+      assigned_to_coach: 'atribuído a '
+      assigned_to_me: ' atribuído a mim'
+      filter_by: 'Filtrar por:'
       filter_by_another_level: Filter by another level
       filter_by_another_level_or_submissions_assigned: Filter by another level, or only show submissions assigned to a coach
       filter_by_level: Filter by level
@@ -180,32 +180,32 @@ en:
       me: Me
       now_showing_submissions_assigned_to: Now showing submissions assigned to %{name}.
       now_showing_submissions_from_all_students: Now showing submissions from all students in this course.
-      pending: Pending
-      reviewed: Reviewed
-      reviewed_at: Reviewed At
-      sort_by: 'Sort by:'
-      submitted_at: Submitted At
+      pending: Pendente
+      reviewed: Avaliado
+      reviewed_at: Avaliado em
+      sort_by: 'Ordenar por:'
+      submitted_at: Enviado em
     CoursesStudents__StudentOverlay:
       access_ended_at: This student's access to the course ended on %{date}.
-      attempted: ' Attempted'
-      average_grades: Average Grades
-      average_quiz_score: Average Quiz Score
-      close_student_report: Close student report
-      course_completed: Course Completed!
+      attempted: ' Tentativa'
+      average_grades: Notas médias
+      average_quiz_score: Pontuação média do questionário
+      close_student_report: Fechar relatório do aluno
+      course_completed: Curso concluído!
       dropped_out_at: This student dropped out of the course on %{date}.
-      level_progress: Level Progress
-      notes: Notes
-      other_team_members: Other Team Members
+      level_progress: Progresso na aprendizagem
+      notes: Notas
+      other_team_members: Outros membros do time
       personal_coaches: Personal Coaches
       quiz: Quiz
-      submissions: Submissions
-      targets: ' Targets'
-      targets_overview: Targets Overview
+      submissions: Submissões
+      targets: ' Módulos'
+      targets_overview: Visão geral dos módulos
       team_coaches: Team Coaches
-      total_targets_completed: Total Targets Completed
+      total_targets_completed: Total de módulos concluídos
     CurriculumEditor:
-      create_level: Create Level
-      create_target_group: Create target group
+      create_level: Criar Nível
+      create_target_group: Criar módulo
       edit_selected_level: Edit selected level
     CurriculumEditor__ContentBlockCreator:
       button_labels:
@@ -262,39 +262,39 @@ en:
       update_target: Update Target
       visit_link: Visit a link to complete the target.
     CurriculumEditor__TargetGroupShow:
-      create_target: Create a target
-      milestone_targets: Milestone Targets
+      create_target: Criar módulo
+      milestone_targets: Módulos
     Notifications__List:
-      button_load_more: Load More Notifications...
-      empty_notifications: You don't have any notifications!
+      button_load_more: Carregar mais notificações...
+      empty_notifications: Você ainda não tem notificações!
       filter:
         events:
-          post_created_text: Post Created
-          topic_created_text: Topic Created
-        input_hint: Search by title name or event type
-        input_label: Search
-        input_placeholder: Search by title, event, read and unread
+          post_created_text: Post criado
+          topic_created_text: Tópico criado
+        input_hint: Pesquise por nome do título ou tipo de evento
+        input_label: Procurar
+        input_placeholder: Pesquise por título, evento, lido e não lido
         label:
           event: Evento
           status: Status
-          title: Search by title
+          title: Procurar por título
         status:
           all: Todos
-          read: Read
-          unread: Unread
-      mark_all_as_read_button: Mark All as Read
+          read: Lidas
+          unread: Não lidas
+      mark_all_as_read_button: Marcar todas como lidas
       notifications_fully_loaded_text: Showing all %{total_notifications} notifications
       notifications_partially_loaded_text: Showing %{loaded_notifications_count} of %{total_notifications} notifications
     StudentTopNav:
-      sign_in: Sign In
-      sign_out: Sign Out
+      sign_in: Entrar
+      sign_out: Sair
     StudentTopNav__DropDown:
       more: Mais
     StudentTopNav__UserControls:
-      edit_profile: Edit Profile
-      sign_out: Sign Out
+      edit_profile: Alterar perfil
+      sign_out: Sair
     StudentsEditor__ActionsForm:
-      active_label: Active
+      active_label: Ativo
       certificates_label: Course Certificates
       dropout_button: Dropout Student
       dropout_student_label: Has this student dropped out?
@@ -343,16 +343,16 @@ en:
       delete_topic_confirm_dialog: Are you sure you want to delete the topic? This cannot be undone.
       delete_topic_string: Delete Topic
       deleted_user_name: Deleted User
-      edit_post_string: Edit Post
-      edit_reply_string: Edit Reply
+      edit_post_string: Alterar post
+      edit_reply_string: Alterar resposta
       go_to_solution_button: Go to solution
       history_button_text: History
       last_edited_by_label: 'Last edited by '
-      mark_as_solution_label: Mark as solution
-      new_reply_button: Reply
-      solution_icon_label: Solution
+      mark_as_solution_label: Marcar como solucionado
+      new_reply_button: Responder
+      solution_icon_label: Solucionado
     TopicsShow__Root:
-      edit_topic_button: Edit Topic
+      edit_topic_button: Alterar tópico
       linked_target_label: 'Linked Target: '
       lock_topic_button: Lock Topic
       locked_topic_notice: This topic thread has been locked; no new replies can be posted.
@@ -360,16 +360,16 @@ en:
       topic_editor_cancel_button: Cancel
       unlock_topic_button: Unlock Topic
       update_topic_button: Update Topic
-      view_target_button: View Target
+      view_target_button: Ver módulo
     TopicsShow__SubscriptionManager:
-      subscribe: Subscribe
-      unsubscribe: Unsubscribe
+      subscribe: Assinar
+      unsubscribe: Para de receber
     WebPushSubscriptionManager:
       notification_rejected: Permission Rejected
       notification_rejected_message: If you change your mind, click the lock icon to give your browser permission to send you desktop notifications.
-      subscribe: Subscribe
-      subscribed_on_another_device: Subscribe on this Device
-      unsubscribe: Unsubscribe
+      subscribe: Assinar
+      subscribed_on_another_device: Assinar neste dispositivo
+      unsubscribe: Para de receber
   dashboard:
     dashboard:
       tour:
@@ -389,8 +389,8 @@ en:
         access_ended: Review course content
         active: Continuar o curso
         dropped_out: Dropped out
-      featured_courses_heading: Featured Courses
-      get_started: Get started
+      featured_courses_heading: Cursos em destaque
+      get_started: Começar
       learn_more: Aprender mais
       welcome_prefix: Olá, bem vindo(a) a
   jobs:
@@ -480,16 +480,16 @@ en:
   shared:
     cancel: Cancelar
     close: Fechar
-    done_exclamation: Done!
+    done_exclamation: Feito!
     file_invalid: Please select a file with a size less than 5 MB.
     image_file_invalid: Please select an image (PNG, JPEG, GIF) with a size less than 5 MB, and less than 4096px wide or high.
-    level: Level
+    level: Nível
     level_label:
-      long_with_name: 'Level %{number}: %{name}'
-      long_without_name: Level %{number}
+      long_with_name: 'Nível %{number}: %{name}'
+      long_without_name: Nível %{number}
       short_with_name: 'L%{number}: %{name}'
       short_without_name: L%{number}
     optional: optional
-    save_changes: Save Changes
-    saving: Saving...
+    save_changes: Salvar alterações
+    saving: Salvando...
     target: Target
