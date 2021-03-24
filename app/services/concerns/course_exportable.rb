@@ -121,7 +121,7 @@ module CourseExportable
     elsif target.link_to_complete.present?
       'Visit Link'
     else
-      'Marcar como Conclu&iacute;do'
+      'Marcar como Concluído'
     end
   end
 

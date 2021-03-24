@@ -131,7 +131,7 @@ feature 'Target Overlay', js: true do
 
     # Return to the submissions & feedback tab on the target overlay.
     click_link target_l1.title
-    find('.course-overlay__body-tab-item', text: 'Submissions & Feedback').click
+    find('.course-overlay__body-tab-item', text: 'Envios e Feedback').click
 
     # The submission contents should be on the page.
     expect(page).to have_content(long_answer)
@@ -166,7 +166,7 @@ feature 'Target Overlay', js: true do
       sign_in_user student.user, referrer: target_path(target_l1)
 
       # There should be a mark as complete button on the learn page.
-      expect(page).to have_button('Marcar como Conclu&iacute;do')
+      expect(page).to have_button('Marcar como Concluído')
 
       # Completion instructions should be show on learn section for auto-verified targets
       expect(page).to have_text('Antes de marcar como completo')
@@ -176,10 +176,10 @@ feature 'Target Overlay', js: true do
       expect(page).not_to have_selector('.complete-button-selected')
 
       # Clicking the mark as complete tab option should highlight the button.
-      find('.course-overlay__body-tab-item', text: 'Marcar como Conclu&iacute;do').click
+      find('.course-overlay__body-tab-item', text: 'Marcar como Concluído').click
       expect(page).to have_selector('.complete-button-selected')
 
-      click_button 'Marcar como Conclu&iacute;do'
+      click_button 'Marcar como Concluído'
 
       # The button should be replaced with a 'completed' marker.
       expect(page).to have_selector('.complete-button-selected', text: 'Concluído')
@@ -540,11 +540,11 @@ feature 'Target Overlay', js: true do
 
       fill_in 'Title', with: topic_title
       replace_markdown(topic_body)
-      click_button 'Criar T&oacute;pico'
+      click_button 'Criar Tópico'
 
       expect(page).to have_text(topic_title)
       expect(page).to have_text(topic_body)
-      expect(page).not_to have_text('Criar um novo t&oacute;pico de discuss&atilde;o')
+      expect(page).not_to have_text('Criar um novo t&oacute;pico de discussão')
 
       # The question should have been linked to the target.
       expect(Topic.where(title: topic_title).first.target).to eq(target_l1)
@@ -630,7 +630,7 @@ feature 'Target Overlay', js: true do
         sign_in_user school_admin.user, referrer: target_path(target_l1)
 
         # There should be a mark as complete button on the learn page.
-        expect(page).to have_button('Marcar como Conclu&iacute;do', disabled: true)
+        expect(page).to have_button('Marcar como Concluído', disabled: true)
       end
     end
 
@@ -675,21 +675,21 @@ feature 'Target Overlay', js: true do
 
     expect(page).to have_text(target_l1.title)
 
-    expect(page).not_to have_link('M&oacute;dulo Anterior')
-    click_link 'Próximo M&oacute;dulo'
+    expect(page).not_to have_link('Módulo Anterior')
+    click_link 'Próximo Módulo'
 
     expect(page).to have_text(prerequisite_target.title)
 
-    click_link 'Próximo M&oacute;dulo'
+    click_link 'Próximo Módulo'
 
     expect(page).to have_text(quiz_target.title)
-    expect(page).not_to have_link('Próximo M&oacute;dulo')
+    expect(page).not_to have_link('Próximo Módulo')
 
-    click_link 'M&oacute;dulo anterior'
+    click_link 'Módulo anterior'
 
     expect(page).to have_text(prerequisite_target.title)
 
-    click_link 'M&oacute;dulo anterior'
+    click_link 'Módulo anterior'
 
     expect(page).to have_text(target_l1.title)
   end
