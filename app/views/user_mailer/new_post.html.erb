@@ -1,32 +1,32 @@
 <%
   topic = @post.topic
   addressee_name = @addressee.name
-  author_name = @post.creator&.name || "A user"
+  author_name = @post.creator&.name || "Um usuário"
   community_name = @post.topic.community.name
 %>
 
 <% content_for :title do %>
-  New reply for your post
+  Nova resposta para sua postagem
 <% end %>
 
 <% content_for :subtitle do %>
-  <%= author_name %> has replied to your post.
+  <%= author_name %> respondeu à sua postagem.
 <% end %>
 
 <% content_for :title_button_text do %>
-  View Reply
+  Ver resposta
 <% end %>
 
 <% content_for(:title_button_link, topic_url(topic)) %>
 
 <% content_for :salutation do %>
-  Hello <%= addressee_name %>,
+  Olá <%= addressee_name %>,
 <% end %>
 
 <% content_for :body do %>
-  <p><%= author_name %> has posted a reply to something you said on the <%= community_name %> community.</p>
+  <p><%= author_name %> postou uma resposta a algo que você disse na comunidade <%= community_name %>.</p>
 
-  <p>You can view the reply by clicking on the link above.</p>
+  <p>Você pode ver a resposta clicando no link acima.</p>
 
   <%= render 'mailers/link_fallback', url: topic_url(topic) %>
 <% end %>

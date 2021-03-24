@@ -3,32 +3,32 @@
 %>
 
 <% content_for :title do %>
-  Sign In to <%= @school_name%>
+  Entre para <%= @school_name%>
 <% end %>
 
 <% content_for :subtitle do %>
-  This is a one-time link to sign in to <%= @school_name%>
+  Este é um link único para fazer login no <%= @school_name%>
 <% end %>
 
 <% content_for :title_button_text do %>
-  Sign In
+  Entrar
 <% end %>
 
 <% content_for(:title_button_link, login_url) %>
 
 <% content_for :salutation do %>
-  Hello,
+  Olá,
 <% end %>
 
 <% content_for :body do %>
   <p>
-    Please <%= link_to 'click here', login_url%> to login to your <%= @school_name%> account.
+    Please <%= link_to 'clique aqui', login_url%> para entrar na sua conta <%= @school_name%>.
   </p>
 
   <%= render 'mailers/link_fallback', url: login_url%>
 
   <p>
-    Please note that this is a private URL and should not be shared.
+    Observe que este é um URL privado e não deve ser compartilhado.
   </p>
 <% end %>
 

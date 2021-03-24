@@ -112,11 +112,11 @@ let ctaFooter = (course, currentSchoolAdmin) => {
   let courseId = course |> Course.id
 
   switch callToAction(course, currentSchoolAdmin) {
-  | #ViewCourse => ctaButton("View Course", studentLink(courseId, "curriculum"))
-  | #EditCourse => ctaButton("Edit Curriculum", "/school/courses/" ++ (courseId ++ "/curriculum"))
-  | #ReviewSubmissions => ctaButton("Review Submissions", studentLink(courseId, "review"))
+  | #ViewCourse => ctaButton("Ver Curso", studentLink(courseId, "curriculum"))
+  | #EditCourse => ctaButton("Alterar Currículo", "/school/courses/" ++ (courseId ++ "/curriculum"))
+  | #ReviewSubmissions => ctaButton("Revisar Submissões", studentLink(courseId, "review"))
   | #DroppedOut => ctaText("Dropped out", "fas fa-user-slash")
-  | #CourseEnded => ctaText("Course Ended", "fas fa-history")
+  | #CourseEnded => ctaText("Curso concluído", "fas fa-history")
   }
 }
 

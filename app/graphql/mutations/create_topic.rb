@@ -6,7 +6,7 @@ module Mutations
     argument :target_id, ID, required: false
     argument :topic_category_id, ID, required: false
 
-    description 'Create a new topic of discussion in a community'
+    description 'Crie um novo tópico de discussão em uma comunidade'
 
     field :topic_id, ID, null: true
 

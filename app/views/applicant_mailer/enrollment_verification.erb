@@ -5,28 +5,27 @@
 %>
 
 <% content_for :title do %>
-  Welcome to <%= course_name %>
+  Bem vindo(a) ao <%= course_name %>
 <% end %>
 
 <% content_for :subtitle do %>
-  Use this <strong>one-time link</strong> to verify your email address and sign into <%= school_name %>!
+  Use este <strong> link único </strong> para verificar seu endereço de e-mail e faça login em <%= school_name%>!
 <% end %>
 
 <% content_for :title_button_text do %>
-  Activate your account and sign in
+  Ative sua conta e faça login
 <% end %>
 
 <% content_for(:title_button_link, login_url) %>
 
 <% content_for :salutation do %>
-  Hello,
+  Olá,
 <% end %>
 
 <% content_for :body do %>
   <p>
-    To activate your <%= school_name %> account, and enroll to the <%= course_name %> course, please verify your email
-    address. Clicking on this <strong>one-time link</strong> will verify your email-address and confirm that you wish to
-    create an account at <%= school_name %>.
+  Para ativar sua conta <%= school_name%> e se inscrever no curso <%= course_name%>, verifique seu endereço de e-mail. 
+  Clicar neste <strong> link único </strong> irá verificar seu endereço de e-mail e confirmar que deseja criar uma conta em <%= school_name%>.
   </p>
 
   <%= render 'mailers/link_fallback', url: login_url%>

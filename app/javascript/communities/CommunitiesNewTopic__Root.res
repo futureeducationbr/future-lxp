@@ -283,7 +283,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
         | None => React.null
         }}
         <h4 className="max-w-3xl w-full mx-auto pb-2 mt-2 px-3 lg:px-0">
-          {"Create a new topic of discussion" |> str}
+          {"Crie um novo tópico de discussão" |> str}
         </h4>
         <div className="md:px-3">
           <div
@@ -313,7 +313,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
                     <label
                       className="inline-block tracking-wide text-gray-900 text-xs font-semibold mb-2"
                       htmlFor="topic_category">
-                      {"Select Category" |> str}
+                      {"Escolher Categoria" |> str}
                     </label>
                     <select
                       id="topic_category"
@@ -370,7 +370,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
                         state.selectedCategory,
                       )}
                       className="btn btn-primary border border-transparent w-full md:w-auto">
-                      {"Create Topic" |> str}
+                      {"Criar Tópico" |> str}
                     </button>
                   </div>
                 </div>

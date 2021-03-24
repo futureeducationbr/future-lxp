@@ -98,35 +98,35 @@ feature 'Target Overlay', js: true do
 
     replace_markdown long_answer
 
-    click_button 'Submit'
+    click_button 'Enviar'
 
-    expect(page).to have_content('Your submission has been queued for review')
+    expect(page).to have_content('Seu envio foi colocado na fila para revisão')
 
     dismiss_notification
 
     # The state of the target should change.
     within('.course-overlay__header-title-card') do
-      expect(page).to have_content('Pending Review')
+      expect(page).to have_content('Revisão pendente')
     end
 
     # The submissions should mention that review is pending.
-    expect(page).to have_content('Pending Review')
+    expect(page).to have_content('Revisão pendente')
 
     # The student should be able to undo the submission at this point.
-    expect(page).to have_button('Undo submission')
+    expect(page).to have_button('Desfazer envio')
 
     # User should be looking at their submission now.
-    expect(page).to have_content('Your Submissions')
+    expect(page).to have_content('Suas submissões')
 
     # Let's check the database to make sure the submission was created correctly
     last_submission = TimelineEvent.last
     expect(last_submission.checklist).to eq([{ 'kind' => Target::CHECKLIST_KIND_LONG_TEXT, 'title' => 'Write something about your submission', 'result' => long_answer, 'status' => TimelineEvent::CHECKLIST_STATUS_NO_ANSWER }])
 
     # The status should also be updated on the dashboard page.
-    click_button 'Close'
+    click_button 'Fechar'
 
     within("a[aria-label='Select Target #{target_l1.id}'") do
-      expect(page).to have_content('Pending Review')
+      expect(page).to have_content('Revisão pendente')
     end
 
     # Return to the submissions & feedback tab on the target overlay.
@@ -138,7 +138,7 @@ feature 'Target Overlay', js: true do
 
     # User should be able to undo the submission.
     accept_confirm do
-      click_button('Undo submission')
+      click_button('Desfazer envio')
     end
 
     # This action should reload the page and return the user to the content of the target.
@@ -148,7 +148,7 @@ feature 'Target Overlay', js: true do
     expect { last_submission.reload }.to raise_exception(ActiveRecord::RecordNotFound)
 
     # ...and the complete section should be accessible again.
-    expect(page).to have_selector('.course-overlay__body-tab-item', text: 'Complete')
+    expect(page).to have_selector('.course-overlay__body-tab-item', text: 'Concluído')
   end
 
   scenario "student visits the target's link with a mangled ID" do
@@ -166,29 +166,29 @@ feature 'Target Overlay', js: true do
       sign_in_user student.user, referrer: target_path(target_l1)
 
       # There should be a mark as complete button on the learn page.
-      expect(page).to have_button('Mark As Complete')
+      expect(page).to have_button('Marcar como Concluído')
 
       # Completion instructions should be show on learn section for auto-verified targets
-      expect(page).to have_text('Before marking as complete')
+      expect(page).to have_text('Antes de marcar como completo')
       expect(page).to have_text(target_l1.completion_instructions)
 
       # The complete button should not be highlighted.
       expect(page).not_to have_selector('.complete-button-selected')
 
       # Clicking the mark as complete tab option should highlight the button.
-      find('.course-overlay__body-tab-item', text: 'Mark as Complete').click
+      find('.course-overlay__body-tab-item', text: 'Marcar como Concluído').click
       expect(page).to have_selector('.complete-button-selected')
 
-      click_button 'Mark As Complete'
+      click_button 'Marcar como Concluído'
 
       # The button should be replaced with a 'completed' marker.
-      expect(page).to have_selector('.complete-button-selected', text: 'Completed')
+      expect(page).to have_selector('.complete-button-selected', text: 'Concluído')
 
       # The target should be marked as passed.
-      expect(page).to have_selector('.course-overlay__header-title-card', text: 'Completed')
+      expect(page).to have_selector('.course-overlay__header-title-card', text: 'Concluído')
 
       # Since this is a team target, other students shouldn't be listed as pending.
-      expect(page).not_to have_content('You have team members who are yet to complete this target')
+      expect(page).not_to have_content('Você tem membros da equipe que ainda não completaram esta meta')
 
       # Target should have been marked as passed in the database.
       expect(target_l1.status(student)).to eq(Targets::StatusService::STATUS_PASSED)
@@ -201,11 +201,11 @@ feature 'Target Overlay', js: true do
       let(:link_to_complete) { "https://www.example.com/#{Faker::Lorem.word}" }
       let!(:target_with_link) { create :target, :with_content, target_group: target_group_l1, link_to_complete: link_to_complete, completion_instructions: Faker::Lorem.sentence }
 
-      scenario 'student completes a target by visiting a link' do
+      scenario 'o aluno completa uma meta visitando um link' do
         sign_in_user student.user, referrer: target_path(target_with_link)
 
         # There should be a un-highligted button on the learn page that lets student complete the target.
-        expect(page).to have_button('Visit Link To Complete')
+        expect(page).to have_button('Visite o link para completar')
         expect(page).not_to have_selector('.complete-button-selected')
 
         # Completion instructions should be show on learn section for targets with link to complete
@@ -213,11 +213,11 @@ feature 'Target Overlay', js: true do
         expect(page).to have_text(target_with_link.completion_instructions)
 
         # Clicking the tab should highlight the button.
-        find('.course-overlay__body-tab-item', text: 'Visit Link to Complete').click
+        find('.course-overlay__body-tab-item', text: 'Visite o link para completar').click
         expect(page).to have_selector('.complete-button-selected')
 
         # Clicking the button should complete the target and send the student to the link.
-        new_window = window_opened_by { click_button 'Visit Link To Complete' }
+        new_window = window_opened_by { click_button 'Visite o link para completar' }
 
         # User should be redirected to the link_to_visit.
         within_window new_window do
@@ -226,14 +226,14 @@ feature 'Target Overlay', js: true do
         end
 
         # Target should now be complete for the user.
-        expect(page).to have_selector('.course-overlay__header-title-card', text: 'Completed')
+        expect(page).to have_selector('.course-overlay__header-title-card', text: 'Concluído')
 
         # Target should have been marked as passed in the database.
         expect(target_with_link.status(student)).to eq(Targets::StatusService::STATUS_PASSED)
       end
     end
 
-    scenario 'student completes a target by taking a quiz' do
+    scenario 'o aluno completa uma meta respondendo a um teste' do
       notification_service = prepare_developers_notification
 
       sign_in_user student.user, referrer: target_path(quiz_target)
@@ -242,47 +242,47 @@ feature 'Target Overlay', js: true do
         expect(page).to have_content(quiz_target.title)
       end
 
-      find('.course-overlay__body-tab-item', text: 'Take Quiz').click
+      find('.course-overlay__body-tab-item', text: 'Faça o teste').click
 
       # Completion instructions should be show on Take Quiz section for targets with quiz
-      expect(page).to have_text('Instructions')
+      expect(page).to have_text('Instruções')
       expect(page).to have_text(quiz_target.completion_instructions)
 
       # Question one
       expect(page).to have_content(/Question #1/i)
       expect(page).to have_content(quiz_question_1.question)
       find('.quiz-root__answer', text: q1_answer_1.value).click
-      click_button('Next Question')
+      click_button('Próxima Pergunta')
 
       # Question two
       expect(page).to have_content(/Question #2/i)
       expect(page).to have_content(quiz_question_2.question)
       find('.quiz-root__answer', text: q2_answer_4.value).click
-      click_button('Submit Quiz')
+      click_button('Enviar Teste')
 
-      expect(page).to have_content('Your responses have been saved')
-      expect(page).to have_selector('.course-overlay__body-tab-item', text: 'Quiz Result')
+      expect(page).to have_content('Suas respostas foram salvas')
+      expect(page).to have_selector('.course-overlay__body-tab-item', text: 'Resultado')
 
       within('.course-overlay__header-title-card') do
         expect(page).to have_content(quiz_target.title)
-        expect(page).to have_content('Completed')
+        expect(page).to have_content('Concluído')
       end
 
       # The quiz result should be visible.
       within("div[aria-label='Question 1") do
-        expect(page).to have_content('Incorrect')
+        expect(page).to have_content('Incorreta')
       end
 
-      expect(page).to have_content("Your Answer: #{q1_answer_1.value}")
-      expect(page).to have_content("Correct Answer: #{q1_answer_2.value}")
+      expect(page).to have_content("Sua resposta: #{q1_answer_1.value}")
+      expect(page).to have_content("Resposta correta: #{q1_answer_2.value}")
 
       find("div[aria-label='Question 2']").click
 
       within("div[aria-label='Question 2") do
-        expect(page).to have_content('Correct')
+        expect(page).to have_content('Correta')
       end
 
-      expect(page).to have_content("Your Correct Answer: #{q2_answer_4.value}")
+      expect(page).to have_content("Sua resposta correta: #{q2_answer_4.value}")
 
       submission = TimelineEvent.last
       # The score should have stored on the submission.
@@ -320,7 +320,7 @@ feature 'Target Overlay', js: true do
     scenario 'student sees feedback for a reviewed submission' do
       sign_in_user student.user, referrer: target_path(target_l1)
 
-      find('.course-overlay__body-tab-item', text: 'Submissions & Feedback').click
+      find('.course-overlay__body-tab-item', text: 'Envios e Feedback').click
 
       # Both submissions should be visible, along with grading and all feedback from coaches.
       within("div[aria-label='Details about your submission on #{submission_1.created_at.strftime('%B %-d, %Y')}']") do
@@ -340,7 +340,7 @@ feature 'Target Overlay', js: true do
         expect(page).to have_content(feedback_2.feedback)
       end
 
-      within("div[aria-label='Details about your submission on #{submission_2.created_at.strftime('%B %-d, %Y')}']") do
+      within("div[aria-label='Detalhes sobre o seu envio em #{submission_2.created_at.strftime('%B %-d, %Y')}']") do
         find("div[aria-label='#{submission_2.checklist.first['title']}']").click
         expect(page).to have_content(submission_2.checklist.first['result'])
 
@@ -356,9 +356,9 @@ feature 'Target Overlay', js: true do
       end
 
       # Adding another submissions should be possible.
-      find('button', text: 'Add another submission').click
+      find('button', text: 'Adicionar outro envio').click
 
-      expect(page).to have_content('Write something about your submission')
+      expect(page).to have_content('Escreva algo sobre o seu envio')
 
       # There should be a cancel button to go back to viewing submissions.
       click_button 'Cancel'
@@ -373,9 +373,9 @@ feature 'Target Overlay', js: true do
       scenario 'student cannot resubmit non-resubmittable passed target' do
         sign_in_user student.user, referrer: target_path(target_l1)
 
-        find('.course-overlay__body-tab-item', text: 'Submissions & Feedback').click
+        find('.course-overlay__body-tab-item', text: 'Envios e Feedback').click
 
-        expect(page).not_to have_selector('button', text: 'Add another submission')
+        expect(page).not_to have_selector('button', text: 'Adicionar outro envio')
       end
 
       scenario 'student can resubmit non-resubmittable target if its failed' do
@@ -386,9 +386,9 @@ feature 'Target Overlay', js: true do
 
         sign_in_user student.user, referrer: target_path(target_l1)
 
-        find('.course-overlay__body-tab-item', text: 'Submissions & Feedback').click
+        find('.course-overlay__body-tab-item', text: 'Envios e Feedback').click
 
-        expect(page).to have_selector('button', text: 'Add another submission')
+        expect(page).to have_selector('button', text: 'Adicionar outro envio')
       end
     end
   end
@@ -423,7 +423,7 @@ feature 'Target Overlay', js: true do
       sign_in_user student.user, referrer: target_path(target_l1)
 
       within('.course-overlay__header-title-card') do
-        expect(page).to have_content('Locked')
+        expect(page).to have_content('Bloqueado')
       end
 
       expect(page).to have_content('This target has pre-requisites that are incomplete.')
@@ -451,7 +451,7 @@ feature 'Target Overlay', js: true do
 
       within('.course-overlay__header-title-card') do
         expect(page).to have_content(target_l1.title)
-        expect(page).to have_content('Locked')
+        expect(page).to have_content('Bloqueado')
       end
 
       expect(page).to have_content('The course has ended and submissions are disabled for all targets!')
@@ -466,17 +466,17 @@ feature 'Target Overlay', js: true do
       # The status should read locked.
       within('.course-overlay__header-title-card') do
         expect(page).to have_content(target_l1.title)
-        expect(page).to have_content('Locked')
+        expect(page).to have_content('Bloqueado')
       end
 
       # The submissions & feedback sections should be visible.
       find('.course-overlay__body-tab-item', text: 'Submissions & Feedback').click
 
       # The submissions should mention that review is pending.
-      expect(page).to have_content('Pending Review')
+      expect(page).to have_content('Revisão Pendente')
 
       # The student should NOT be able to undo the submission at this point.
-      expect(page).not_to have_button('Undo submission')
+      expect(page).not_to have_button('Desfazer envio')
     end
   end
 
@@ -490,7 +490,7 @@ feature 'Target Overlay', js: true do
 
       within('.course-overlay__header-title-card') do
         expect(page).to have_content(target_l1.title)
-        expect(page).to have_content('Locked')
+        expect(page).to have_content('Bloqueado')
       end
 
       expect(page).to have_content('Your access to this course has ended.')
@@ -512,11 +512,11 @@ feature 'Target Overlay', js: true do
       sign_in_user student.user, referrer: target_path(target_l1)
 
       # Overlay should have a discuss tab that lists linked communities.
-      find('.course-overlay__body-tab-item', text: 'Discuss').click
+      find('.course-overlay__body-tab-item', text: 'Discussão').click
       expect(page).to have_text(community_1.name)
       expect(page).to have_text(community_2.name)
-      expect(page).to have_link('Go to community', count: 2)
-      expect(page).to have_link('Create a topic', count: 2)
+      expect(page).to have_link('Ir para a comunidade', count: 2)
+      expect(page).to have_link('Criar um tópico', count: 2)
       expect(page).to have_text("There's been no recent discussion about this target.", count: 1)
 
       # Check the presence of existing topics
@@ -524,34 +524,34 @@ feature 'Target Overlay', js: true do
       expect(page).to_not have_text(topic_target_l2_2.title)
 
       # Student can ask a question related to the target in community from target overlay.
-      find("a[title='Create a topic in the #{community_1.name} community'").click
+      find("a[title='Crie um tópico na comunidade #{community_1.name}'").click
 
       expect(page).to have_text(target_l1.title)
-      expect(page).to have_text('Create a new topic of discussion')
+      expect(page).to have_text('Criar um novo tópico de discussão')
 
       # Try clearing the linking.
-      click_link 'Clear'
+      click_link 'Limpar'
 
       expect(page).not_to have_text(target_l1.title)
-      expect(page).to have_text('Create a new topic of discussion')
+      expect(page).to have_text('Criar um novo tópico de discussão')
 
       # Let's go back to linked state and try creating a linked question.
       visit(new_topic_community_path(community_1, target_id: target_l1.id))
 
       fill_in 'Title', with: topic_title
       replace_markdown(topic_body)
-      click_button 'Create Topic'
+      click_button 'Criar tópico'
 
       expect(page).to have_text(topic_title)
       expect(page).to have_text(topic_body)
-      expect(page).not_to have_text('Create a new topic of discussion')
+      expect(page).not_to have_text('Criar um novo tópico de discussão')
 
       # The question should have been linked to the target.
       expect(Topic.where(title: topic_title).first.target).to eq(target_l1)
 
       # Return to the target overlay. Student should be able to their question there now.
       visit target_path(target_l1)
-      find('.course-overlay__body-tab-item', text: 'Discuss').click
+      find('.course-overlay__body-tab-item', text: 'Discussão').click
 
       expect(page).to have_text(community_1.name)
       expect(page).to have_text(topic_title)
@@ -575,13 +575,13 @@ feature 'Target Overlay', js: true do
     # The level selected in the curriculum list underneath should always match the target.
     sign_in_user student.user, referrer: target_path(target_l0)
 
-    click_button('Close')
+    click_button('Fechar')
 
     expect(page).to have_text(target_group_l0.name)
 
     visit target_path(target_l2)
 
-    click_button('Close')
+    click_button('Fechar')
 
     expect(page).to have_text(target_group_l2.name)
   end
@@ -597,29 +597,29 @@ feature 'Target Overlay', js: true do
         sign_in_user school_admin.user, referrer: target_path(target_l1)
 
         expect(page).to have_content('You are currently looking at a preview of this course.')
-        expect(page).to have_link('Edit Content', href: content_school_course_target_path(course_id: target_l1.course.id, id: target_l1.id))
+        expect(page).to have_link('Alterar conteúdo', href: content_school_course_target_path(course_id: target_l1.course.id, id: target_l1.id))
 
         # This target should have a 'Complete' section.
-        find('.course-overlay__body-tab-item', text: 'Complete').click
+        find('.course-overlay__body-tab-item', text: 'Concluído').click
 
         # The submit button should be disabled.
-        expect(page).to have_button('Submit', disabled: true)
+        expect(page).to have_button('Enviar', disabled: true)
 
         replace_markdown Faker::Lorem.sentence
 
-        expect(page).to have_button('Submit', disabled: true)
+        expect(page).to have_button('Enviar', disabled: true)
 
         fill_in 'Attach link', with: 'https://example.com?q=1'
 
         # The submit button should be disabled.
-        expect(page).to have_button('Submit', disabled: true)
+        expect(page).to have_button('Enviar', disabled: true)
 
         attach_file 'attachment_file', File.absolute_path(Rails.root.join('spec/support/uploads/faculty/human.png')), visible: false
 
         dismiss_notification
 
         # The submit button should be disabled.
-        expect(page).to have_button('Submit', disabled: true)
+        expect(page).to have_button('Enviar', disabled: true)
       end
     end
 
@@ -630,7 +630,7 @@ feature 'Target Overlay', js: true do
         sign_in_user school_admin.user, referrer: target_path(target_l1)
 
         # There should be a mark as complete button on the learn page.
-        expect(page).to have_button('Mark As Complete', disabled: true)
+        expect(page).to have_button('Marcar como concluído', disabled: true)
       end
     end
 
@@ -641,7 +641,7 @@ feature 'Target Overlay', js: true do
       scenario 'link to complete is shown to the user' do
         sign_in_user school_admin.user, referrer: target_path(target_with_link)
 
-        expect(page).to have_link('Visit Link', href: link_to_complete)
+        expect(page).to have_link('Visitar link', href: link_to_complete)
       end
     end
 
@@ -653,19 +653,19 @@ feature 'Target Overlay', js: true do
           expect(page).to have_content(quiz_target.title)
         end
 
-        find('.course-overlay__body-tab-item', text: 'Take Quiz').click
+        find('.course-overlay__body-tab-item', text: 'Faça o teste').click
 
         # Question one
         expect(page).to have_content(/Question #1/i)
         expect(page).to have_content(quiz_question_1.question)
         find('.quiz-root__answer', text: q1_answer_1.value).click
-        click_button('Next Question')
+        click_button('Próxima pergunta')
 
         # Question two
         expect(page).to have_content(/Question #2/i)
         expect(page).to have_content(quiz_question_2.question)
         find('.quiz-root__answer', text: q2_answer_4.value).click
-        expect(page).to have_button('Submit Quiz', disabled: true)
+        expect(page).to have_button('Responder', disabled: true)
       end
     end
   end
@@ -676,20 +676,20 @@ feature 'Target Overlay', js: true do
     expect(page).to have_text(target_l1.title)
 
     expect(page).not_to have_link('Previous Target')
-    click_link 'Next Target'
+    click_link 'Próximo módulo'
 
     expect(page).to have_text(prerequisite_target.title)
 
-    click_link 'Next Target'
+    click_link 'Próximo módulo'
 
     expect(page).to have_text(quiz_target.title)
     expect(page).not_to have_link('Next Target')
 
-    click_link 'Previous Target'
+    click_link 'Módulo anterior'
 
     expect(page).to have_text(prerequisite_target.title)
 
-    click_link 'Previous Target'
+    click_link 'Módulo anterior'
 
     expect(page).to have_text(target_l1.title)
   end
@@ -731,10 +731,10 @@ feature 'Target Overlay', js: true do
     scenario 'latest flag is updated correctly on deleting the latest submission for all concerned students' do
       # Delete Submission A
       sign_in_user student_a.user, referrer: target_path(target_l1)
-      find('.course-overlay__body-tab-item', text: 'Submissions & Feedback').click
+      find('.course-overlay__body-tab-item', text: 'Envios e feedback').click
 
       accept_confirm do
-        click_button('Undo submission')
+        click_button('Desfazer envio')
       end
 
       # This action should delete `submission_new`, reload the page and return the user to the content of the target.
@@ -766,10 +766,10 @@ feature 'Target Overlay', js: true do
 
     scenario 'latest flag is updated correctly for all students' do
       sign_in_user student_1.user, referrer: target_path(target_l1)
-      find('.course-overlay__body-tab-item', text: 'Complete').click
+      find('.course-overlay__body-tab-item', text: 'Concluído').click
       replace_markdown Faker::Lorem.sentence
-      click_button 'Submit'
-      expect(page).to have_content('Your submission has been queued for review')
+      click_button 'Enviar'
+      expect(page).to have_content('Seu envio foi colocado na fila para revisão')
       dismiss_notification
 
       new_submission = TimelineEvent.last

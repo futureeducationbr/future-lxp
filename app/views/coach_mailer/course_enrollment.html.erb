@@ -7,27 +7,27 @@
 <% end %>
 
 <% content_for :subtitle do %>
-  You have been added as a coach on <%= @school.name %>.
+  Você foi adicionado como mentor em <% = @ school.name%>.
 <% end %>
 
 <% content_for :title_button_text do %>
-  Sign in to Review Course
+  Faça login para ver o curso
 <% end %>
 
 <% content_for(:title_button_link, sign_in_link) %>
 
 <% content_for :salutation do %>
-  Hello <%= @coach.name %>,
+  Olá <%= @coach.name %>,
 <% end %>
 
 <% content_for :body do %>
   <p>
-    You have been added as a coach in the course <strong><%= @course.name %></strong>, on <%= @school.name %>. This
-    gives you the ability to review submissions from students, assign grades, and give them feedback on their work.
+  Você foi adicionado como um treinador no curso <strong> <%= @course.name%> </strong>, em <%= @school.name%>. 
+  Isso permite que você analise os envios dos alunos, atribua notas e forneça feedback sobre a aprendizagem deles.
   </p>
 
   <p>
-    Use the link above to sign into <%= @school.name %> and view your students' submissions.
+    Use o link acima para fazer login em <%= @school.name%> e ver os envios de seus alunos.
   </p>
 
   <%= render 'mailers/link_fallback', url: sign_in_link %>

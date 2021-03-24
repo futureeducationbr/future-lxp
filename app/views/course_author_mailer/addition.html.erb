@@ -7,28 +7,28 @@
 <% end %>
 
 <% content_for :subtitle do %>
-  You have been added as an author on <%= @school.name %>.
+  Você foi adicionado como autor em <%= @school.name %>.
 <% end %>
 
 <% content_for :title_button_text do %>
-  Sign in to Edit Course
+  Faça login para editar o curso
 <% end %>
 
 <% content_for(:title_button_link, sign_in_link) %>
 
 <% content_for :salutation do %>
-  Hello <%= @user.name %>,
+  Olá <%= @user.name %>,
 <% end %>
 
 <% content_for :body do %>
   <p>
-    You have been added as an author in the course <strong><%= @course.name %></strong>, on <%= @school.name %>. This
-    gives you the ability to use the school administration interface to edit the contents of the course, and to
-    <em>preview</em> the course as a student.
+  Você foi adicionado como autor no curso <strong> <%= @course.name%> </strong>, 
+  em <%= @school.name%>. Isso dá a você a capacidade de usar a interface de administração da escola para editar 
+  o conteúdo do curso e para <em> visualizar </em> o curso como um aluno.
   </p>
 
   <p>
-    Use the link above to sign into <%= @school.name %> and view the course.
+    Use o link acima para entrar em <%= @school.name%> e ver o curso.
   </p>
 
   <%= render 'mailers/link_fallback', url: sign_in_link %>

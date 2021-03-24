@@ -386,7 +386,7 @@ en:
   home:
     index:
       course_status:
-        access_ended: Review course content
+        access_ended: Revisar conteúdo do curso
         active: Continuar o curso
         dropped_out: Dropped out
       featured_courses_heading: Cursos em destaque

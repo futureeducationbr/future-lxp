@@ -5,26 +5,26 @@
 - coach_name = @startup_feedback.faculty.name
 
 = content_for :title do
-  | Feedback from coach
+  | Feedback do mentor
 
 = content_for :subtitle do
-  | #{@startup_feedback.faculty.name} has some feedback for you.
+  | #{@startup_feedback.faculty.name} tem um feedback para você.
 
 - if target.present?
   = content_for :title_button_text do
-    | View Feedback on Dashboard
+    | Ver feedback na plataforma
 
   = content_for(:title_button_link, target_url)
 
 = content_for :salutation do
-  | Hello,
+  | Olá,
 
 = content_for :body do
   - update_for = timeline_event.present? ? 'recent submission' : 'recent updates'
 
-  p Here is some feedback from #{coach_name} on your #{update_for}:
+  p Aqui estão alguns comentários de #{coach_name} em sua #{update_for}:
 
   blockquote =  sanitize(MarkdownIt::Parser.new(:commonmark).render(@startup_feedback.feedback)).html_safe
 
   - if target.present?
-    p You can view #{link_to 'the full feedback'.html_safe, target_url}, including any files attached to the feedback.
+    p Você pode visualizar #{link_to 'o feedback completo'.html_safe, target_url}, incluindo quaisquer arquivos anexados ao feedback.

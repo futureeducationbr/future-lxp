@@ -114,14 +114,14 @@ en:
       close_button: Close
       completion_tab_complete: Complete
       completion_tab_completed: Completed
-      completion_tab_locked: Locked
+      completion_tab_locked: Bloqueado
       completion_tab_mark_complete: Mark as Complete
       completion_tab_quiz_result: Quiz Result
       completion_tab_submissions: Submissions & Feedback
       completion_tab_take_quiz: Take Quiz
       completion_tab_visit_link: Visit Link to Complete
-      discuss_tab: Discuss
-      learn_tab: Learn
+      discuss_tab: Discussão
+      learn_tab: Aprenda
       next_target_button: Next Target
       pending_team_members_notice: 'You have team members who are yet to complete this target:'
       preview_mode_text: You are currently looking at a preview of this course.
