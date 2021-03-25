@@ -129,7 +129,7 @@ feature "Student's view of Course Curriculum", js: true do
     expect(page).to have_selector('.curriculum__target-group', count: 2)
 
     # ...and only one of thoese should be a milestone target group.
-    expect(page).to have_selector('.curriculum__target-group', text: 'MÓDULO', count: 1)
+    expect(page).to have_selector('.curriculum__target-group', text: 'AULA', count: 1)
 
     # Open the level selector dropdown.
     click_button "L4: #{level_4.name}"

@@ -87,7 +87,7 @@ feature 'Target Overlay', js: true do
     expect(page).to have_link(file_title)
   end
 
-  scenario 'aluno envia trabalho em um módulo' do
+  scenario 'aluno envia trabalho em uma aula' do
     sign_in_user student.user, referrer: target_path(target_l1)
 
     # This target should have a 'Complete' section.
@@ -675,21 +675,21 @@ feature 'Target Overlay', js: true do
 
     expect(page).to have_text(target_l1.title)
 
-    expect(page).not_to have_link('Módulo Anterior')
-    click_link 'Próximo Módulo'
+    expect(page).not_to have_link('Aula Anterior')
+    click_link 'Próxima Aula'
 
     expect(page).to have_text(prerequisite_target.title)
 
-    click_link 'Próximo Módulo'
+    click_link 'Próxima Aula'
 
     expect(page).to have_text(quiz_target.title)
-    expect(page).not_to have_link('Próximo Módulo')
+    expect(page).not_to have_link('Próxima Aula')
 
-    click_link 'Módulo anterior'
+    click_link 'Aula anterior'
 
     expect(page).to have_text(prerequisite_target.title)
 
-    click_link 'Módulo anterior'
+    click_link 'Aula anterior'
 
     expect(page).to have_text(target_l1.title)
   end

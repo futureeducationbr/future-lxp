@@ -191,7 +191,7 @@ feature 'Automatic issuance of certificates', js: true do
 
         click_button 'Marcar como Concluído'
 
-        expect(page).to have_text('Módulo foi marcado como concluído', wait: 10)
+        expect(page).to have_text('Aula foi marcada como concluída', wait: 10)
 
         # No certificate should be issued, yet.
         expect(IssuedCertificate.count).to eq(0)
@@ -200,7 +200,7 @@ feature 'Automatic issuance of certificates', js: true do
 
         click_button 'Marcar como Concluído'
 
-        expect(page).to have_text('Módulo foi marcado como concluído')
+        expect(page).to have_text('Aula foi marcada como concluída')
 
         # Both students get certificate when the last student in team completes the target.
         expect(IssuedCertificate.pluck(:user_id)).to contain_exactly(student_1.user.id, student_2.user.id)
@@ -215,7 +215,7 @@ feature 'Automatic issuance of certificates', js: true do
 
         click_button 'Marcar como Concluído'
 
-        expect(page).to have_text('Módulo foi marcado como concluído')
+        expect(page).to have_text('Aula foi marcada como concluída')
 
         # An active certificate is necessary for the automatic issuance of certificates.
         expect(IssuedCertificate.count).to eq(0)
@@ -230,7 +230,7 @@ feature 'Automatic issuance of certificates', js: true do
 
         click_button 'Marcar como Concluído'
 
-        expect(page).to have_text('Módulo foi marcado como concluído')
+        expect(page).to have_text('Aula foi marcado como concluída')
 
         # At least one milestone is required in the final level for the issuance of certificates.
         expect(IssuedCertificate.count).to eq(0)

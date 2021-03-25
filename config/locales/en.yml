@@ -80,7 +80,7 @@ en:
       level_locked_explanation: You can access the content on %{date}.
       level_locked_for_students_notice: This level is still locked for students, and will be unlocked on <strong>%{date}</strong>.
       level_locked_notice: The level is currently locked!
-      milestone_targets: Módulo
+      milestone_targets: Aula
       nav_next_level: Próximo Nível
       nav_previous_level: Nível Anterior
     CoursesCurriculum__Learn:
@@ -163,7 +163,7 @@ en:
       rejected: Rejeitado
       sort_by: 'Ordenar por:'
       status: Status
-      submission_not_considered: Este envio não é considerado para a conclusão do seu módulo.
+      submission_not_considered: Este envio não é considerado para a conclusão da sua aula.
       submission_not_considered_help: This is a <em>team</em> target, and this submission is not linked to some members of your team. This can happen if a target is changed after your individual submission, to require a <em>team</em> submission, or if your team's composition changed after a <em>team</em> submission was created.
       submitted_at: Enviado em
       submitted_on: Enviado em %{date}
@@ -199,7 +199,7 @@ en:
       personal_coaches: Personal Coaches
       quiz: Quiz
       submissions: Submissões
-      targets: ' Módulos'
+      targets: ' Aulas'
       targets_overview: Visão geral das Aulas
       team_coaches: Team Coaches
       total_targets_completed: Total de aulas concluídas
@@ -262,8 +262,8 @@ en:
       update_target: Update Target
       visit_link: Visit a link to complete the target.
     CurriculumEditor__TargetGroupShow:
-      create_target: Criar módulo
-      milestone_targets: Módulos
+      create_target: Criar Aula
+      milestone_targets: Aulas
     Notifications__List:
       button_load_more: Carregar mais notificações...
       empty_notifications: Você ainda não tem notificações!

@@ -131,7 +131,7 @@ let make = (~target, ~targetDetails, ~targetStatus, ~addSubmissionCB, ~preview) 
       {switch targetStatus |> TargetStatus.status {
       | Pending => autoVerify(target, linkToComplete, saving, setSaving, addSubmissionCB, preview)
       | Locked(_) => React.null
-      | _ => statusBar("Concluído", linkToComplete)
+      | _ => statusBar("Conclu\xc3\xaddo", linkToComplete)
       }}
     </div>,
   ] |> React.array

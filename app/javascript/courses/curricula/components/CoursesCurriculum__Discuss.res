@@ -37,7 +37,7 @@ let actionButtons = (community, targetId) => {
 
   <div className="flex">
     <a
-      title={"Ver todos os tópicos desta módulo na comunidade " ++ (communityName ++ " ")}
+      title={"Ver todos os tópicos desta aula na comunidade " ++ (communityName ++ " ")}
       href={linkToCommunity(communityId, targetId)}
       className="btn btn-default mr-3">
        {"Ir para comunidade" |> str}
