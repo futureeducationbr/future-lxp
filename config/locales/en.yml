@@ -15,8 +15,8 @@ en:
       button_load_more: Carregar Mais...
       empty_topics: Não há discussão aqui ainda.
       filter_input_label: 'Filtrar por:'
-      filter_input_placeholder_categories: Filter by category, solution or search within topics
-      filter_input_placeholder_default: Search within topics or filter by solution
+      filter_input_placeholder_categories: Filtrar por categoria, solução ou pesquisa em tópicos
+      filter_input_placeholder_default: Pesquise em tópicos ou filtre por solução
       sort_criterion_input_label: 'Ordenar por:'
       sort_criterion_last_activity: Última atividade
       sort_criterion_posted_at: Postado em

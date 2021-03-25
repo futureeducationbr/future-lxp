@@ -234,7 +234,7 @@ let communitiesSection = communities =>
                 {community |> Community.name |> str}
               </h4>
               <div className="btn btn-small btn-primary-ghost mt-2">
-                {"Visit Community" |> str}
+                {"Visitar comunidade" |> str}
               </div>
             </div>
           </a>
