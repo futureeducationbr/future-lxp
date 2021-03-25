@@ -122,10 +122,10 @@ en:
       completion_tab_visit_link: Visite o link para concluir
       discuss_tab: Discussão
       learn_tab: Aprenda
-      next_target_button: Próxima Lição
+      next_target_button: Próxima Aula
       pending_team_members_notice: 'You have team members who are yet to complete this target:'
       preview_mode_text: You are currently looking at a preview of this course.
-      previous_target_button: Lição Anterior
+      previous_target_button: Aula Anterior
       scroll_to_top: Ir para o topo
     CoursesCurriculum__TargetStatus:
       access_locked: Your access to this course has ended.

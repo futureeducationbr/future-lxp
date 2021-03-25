@@ -68,13 +68,13 @@ feature 'Community', js: true do
     sign_in_user(student_1.user, referrer: community_path(community))
     expect(page).to have_text(community.name)
 
-    click_link 'New Topic'
-    expect(page).to have_text('Create a new topic of discussion')
+    click_link 'Novo Tópico'
+    expect(page).to have_text('Crie um novo tópico de discussão')
     fill_in 'Title', with: topic_title
     replace_markdown topic_body
-    click_button 'Create Topic'
+    click_button 'Criar Tópico'
 
-    expect(page).not_to have_text('Create a new topic of discussion')
+    expect(page).not_to have_text('Crie um novo tópico de discussão')
     expect(page).to have_text(topic_title)
     expect(page).to have_text(topic_body)
     expect(community.topics.reload.find_by(title: topic_title).first_post.body).to eq(topic_body)
@@ -88,29 +88,29 @@ feature 'Community', js: true do
 
     # Edit a reply and set reason first time.
     find("div[aria-label='Options for post #{reply_1.id}']").click
-    click_button 'Edit Reply'
+    click_button 'Alterar Resposta'
 
     within("div#post-show-#{reply_1.id}") do
       replace_markdown reply_body_for_edit
     end
 
     fill_in 'edit-reason', with: first_reason
-    click_button 'Update Reply'
+    click_button 'Atualizar Resposta'
 
     # Edit a reply and set reason second time.
     find("div[aria-label='Options for post #{reply_1.id}']").click
-    click_button 'Edit Reply'
+    click_button 'Alterar Resposta'
 
     within("div#post-show-#{reply_1.id}") do
       replace_markdown reply_body_for_edit
     end
 
     fill_in 'edit-reason', with: second_reason
-    click_button 'Update Reply'
+    click_button 'Atualizar Resposta'
 
     # Go to the history page history - the reason should be there.
     find("div[aria-label='Options for post #{reply_1.id}']").click
-    click_link 'History'
+    click_link 'Histórico'
 
     expect(page).to have_text(first_reason)
     expect(page).to have_text(second_reason)
@@ -134,18 +134,18 @@ feature 'Community', js: true do
 
     # any one with access to the community can reply to a topic
     replace_markdown reply_body
-    click_button 'Post Your Reply'
+    click_button 'Postar Sua Resposta'
 
     expect(page).to have_text('Reply added successfully')
     dismiss_notification
 
     # A notification should have been mailed to the question author.
     open_email(topic_1.creator.email)
-    expect(current_email.subject).to eq('New reply for your post')
+    expect(current_email.subject).to eq('Nova resposta para sua postagem')
     expect(current_email.body).to include("#{student_2.user.name} has posted a reply to something you said on the #{community.name} community")
     expect(current_email.body).to include("/topics/#{topic_1.id}")
 
-    expect(page).to have_text('2 Replies')
+    expect(page).to have_text('2 Respostas')
     new_reply = topic_1.replies.find_by(post_number: 3)
     expect(new_reply.body).to eq(reply_body)
 
@@ -171,7 +171,7 @@ feature 'Community', js: true do
     expect(page).to have_text('Post Edit History')
     expect(page).to have_text(reply_body)
     expect(page).to have_text(reply_body_for_edit)
-    click_link 'Back to Post'
+    click_link 'Voltar a Postagem'
 
     # can archive his reply
     find("div[aria-label='Options for post #{new_reply.id}']").click
@@ -192,7 +192,7 @@ feature 'Community', js: true do
       expect(page).to have_text('Reply To')
       expect(page).to have_text(reply_1.creator.name)
     end
-    click_button 'Post Your Reply'
+    click_button 'Escreva sua Resposta'
 
     dismiss_notification
 
@@ -205,12 +205,12 @@ feature 'Community', js: true do
 
     # check saved reply
     last_reply = topic_1.replies.find_by(post_number: 4)
-    expect(last_reply.body).to eq('This is a reply to another post')
+    expect(last_reply.body).to eq('Esta é uma resposta a outra postagem')
     expect(last_reply.reply_to_post_id).to eq(reply_1.id)
 
     # Reply appears in the main list and as a thread to it's parent post
     find("button[aria-label='Show replies of post #{reply_1.id}']").click
-    expect(page).to have_text('This is a reply to another post', count: 2)
+    expect(page).to have_text('Esta é uma resposta a outra postagem', count: 2)
 
     # can like and unlike a reply
     find("button[aria-label='Like post #{reply_1.id}']").click
@@ -234,7 +234,7 @@ feature 'Community', js: true do
 
     # Revisiting the page "soon" should not increase the count.
     click_link community.name
-    expect(page).to have_link('New Topic')
+    expect(page).to have_link('Novo Tópico')
     click_link topic_1.title
 
     expect(page).to have_text(topic_1.first_post.body)
@@ -243,7 +243,7 @@ feature 'Community', js: true do
     # Revisiting after a "long while" should increase the count again.
     travel_to(90.minutes.from_now) do
       click_link community.name
-      expect(page).to have_link('New Topic')
+      expect(page).to have_link('Novo Tópico')
       click_link topic_1.title
 
       expect(page).to have_text(topic_1.first_post.body)
@@ -277,12 +277,12 @@ feature 'Community', js: true do
 
     # Faculty edits a topic body
     find("div[aria-label='Options for post #{topic_1.first_post.id}']").click
-    click_button 'Edit Post'
+    click_button 'Alterar Postagem'
 
     old_description = topic_1.first_post.body
     within("div#post-show-#{topic_1.first_post.id}") do
       replace_markdown topic_body_for_edit
-      click_button 'Update Post'
+      click_button 'Atualizar Postagem'
     end
 
     dismiss_notification
@@ -296,7 +296,7 @@ feature 'Community', js: true do
     click_link 'History'
     expect(page).to have_text(old_description)
     expect(page).to have_text(topic_body_for_edit)
-    click_link 'Back to Post'
+    click_link 'Voltar a Postagem'
 
     # can mark a reply as solution
     within("div#post-show-#{reply_1.id}") do
@@ -322,18 +322,18 @@ feature 'Community', js: true do
 
     # When the topic has a reply, the first post won't have the delete option.
     find("div[aria-label='Options for post #{topic_1.first_post.id}']").click
-    expect(page).not_to have_button('Delete Topic')
+    expect(page).not_to have_button('Apagar Tópico')
 
     # So, let's delete the sole reply.
     find("div[aria-label='Options for post #{reply_1.id}']").click
-    accept_confirm { click_button('Delete Reply') }
+    accept_confirm { click_button('Apagar Resposta') }
 
     expect(page).to have_text('Post archived successfully')
     dismiss_notification
 
     # This should make the delete option visible on the first post.
     find("div[aria-label='Options for post #{topic_1.first_post.id}']").click
-    accept_confirm { click_button('Delete Topic') }
+    accept_confirm { click_button('Apagar Postagem') }
 
     # Student should be back on the community main page.
     expect(page).to have_text(topic_2.title)
@@ -348,7 +348,7 @@ feature 'Community', js: true do
     sign_in_user(student_1.user, referrer: topic_path(topic_3))
 
     expect(page).to have_text(target.title)
-    expect(page).to have_link('View Target', href: target_path(target))
+    expect(page).to have_link('Ver Aula', href: target_path(target))
   end
 
   scenario 'a target-linked question is viewed by student without access to target' do
@@ -358,7 +358,7 @@ feature 'Community', js: true do
     expect(page).to have_text(target.title)
 
     # ...but not linked.
-    expect(page).not_to have_link('View Target')
+    expect(page).not_to have_link('Ver Aula')
   end
 
   scenario 'coach marks a post as solution, edits content, and checks last edited info' do
@@ -375,21 +375,21 @@ feature 'Community', js: true do
     visit current_path
 
     within("div#post-show-#{reply_1.id}") do
-      expect(page).to_not have_text('Last edited by')
+      expect(page).to_not have_text('Última edição por')
     end
 
     # Edits the content of the post
     find("div[aria-label='Options for post #{reply_1.id}']").click
-    click_button 'Edit Reply'
+    click_button 'Alterar Resposta'
 
     within("div#post-show-#{reply_1.id}") do
       replace_markdown topic_body_for_edit
-      click_button 'Update Reply'
+      click_button 'Atualizar Resposta'
     end
 
     # Check for correct last edited message
     within("div#post-show-#{reply_1.id}") do
-      expect(page).to have_text("Last edited by #{coach.name}")
+      expect(page).to have_text("Última edição por #{coach.name}")
     end
   end
 
@@ -418,13 +418,13 @@ feature 'Community', js: true do
     expect(page).to have_text(topic_1.title)
 
     # can subscribe to a topic
-    click_button 'Subscribe'
-    expect(page).to have_text('Unsubscribe')
+    click_button 'Inscrever'
+    expect(page).to have_text('Cancelar subscrição')
     expect(topic_1.subscribers).to include(student_1.user)
 
     # can Unsubscribe
-    click_button 'Unsubscribe'
-    expect(page).to have_text('Subscribe')
+    click_button 'Cancelar subscrição'
+    expect(page).to have_text('Inscrever')
     expect(topic_1.subscribers).not_to include(student_1.user)
   end
 
@@ -474,12 +474,12 @@ feature 'Community', js: true do
 
       # Edit a post.
       find("div[aria-label='Options for post #{topic_1.first_post.id}']").click
-      click_button 'Edit Post'
+      click_button 'Alterar Postagem'
       old_description = topic_1.first_post.body
 
       within("div#post-show-#{topic_1.first_post.id}") do
         replace_markdown topic_body_for_edit
-        click_button 'Update Post'
+        click_button 'Atualizar Postagem'
       end
 
       dismiss_notification
@@ -488,25 +488,25 @@ feature 'Community', js: true do
 
       # Archive a post.
       find("div[aria-label='Options for post #{reply_1.id}']").click
-      accept_confirm { click_button('Delete Reply') }
+      accept_confirm { click_button('Apagar Resposta') }
 
-      expect(page).to have_text('Post archived successfully')
+      expect(page).to have_text('Postagem arquivada com sucesso')
 
       dismiss_notification
 
       # Post a reply.
       replace_markdown reply_body
-      expect { click_button 'Post Your Reply' }.to change { Post.count }.by(1)
+      expect { click_button 'Postar Sua Resposta' }.to change { Post.count }.by(1)
       dismiss_notification
 
       # Create a new topic.
       click_link community.name
-      click_link 'New Topic'
+      click_link 'Novo Tópico'
       fill_in 'Title', with: topic_title
       replace_markdown topic_body
-      click_button 'Create Topic'
+      click_button 'Criar Tópico'
 
-      expect(page).to have_text('0 Replies')
+      expect(page).to have_text('0 Respostas')
       expect(community.topics.reload.find_by(title: topic_title).first_post.body).to eq(topic_body)
     end
 
@@ -516,7 +516,7 @@ feature 'Community', js: true do
       expect(page).to have_text(topic_1.title)
       expect(page).to_not have_text('This topic thread has been locked')
 
-      accept_confirm { click_button('Lock Topic') }
+      accept_confirm { click_button('Bloquear Tópico') }
 
       expect(page).to have_text('This topic has been locked')
       dismiss_notification
@@ -526,7 +526,7 @@ feature 'Community', js: true do
       expect(topic_1.reload.locked_at).to_not eq(nil)
       expect(topic_1.locked_by).to eq(school_admin.user)
 
-      accept_confirm { click_button('Unlock Topic') }
+      accept_confirm { click_button('Desbloquear Tópico') }
 
       expect(page).to have_text('This topic has been unlocked')
       dismiss_notification
@@ -542,18 +542,18 @@ feature 'Community', js: true do
     sign_in_user(student_1.user, referrer: topic_path(topic_1))
 
     expect(page).to have_text(topic_1.title)
-    expect(page).to_not have_button('Lock Topic')
+    expect(page).to_not have_button('Bloquear Tópico')
   end
 
   scenario 'coach attempts to lock/unlock a topic' do
     sign_in_user(coach.user, referrer: topic_path(topic_1))
 
-    accept_confirm { click_button('Lock Topic') }
+    accept_confirm { click_button('Bloquear Tópico') }
 
     expect(page).to have_text('This topic has been locked')
     dismiss_notification
 
-    accept_confirm { click_button('Unlock Topic') }
+    accept_confirm { click_button('Desbloquear Tópico') }
 
     expect(page).to have_text('This topic has been unlocked')
     dismiss_notification
@@ -567,7 +567,7 @@ feature 'Community', js: true do
     # Before posting reply, let's lock the topic.
     topic_1.update!(locked_at: Time.zone.now, locked_by: coach.user)
 
-    click_button 'Post Your Reply'
+    click_button 'Postar Sua Resposta'
 
     expect(page).to have_text('Cannot add reply to a locked topic')
   end
@@ -598,7 +598,7 @@ feature 'Community', js: true do
 
       fill_in 'filter', with: 'category'
 
-      click_button "Category: #{category_1.name}"
+      click_button "Categoria: #{category_1.name}"
 
       expect(page).to_not have_text(topic_2.title)
       expect(page).to have_text(topic_1.title)
@@ -619,13 +619,13 @@ feature 'Community', js: true do
       sign_in_user(coach.user, referrer: topic_path(topic_1))
 
       # Change category
-      find("h3[aria-label='Topic Title']").hover
-      click_button 'Edit Topic'
+      find("h3[aria-label='Título da Postagem']").hover
+      click_button 'Alterar Tópico'
 
       find("div[aria-label='Selected category']").click
       find("div[aria-label='Select category #{category_2.name}']").click
 
-      click_button 'Update Topic'
+      click_button 'Atualizar Tópico'
 
       dismiss_notification
 
@@ -638,12 +638,12 @@ feature 'Community', js: true do
       # Assign no category
 
       find("h3[aria-label='Topic Title']").hover
-      click_button 'Edit Topic'
+      click_button 'Alterar Tópico'
 
       find("div[aria-label='Selected category']").click
       find("div[aria-label='Select no category']").click
 
-      click_button 'Update Topic'
+      click_button 'Atualizar Tópico'
 
       dismiss_notification
 
@@ -717,7 +717,7 @@ feature 'Community', js: true do
       sign_in_user(coach.user, referrer: community_path(community))
 
       within("div[aria-label='Change topics sorting']") do
-        expect(page).to have_content("Posted At")
+        expect(page).to have_content("Postado em")
       end
 
       # Check current ordering of topics
@@ -733,8 +733,8 @@ feature 'Community', js: true do
       expect(find("#topics a:nth-child(1)")).to have_content(topic_2.title)
 
       # Change sorting criterion to last activity
-      click_button 'Posted At'
-      click_button 'Last Activity'
+      click_button 'Postado em'
+      click_button 'Última Atividade'
 
       expect(find("#topics a:nth-child(3)")).to have_content(topic_1.title)
       expect(find("#topics a:nth-child(2)")).to have_content(topic_3.title)
@@ -748,8 +748,8 @@ feature 'Community', js: true do
       expect(find("#topics a:nth-child(3)")).to have_content(topic_2.title)
 
       # Change sorting criterion to views
-      click_button 'Last Activity'
-      click_button 'Views'
+      click_button 'Última Atividade'
+      click_button 'Visualizações'
 
       expect(find("#topics a:nth-child(1)")).to have_content(topic_3.title)
       expect(find("#topics a:nth-child(2)")).to have_content(topic_1.title)

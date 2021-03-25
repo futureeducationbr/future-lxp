@@ -200,8 +200,8 @@ let make = (
             className="inline-block tracking-wide text-gray-900 text-sm font-semibold mb-2"
             htmlFor="new-reply">
             {switch replyToPostId {
-            | Some(_id) => "Reply To"
-            | None => "Your Reply"
+            | Some(_id) => "Responder Para"
+            | None => "Sua Resposta"
             } |> str}
           </label>
           {replyToPostId
@@ -288,8 +288,8 @@ let make = (
                 )}
                 className="btn btn-primary">
                 {switch post {
-                | Some(post) => Post.postNumber(post) == 1 ? "Update Post" : "Update Reply"
-                | None => "Post Your Reply"
+                | Some(post) => Post.postNumber(post) == 1 ? "Atualizar Post" : "Atualizar Resposta"
+                | None => "Postar Sua Resposta"
                 } |> str}
               </button>
             }
