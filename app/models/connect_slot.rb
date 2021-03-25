@@ -21,14 +21,14 @@ class ConnectSlot < ApplicationRecord
 
   # For select input in the form in FacultyController#index.
   def to_s
-    slot_at.in_time_zone('Asia/Calcutta').strftime('%b %-d, %-I:%M %p')
+    slot_at.in_time_zone('America/Sao_Paulo').strftime('%b %-d, %-I:%M %p')
   end
 
   def self.next_week_start
-    7.days.from_now.beginning_of_week.in_time_zone('Asia/Calcutta')
+    7.days.from_now.beginning_of_week.in_time_zone('America/Sao_Paulo')
   end
 
   def self.next_week_end
-    7.days.from_now.end_of_week.in_time_zone('Asia/Calcutta')
+    7.days.from_now.end_of_week.in_time_zone('America/Sao_Paulo')
   end
 end

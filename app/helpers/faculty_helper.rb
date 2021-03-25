@@ -1,10 +1,10 @@
 module FacultyHelper
   def next_week_start
-    7.days.from_now.beginning_of_week.in_time_zone('Asia/Calcutta').strftime('%b %d')
+    7.days.from_now.beginning_of_week.in_time_zone('America/Sao_Paulo').strftime('%b %d')
   end
 
   def next_week_end
-    7.days.from_now.end_of_week.in_time_zone('Asia/Calcutta').strftime('%b %d')
+    7.days.from_now.end_of_week.in_time_zone('America/Sao_Paulo').strftime('%b %d')
   end
 
   def faculty_rating_stars(rating)
