@@ -36,7 +36,7 @@ module FacultyHelper
 
     commitment_string = commitment >= 1 ? commitment.to_i.to_s : ''
     commitment_string += '½' if commitment.to_i != commitment
-    commitment_string + (commitment > 1 ? ' hours' : ' hour')
+    commitment_string + (commitment > 1 ? ' horas' : ' hora')
   end
 
   def tooltip_for_commitment

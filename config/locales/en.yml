@@ -111,6 +111,7 @@ en:
       team_members_pending_description: You have completed all required milestone targets, but one or more of your team-mates haven't. Please ask them to sign in and check for incomplete milestone targets.
       team_members_pending_title: Check With Your Team
     CoursesCurriculum__Overlay:
+      curriculum_tab: Currículo
       close_button: Fechar
       completion_tab_complete: Completo
       completion_tab_completed: Concluído
@@ -139,6 +140,7 @@ en:
         pending_review: Avaliação pendente
         rejected: Rejeitado
     CoursesReport__Overview:
+      report_tab: Relatório
       attempted: ' Tentativa'
       average_grades: Notas médias
       average_quiz_score: Average Quiz Score
