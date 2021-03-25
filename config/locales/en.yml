@@ -26,8 +26,8 @@ en:
       topic_stats_likes: Like
       topic_stats_replies: Responder
       topic_stats_views: Visualizar
-      topics_fully_loaded_text: Showing all %{total_topics} topics
-      topics_partially_loaded_text: Showing %{loaded_topics_count} of %{total_topics} topics
+      topics_fully_loaded_text: Mostrando %{total_topics} tópicos
+      topics_partially_loaded_text: Mostrando %{loaded_topics_count} de %{total_topics} tópicos
     CourseCertificates__CreateDrawer:
       certificate_base_image_label: Certificate Base Image
       certificate_base_image_placeholder: Select a base image for certificate
