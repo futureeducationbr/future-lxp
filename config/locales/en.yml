@@ -333,34 +333,34 @@ en:
       sort_criterion_last_updated: Last Updated
       sort_criterion_name: Nome
     StudentsEditor__Search:
-      filter_input_label: 'Filter by:'
+      filter_input_label: 'Filtrar por:'
       filter_input_placeholder: Type name, tag or level
     TopicsShow__LikeManager:
       like_button_tooltip: Like this post
     TopicsShow__PostShow:
       delete_post_confirm_dialog: Are you sure you want to delete the post? This cannot be undone.
-      delete_reply_string: Delete Reply
+      delete_reply_string: Apagar Resposta
       delete_topic_confirm_dialog: Are you sure you want to delete the topic? This cannot be undone.
-      delete_topic_string: Delete Topic
+      delete_topic_string: Apagar Tópico
       deleted_user_name: Deleted User
-      edit_post_string: Alterar post
-      edit_reply_string: Alterar resposta
-      go_to_solution_button: Go to solution
+      edit_post_string: Alterar Post
+      edit_reply_string: Alterar Resposta
+      go_to_solution_button: Ir para a solução
       history_button_text: History
-      last_edited_by_label: 'Last edited by '
+      last_edited_by_label: 'Última edição por '
       mark_as_solution_label: Marcar como solucionado
       new_reply_button: Responder
       solution_icon_label: Solucionado
     TopicsShow__Root:
       edit_topic_button: Alterar tópico
-      linked_target_label: 'Linked Target: '
+      linked_target_label: 'Vinculado a aula: '
       lock_topic_button: Lock Topic
       locked_topic_notice: This topic thread has been locked; no new replies can be posted.
-      topic_category_label: 'Topic Category: '
-      topic_editor_cancel_button: Cancel
+      topic_category_label: 'Categoria: '
+      topic_editor_cancel_button: Cancelar
       unlock_topic_button: Unlock Topic
       update_topic_button: Update Topic
-      view_target_button: Ver módulo
+      view_target_button: Ver Aula
     TopicsShow__SubscriptionManager:
       subscribe: Assinar
       unsubscribe: Para de receber

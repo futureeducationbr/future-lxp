@@ -408,7 +408,7 @@ let make = (
   <div className="max-w-3xl mx-auto">
     <div className="md:flex w-full items-start pb-4">
       <div className="flex-1">
-        <label className="block text-tiny font-semibold uppercase"> {"Filter by:" |> str} </label>
+        <label className="block text-tiny font-semibold uppercase"> {"Filtrar por:" |> str} </label>
         <Multiselect
           id="filter"
           unselected={unselected(levels, selectedLevel, selectedStatus)}

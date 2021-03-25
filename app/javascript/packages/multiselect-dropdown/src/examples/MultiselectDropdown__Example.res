@@ -123,7 +123,7 @@ module DetailedExample = {
         <label
           className="block text-xs font-semibold"
           htmlFor="MultiselectDropdown__search-input-detailed-example">
-          {"Filter by:" |> str}
+          {"Filtrar por:" |> str}
         </label>
       </div>
       <Multiselect

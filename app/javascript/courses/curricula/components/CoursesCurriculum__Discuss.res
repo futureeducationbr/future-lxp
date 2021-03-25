@@ -25,9 +25,9 @@ let handleEmpty = () =>
     <i className="fa fa-comments text-5xl text-gray-600 mb-2 " />
     <div className="text-center">
       <h4 className="font-bold">
-        {"There's been no recent discussion about this target." |> str}
+        {"Não houve nenhuma discussão recente sobre esta aula." |> str}
       </h4>
-      <p> {"Use the community to clear your doubts, and to help your peers!" |> str} </p>
+      <p> {"Use a comunidade para tirar suas dúvidas e ajudar seus colegas!" |> str} </p>
     </div>
   </div>
 

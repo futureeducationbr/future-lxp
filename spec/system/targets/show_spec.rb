@@ -512,12 +512,12 @@ feature 'Target Overlay', js: true do
       sign_in_user student.user, referrer: target_path(target_l1)
 
       # Overlay should have a discuss tab that lists linked communities.
-      find('.course-overlay__body-tab-item', text: 'Discuss&atilde;o').click
+      find('.course-overlay__body-tab-item', text: 'Discussão').click
       expect(page).to have_text(community_1.name)
       expect(page).to have_text(community_2.name)
       expect(page).to have_link('Ir para a comunidade', count: 2)
-      expect(page).to have_link('Criar um t&oacute;pico', count: 2)
-      expect(page).to have_text("There's been no recent discussion about this target.", count: 1)
+      expect(page).to have_link('Criar um tópico', count: 2)
+      expect(page).to have_text("Não houve nenhuma discussão recente sobre esta aula.", count: 1)
 
       # Check the presence of existing topics
       expect(page).to have_text(topic_target_l2_1.title)
@@ -527,13 +527,13 @@ feature 'Target Overlay', js: true do
       find("a[title='Crie um tópico na comunidade #{community_1.name}'").click
 
       expect(page).to have_text(target_l1.title)
-      expect(page).to have_text('Criar um novo tópico de discuss&atilde;o')
+      expect(page).to have_text('Criar um novo tópico de discussão')
 
       # Try clearing the linking.
       click_link 'Limpar'
 
       expect(page).not_to have_text(target_l1.title)
-      expect(page).to have_text('Criar um novo t&oacute;pico de discuss&atilde;o')
+      expect(page).to have_text('Criar um novo t&oacute;pico de discussão')
 
       # Let's go back to linked state and try creating a linked question.
       visit(new_topic_community_path(community_1, target_id: target_l1.id))
@@ -544,7 +544,7 @@ feature 'Target Overlay', js: true do
 
       expect(page).to have_text(topic_title)
       expect(page).to have_text(topic_body)
-      expect(page).not_to have_text('Criar um novo t&oacute;pico de discussão')
+      expect(page).not_to have_text('Criar um novo tópico de discussão')
 
       # The question should have been linked to the target.
       expect(Topic.where(title: topic_title).first.target).to eq(target_l1)
