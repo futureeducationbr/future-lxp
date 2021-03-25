@@ -84,7 +84,7 @@ let autoVerify = (target, linkToComplete, saving, setSaving, addSubmissionCB, pr
       {switch (saving, linkToComplete) {
       | (true, _) => completeButtonText("Salvando", "fas fa-spinner fa-spin")
       | (false, Some(_)) => completeButtonText("Visitar link para concluir", "fas fa-external-link-alt")
-      | (false, None) => completeButtonText("Marcar como Concluído", "fas fa-check-square")
+      | (false, None) => completeButtonText("Marcar como Concluido", "fas fa-check-square")
       }}
     </button>
   }

@@ -91,7 +91,7 @@ feature 'Target Overlay', js: true do
     sign_in_user student.user, referrer: target_path(target_l1)
 
     # This target should have a 'Complete' section.
-    find('.course-overlay__body-tab-item', text: 'Concluído').click
+    find('.course-overlay__body-tab-item', text: 'Concluido').click
     # completion instructions should be show on complete section for evaluated targets
     expect(page).to have_text(target_l1.completion_instructions)
     long_answer = Faker::Lorem.sentence
@@ -226,7 +226,7 @@ feature 'Target Overlay', js: true do
         end
 
         # Target should now be complete for the user.
-        expect(page).to have_selector('.course-overlay__header-title-card', text: 'Concluído')
+        expect(page).to have_selector('.course-overlay__header-title-card', text: 'Concluido')
 
         # Target should have been marked as passed in the database.
         expect(target_with_link.status(student)).to eq(Targets::StatusService::STATUS_PASSED)

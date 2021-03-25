@@ -208,7 +208,7 @@ feature 'User Dashboard', js: true do
 
       # Course from which student has dropped out.
       within("div[aria-label=\"#{course_4.name}\"]") do
-        expect(page).to have_link("View Curriculum", href: curriculum_course_path(course_4))
+        expect(page).to have_link("Ver Curriculo", href: curriculum_course_path(course_4))
         expect(page).to_not have_text("Your student profile for this course is locked, and cannot be updated")
       end
     end
