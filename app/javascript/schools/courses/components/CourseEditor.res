@@ -47,17 +47,17 @@ let courseLinks = course =>
     <a
       href={"/school/courses/" ++ ((course |> Course.id) ++ "/curriculum")}
       className="text-primary-500 bg-gray-100 hover:bg-gray-200 border-l text-sm font-semibold items-center p-4 flex cursor-pointer">
-      {"Curriculum" |> str}
+      {"Curriculo" |> str}
     </a>
     <a
       href={"/school/courses/" ++ ((course |> Course.id) ++ "/students")}
       className="text-primary-500 bg-gray-100 hover:bg-gray-200 border-l text-sm font-semibold items-center p-4 flex cursor-pointer">
-      {"Students" |> str}
+      {"Alunos" |> str}
     </a>
     <a
       href={"/school/courses/" ++ ((course |> Course.id) ++ "/coaches")}
       className="text-primary-500 bg-gray-100 hover:bg-gray-200 border-l text-sm font-semibold items-center p-4 flex cursor-pointer">
-      {"Coaches" |> str}
+      {"Mentores" |> str}
     </a>
     <a
       href={"/school/courses/" ++ ((course |> Course.id) ++ "/exports")}
@@ -134,7 +134,7 @@ let make = () => {
                       title={"Edit images for " ++ (course |> Course.name)}
                       onClick={_ => send(UpdateEditorAction(ShowCoverImageForm(course)))}
                       className="text-primary-500 bg-gray-100 hover:bg-gray-200 border-l text-sm font-semibold items-center p-4 flex cursor-pointer">
-                      {"Edit Images" |> str}
+                      {"Alterar Imagens" |> str}
                     </a>
                   </div>
                   <div className="text-gray-800 bg-gray-300 text-sm font-semibold p-4 w-full">
@@ -145,7 +145,7 @@ let make = () => {
                         href={"/courses/" ++ (course |> Course.id)}
                         target="_blank"
                         className="text-sm font-semibold cursor-pointer ml-2 text-primary-500">
-                        {"View public page" |> str}
+                        {"Ver página pública" |> str}
                       </a>
                     </div>
                   </div>

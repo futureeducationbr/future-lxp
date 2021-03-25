@@ -75,11 +75,11 @@ feature 'Students view performance report and submissions overview', js: true do
     expect(page).to have_selector('.courses-report-overview__student-level', count: course.levels.where.not(number: 0).count)
 
     # Targets Overview
-    expect(page).to have_text('Visão Geral dos Módulos')
+    expect(page).to have_text('Visão Geral das Aulas')
 
     within("div[aria-label='target-completion-status']") do
       expect(page).to have_content('Incompleto: 1')
-      expect(page).to have_content('Revisão pendente: 1')
+      expect(page).to have_content('Avaliação pendente: 1')
       expect(page).to have_content('Concluído: 4')
       expect(page).to have_content('66%')
     end
@@ -126,7 +126,7 @@ feature 'Students view performance report and submissions overview', js: true do
 
     # Filter submissions by target status
     fill_in 'filter', with: 'status'
-    click_button 'Status: Pendente de Revisão'
+    click_button 'Status: Pendente de Avaliação'
 
     expect(page).not_to have_text(target_l1.title)
     expect(page).to have_link(target_l3.title, href: "/targets/#{target_l3.id}")
@@ -140,7 +140,7 @@ feature 'Students view performance report and submissions overview', js: true do
     end
 
     sign_in_user student.user, referrer: report_course_path(course)
-    expect(page).to have_text('Visão Geral dos Módulos')
+    expect(page).to have_text('Visão Geral das Aulas')
     click_button 'Envios'
     expect(page).to have_button('Carregar mais...')
     click_button('Carregar mais...')
@@ -199,7 +199,7 @@ feature 'Students view performance report and submissions overview', js: true do
       within("div[aria-label='target-completion-status']") do
         expect(page).to have_content('66%')
         expect(page).to have_content('Incompleto: 1')
-        expect(page).to have_content('Revisão pendente: 1')
+        expect(page).to have_content('Avaliação pendente: 1')
         expect(page).to have_content('Concluído: 4')
       end
     end
@@ -217,7 +217,7 @@ feature 'Students view performance report and submissions overview', js: true do
       within("div[aria-label='target-completion-status']") do
         expect(page).to have_content('100%')
         expect(page).to have_content('Incompleto: 0')
-        expect(page).to have_content('Revisão pendente: 0')
+        expect(page).to have_content('Avaliação pendente: 0')
         expect(page).to have_content('Concluído: 4')
       end
     end

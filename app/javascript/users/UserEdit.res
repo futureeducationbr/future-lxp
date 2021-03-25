@@ -225,7 +225,7 @@ let confirmDeletionWindow = (state, send) =>
             </p>
             <div className="mt-3">
               <label htmlFor="email" className="block text-sm font-semibold">
-                {"Confirm your email" |> str}
+                {"Confirme seu email" |> str}
               </label>
               <input
                 type_="email"
@@ -235,16 +235,16 @@ let confirmDeletionWindow = (state, send) =>
                 id="email"
                 autoComplete="off"
                 className="appearance-none block text-sm w-full shadow-sm border border-gray-400 rounded px-4 py-2 my-2 leading-relaxed focus:outline-none focus:border-gray-500"
-                placeholder="Type your email"
+                placeholder="Digite seu email"
               />
             </div>
           </div>
 
         <ConfirmWindow
-          title="Delete account"
+          title="Apagar minha conta"
           body
-          confirmButtonText="Initiate Deletion"
-          cancelButtonText="Cancel"
+          confirmButtonText="Apagando sua conta"
+          cancelButtonText="Cancelar"
           onConfirm={() => initiateAccountDeletion(state, send)}
           onCancel={() => send(ChangeDeleteAccountFormVisibility(false))}
           disableConfirm=state.deletingAccount
@@ -287,16 +287,16 @@ let make = (
       <div className="px-4 py-5 sm:p-6">
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/3 pr-4">
-            <h3 className="text-lg font-semibold"> {"Edit your profile" |> str} </h3>
+            <h3 className="text-lg font-semibold"> {"Atualizar Perfil" |> str} </h3>
             <p className="mt-1 text-sm text-gray-700">
-              {"This information will be displayed publicly so be careful what you share." |> str}
+              {"Mantenha os seus dados atualizados sempre que possível." |> str}
             </p>
           </div>
           <div className="mt-5 md:mt-0 w-full md:w-2/3">
             <div className="">
               <div className="">
                 <label htmlFor="user_name" className="block text-sm font-semibold">
-                  {"Name" |> str}
+                  {"Nome" |> str}
                 </label>
               </div>
             </div>
@@ -306,14 +306,14 @@ let make = (
               value=state.name
               onChange={event => send(UpdateName(ReactEvent.Form.target(event)["value"]))}
               className="appearance-none mb-2 block text-sm w-full shadow-sm border border-gray-400 rounded px-4 py-2 my-2 leading-relaxed focus:outline-none focus:border-gray-500"
-              placeholder="Type your name"
+              placeholder="Informe o seu nome"
             />
             <School__InputGroupError
               message="Name can't be blank" active={state.name |> String.trim |> String.length < 2}
             />
             <div className="mt-6">
               <label htmlFor="about" className="block text-sm font-semibold">
-                {"About" |> str}
+                {"Sobre" |> str}
               </label>
               <div>
                 <textarea
@@ -322,7 +322,7 @@ let make = (
                   rows=3
                   onChange={event => send(UpdateAbout(ReactEvent.Form.target(event)["value"]))}
                   className="appearance-none block text-sm w-full shadow-sm border border-gray-400 rounded px-4 py-2 my-2 leading-relaxed focus:outline-none focus:border-gray-500"
-                  placeholder="A brief introduction about yourself"
+                  placeholder="Uma breve introdução sobre você"
                 />
               </div>
             </div>
@@ -331,7 +331,7 @@ let make = (
                 <input
                   name="authenticity_token" type_="hidden" value={AuthenticityToken.fromHead()}
                 />
-                <label className="block text-sm font-semibold"> {"Photo" |> str} </label>
+                <label className="block text-sm font-semibold"> {"Foto" |> str} </label>
                 <div className="mt-2 flex items-center">
                   <span
                     className="inline-block h-14 w-14 rounded-full overflow-hidden bg-gray-200 border-2 boder-gray-400">
@@ -355,7 +355,7 @@ let make = (
                       htmlFor="user-edit__avatar-input"
                       ariaHidden=true
                       className="form-input__file-label rounded-md shadow-sm py-2 px-3 border border-gray-400 rounded-md text-sm font-semibold hover:text-gray-800 active:bg-gray-100 active:text-gray-800">
-                      {"Change photo" |> str}
+                      {"Mudar foto" |> str}
                     </label>
                   </span>
                   {switch state.avatarUploadError {
@@ -369,9 +369,9 @@ let make = (
         </div>
         <div className="flex flex-col md:flex-row mt-10 md:mt-12">
           <div className="w-full md:w-1/3 pr-4">
-            <h3 className="text-lg font-semibold"> {"Security" |> str} </h3>
+            <h3 className="text-lg font-semibold"> {"Segurança" |> str} </h3>
             <p className="mt-1 text-sm text-gray-700">
-              {"Update your login credentials for the school." |> str}
+              {"Atualize suas credenciais de login." |> str}
             </p>
           </div>
           <div className="mt-5 md:mt-0 w-full md:w-2/3">
@@ -385,7 +385,7 @@ let make = (
             {state.hasCurrentPassword
               ? <div className="mt-6">
                   <label htmlFor="current_password" className="block text-sm font-semibold">
-                    {"Current password" |> str}
+                    {"Senha Atual" |> str}
                   </label>
                   <input
                     value=state.currentPassword
@@ -395,13 +395,13 @@ let make = (
                       send(UpdateCurrentPassword(ReactEvent.Form.target(event)["value"]))}
                     id="current_password"
                     className="appearance-none block text-sm w-full shadow-sm border border-gray-400 rounded px-4 py-2 my-2 leading-relaxed focus:outline-none focus:border-gray-500"
-                    placeholder="Type current password"
+                    placeholder="Digite a senha atual"
                   />
                 </div>
               : React.null}
             <div className="mt-6">
               <label htmlFor="new_password" className="block text-sm font-semibold">
-                {"New password" |> str}
+                {"Nova Senha" |> str}
               </label>
               <input
                 autoComplete="off"
@@ -410,7 +410,7 @@ let make = (
                 value=state.newPassword
                 onChange={event => send(UpdateNewPassword(ReactEvent.Form.target(event)["value"]))}
                 className="appearance-none block text-sm w-full shadow-sm border border-gray-400 rounded px-4 py-2 my-2 leading-relaxed focus:outline-none focus:border-gray-500"
-                placeholder="Type new password"
+                placeholder="Digite uma nova senha"
               />
             </div>
             <div className="mt-6">
@@ -418,7 +418,7 @@ let make = (
                 autoComplete="off"
                 htmlFor="confirm_password"
                 className="block text-sm font-semibold">
-                {"Confirm password" |> str}
+                {"Confirme a Senha" |> str}
               </label>
               <input
                 autoComplete="off"
@@ -428,7 +428,7 @@ let make = (
                 onChange={event =>
                   send(UpdateNewPassWordConfirm(ReactEvent.Form.target(event)["value"]))}
                 className="appearance-none block text-sm w-full shadow-sm border border-gray-400 rounded px-4 py-2 my-2 leading-relaxed focus:outline-none focus:border-gray-500"
-                placeholder="Confirm new password"
+                placeholder="Confirme a nova senha"
               />
               <School__InputGroupError
                 message="New password and confirmation should match and must have atleast 8 characters"
@@ -439,21 +439,21 @@ let make = (
         </div>
         <div className="flex flex-col md:flex-row mt-10 md:mt-12">
           <div className="w-full md:w-1/3 pr-4">
-            <h3 className="text-lg font-semibold"> {"Notifications" |> str} </h3>
+            <h3 className="text-lg font-semibold"> {"Notificações" |> str} </h3>
             <p className="mt-1 text-sm text-gray-700">
-              {"Update settings for email notifications." |> str}
+              {"Atualize as configurações de notificações por e-mail." |> str}
             </p>
           </div>
           <div className="mt-5 md:mt-0 w-full md:w-2/3">
             <p className="font-semibold"> {"Community Digest" |> str} </p>
             <p className="text-sm text-gray-700">
-              {"Community digest emails contain new questions from your communities, and a selection of unanswered questions from the past week." |> str}
+              {"Os e-mails de resumo da comunidade contêm novas perguntas de suas comunidades e uma seleção de perguntas não respondidas da semana passada." |> str}
             </p>
             <div className="mt-6">
               <div className="flex items-center">
                 <Radio
                   id="daily_mail_enable"
-                  label="Send me a daily email"
+                  label="Envie-me um email diário"
                   onChange={event =>
                     send(UpdateDailyDigest(ReactEvent.Form.target(event)["checked"]))}
                   checked=state.dailyDigest
@@ -477,7 +477,7 @@ let make = (
           disabled={saveDisabled(state)}
           onClick={updateUser(state, send)}
           className="btn btn-primary">
-          {"Save Changes" |> str}
+          {"Salvar Mudanças" |> str}
         </button>
       </div>
     </div>
@@ -485,13 +485,13 @@ let make = (
       <div className="px-4 py-5 sm:p-6">
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/3 pr-4">
-            <h3 className="text-lg font-semibold"> {"Account" |> str} </h3>
+            <h3 className="text-lg font-semibold"> {"Conta" |> str} </h3>
             <p className="mt-1 text-sm text-gray-700">
               {"Manage your account in this school" |> str}
             </p>
           </div>
           <div className="mt-5 md:mt-0 w-full md:w-2/3">
-            <p className="font-semibold text-red-700"> {"Delete account" |> str} </p>
+            <p className="font-semibold text-red-700"> {"Apagar minha conta" |> str} </p>
             <p className="text-sm text-gray-700 mt-1">
               {"Deleting your user account removes all your data from this school. Replies to posts in communities and feedback to students (if user has a coach profile) will not be deleted. Admin rights need to be revoked if you are an admin in this school.  " |> str}
             </p>
@@ -514,7 +514,7 @@ let make = (
                 : <button
                     onClick={_ => send(ChangeDeleteAccountFormVisibility(true))}
                     className="py-2 px-3 border border-red-500 text-red-600 rounded text-xs font-semibold hover:bg-red-600 hover:text-white focus:outline-none active:bg-red-700 active:text-white">
-                    {"Delete your account" |> str}
+                    {"Apagar minha conta" |> str}
                   </button>}
             </div>
           </div>

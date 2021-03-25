@@ -15,4 +15,4 @@ let decode = json => {
   }
 }
 
-let local = t => Js.Array.includes(t.title, ["Admin", "Dashboard", "Coaches"])
+let local = t => Js.Array.includes(t.title, ["Admin", "Meus Cursos", "Mentores"])

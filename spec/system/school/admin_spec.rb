@@ -134,7 +134,7 @@ feature 'School admins Editor', js: true do
     end
 
     # User should be taken to the dashboard page.
-    expect(page).to have_text('Edit Profile')
+    expect(page).to have_text('Alterar Perfil')
     expect(SchoolAdmin.count).to eq(1)
     expect(SchoolAdmin.first).to eq(school_admin_2)
   end

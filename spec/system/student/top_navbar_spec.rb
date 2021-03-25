@@ -9,7 +9,7 @@ feature 'Student Top Navbar', js: true do
     scenario 'a visitor comes to the homepage' do
       visit root_path
 
-      expect(page).to have_link('Coaches', href: '/coaches')
+      expect(page).to have_link('Mentores', href: '/coaches')
     end
   end
 end

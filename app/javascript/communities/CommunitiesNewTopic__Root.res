@@ -264,7 +264,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
         <div className="px-3 lg:px-0">
           <div className="max-w-3xl w-full mx-auto mt-5 pb-2">
             <a className="btn btn-subtle" onClick={_ => DomUtils.goBack()}>
-              <i className="fas fa-arrow-left" /> <span className="ml-2"> {"Back" |> str} </span>
+              <i className="fas fa-arrow-left" /> <span className="ml-2"> {"Voltar" |> str} </span>
             </a>
           </div>
         </div>
@@ -283,7 +283,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
         | None => React.null
         }}
         <h4 className="max-w-3xl w-full mx-auto pb-2 mt-2 px-3 lg:px-0">
-          {"Crie um novo t&oacute;pico de discuss&atilde;o" |> str}
+          {"Crie um novo tópico de discussão" |> str}
         </h4>
         <div className="md:px-3">
           <div
@@ -294,7 +294,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
                   <label
                     className="inline-block tracking-wide text-gray-900 text-xs font-semibold mb-2"
                     htmlFor="title">
-                    {"Title" |> str}
+                    {"Título" |> str}
                   </label>
                   <input
                     id="title"
@@ -305,7 +305,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
                       let newTitle = ReactEvent.Form.target(event)["value"]
                       updateTitleAndSearch(state, send, communityId, newTitle)
                     }}
-                    placeholder="Title for the new topic"
+                    placeholder="Título para o novo tópico"
                   />
                 </div>
                 {ReactUtils.nullIf(
@@ -342,7 +342,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
               <label
                 className="inline-block tracking-wide text-gray-900 text-xs font-semibold mb-2"
                 htmlFor="body">
-                {"Body" |> str}
+                {"Descrição" |> str}
               </label>
               <div className="w-full flex flex-col">
                 <MarkdownEditor
@@ -350,7 +350,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
                   textareaId="body"
                   onChange={markdown => send(UpdateBody(markdown))}
                   value=state.body
-                  placeholder="If you're asking a question, try to be as descriptive as possible to make it easier for others to post answers. You can use Markdown to format this text."
+                  placeholder="Se você estiver fazendo uma pergunta, tente ser o mais descritivo possível para tornar mais fácil para outras pessoas postarem as respostas. Você pode usar o Markdown para formatar este texto."
                   profile=Markdown.QuestionAndAnswer
                   maxLength=10000
                 />
@@ -370,7 +370,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
                         state.selectedCategory,
                       )}
                       className="btn btn-primary border border-transparent w-full md:w-auto">
-                      {"Criar T&oacute;pico" |> str}
+                      {"Criar Topico" |> str}
                     </button>
                   </div>
                 </div>

@@ -66,7 +66,7 @@ module Layouts
     end
 
     def dashboard_link
-      current_user.present? ? [{ title: 'Dashboard', url: '/dashboard' }] : []
+      current_user.present? ? [{ title: 'Meus Cursos', url: '/dashboard' }] : []
     end
 
     def course_authors
@@ -86,7 +86,7 @@ module Layouts
 
     def coaches_link
       if current_school.users.joins(:faculty).exists?(faculty: { public: true })
-        [{ title: 'Coaches', url: '/coaches' }]
+        [{ title: 'Mentores', url: '/coaches' }]
       else
         []
       end

@@ -7,7 +7,7 @@ en:
       filter_input_placeholder: Pesquise por nome ou selecione um curso
       filter_label_name_like: Nome como
       filter_label_teaches_course: Professores do curso
-      filter_result_empty: The filters you've applied does not match any coach. Please change the filter and try again.
+      filter_result_empty: Os filtros que você aplicou não correspondem a nenhum treinador. Por favor, troque o filtro e tente novamente.
       filter_search_string_course: ensina o curso %{name}
       heading: Mentores
     CommunitiesShow__Root:
@@ -91,16 +91,16 @@ en:
     CoursesCurriculum__NoticeManager:
       access_ended_description: Seu acesso a este curso terminou.
       access_ended_title: Acesso Finalizado
-      course_complete_description: You've completed our coursework. Feel free to complete targets that you might have left out, and read up at attached links.
-      course_complete_title: Parabéns! Você completou todos os módulos.
-      course_ended_description: O curso terminou e as inscrições estão desativadas para todos os módulos!
+      course_complete_description: Você concluiu nosso curso. Sinta-se à vontade para completar as aulas que você possa ter deixado de fora.
+      course_complete_title: Parabéns! Você completou todas as aulas.
+      course_ended_description: O curso terminou e as inscrições estão desativadas para todas as aulas!
       course_ended_title: Curso Terminado
       level_up_blocked:
-        body_middle_pending_review: 'are pending review by a coach. '
-        body_middle_rejected: 'have been rejected. '
+        body_middle_pending_review: 'estão com avaliação pendente por um mentor. '
+        body_middle_rejected: 'foram rejeitados. '
         body_prefix: 'You have submitted all milestone targets in level %{number}, but one or more submissions '
         body_suffix: You need to get a passing grade on all milestone targets to level up.
-        title_pending_review: Pending Review
+        title_pending_review: Avaliação pendente
         title_rejected: Level Up Blocked
       level_up_description: Congratulations! You have successfully completed all milestone targets required to move to the next level in the course. Click on the "Level up" button below to continue progressing through the course.
       level_up_limited_description: You're at Level %{currentLevel}, but you have targets in the Level %{minimumRequiredLevel} that have been rejected, or are pending review by a coach. You'll need to pass all milestone targets in Level %{minimumRequiredLevel} to continue leveling up.
@@ -136,7 +136,7 @@ en:
         completed: Concluído
         locked: Bloqueado
         pending: Pendente
-        pending_review: Revisão pendente
+        pending_review: Avaliação pendente
         rejected: Rejeitado
     CoursesReport__Overview:
       attempted: ' Tentativa'
@@ -149,8 +149,8 @@ en:
       quiz: Questionário
       schedule_coaching_session: Agende uma sessão de coaching
       targets_completed: 'Concluído: %{targetsCount}'
-      targets_overview: Visão geral dos módulos
-      targets_pending_review: 'Revisão pendente: %{targetsCount}'
+      targets_overview: Visão Geral das Aulas
+      targets_pending_review: 'Avaliação pendente: %{targetsCount}'
     CoursesReport__SubmissionsList:
       completed: Concluído
       filter_by_another_level: Filter by another level
@@ -159,7 +159,7 @@ en:
       filter_by_level_or_status: Filter by level, or by status
       load_more: Carregar mais...
       no_submissions_to_show: 'Nenhum envio para mostrar '
-      pending_review: Revisão pendente
+      pending_review: Avaliação pendente
       rejected: Rejeitado
       sort_by: 'Ordenar por:'
       status: Status
@@ -200,12 +200,12 @@ en:
       quiz: Quiz
       submissions: Submissões
       targets: ' Módulos'
-      targets_overview: Visão geral dos módulos
+      targets_overview: Visão geral das Aulas
       team_coaches: Team Coaches
-      total_targets_completed: Total de módulos concluídos
+      total_targets_completed: Total de aulas concluídas
     CurriculumEditor:
       create_level: Criar Nível
-      create_target_group: Criar módulo
+      create_target_group: Criar Aula
       edit_selected_level: Edit selected level
     CurriculumEditor__ContentBlockCreator:
       button_labels:

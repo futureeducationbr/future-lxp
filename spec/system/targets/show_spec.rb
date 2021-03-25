@@ -100,17 +100,17 @@ feature 'Target Overlay', js: true do
 
     click_button 'Enviar'
 
-    expect(page).to have_content('Seu envio foi colocado na fila para revisão')
+    expect(page).to have_content('Seu envio foi colocado na fila para avaliação de um mentor')
 
     dismiss_notification
 
     # The state of the target should change.
     within('.course-overlay__header-title-card') do
-      expect(page).to have_content('Revisão pendente')
+      expect(page).to have_content('Avaliação pendente')
     end
 
     # The submissions should mention that review is pending.
-    expect(page).to have_content('Revisão pendente')
+    expect(page).to have_content('Avaliação pendente')
 
     # The student should be able to undo the submission at this point.
     expect(page).to have_button('Desfazer envio')
@@ -126,7 +126,7 @@ feature 'Target Overlay', js: true do
     click_button 'Fechar'
 
     within("a[aria-label='Select Target #{target_l1.id}'") do
-      expect(page).to have_content('Revisão pendente')
+      expect(page).to have_content('Avaliação pendente')
     end
 
     # Return to the submissions & feedback tab on the target overlay.
@@ -473,7 +473,7 @@ feature 'Target Overlay', js: true do
       find('.course-overlay__body-tab-item', text: 'Envios e Feedback').click
 
       # The submissions should mention that review is pending.
-      expect(page).to have_content('Revisão Pendente')
+      expect(page).to have_content('Avaliação Pendente')
 
       # The student should NOT be able to undo the submission at this point.
       expect(page).not_to have_button('Desfazer envio')
@@ -769,7 +769,7 @@ feature 'Target Overlay', js: true do
       find('.course-overlay__body-tab-item', text: 'Concluído').click
       replace_markdown Faker::Lorem.sentence
       click_button 'Enviar'
-      expect(page).to have_content('Seu envio foi colocado na fila para revisão')
+      expect(page).to have_content('Seu envio foi colocado na fila para avaliação de um mentor')
       dismiss_notification
 
       new_submission = TimelineEvent.last

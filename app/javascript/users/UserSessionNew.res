@@ -174,7 +174,7 @@ let renderSignInWithEmail = (
     <div>
       <label
         className="inline-block tracking-wide text-gray-900 text-xs font-semibold" htmlFor="email">
-        {"Email Address" |> str}
+        {"Endereço de Email" |> str}
       </label>
       <input
         className="appearance-none h-10 mt-1 block w-full text-gray-800 border border-gray-400 rounded py-2 px-4 text-sm bg-gray-100 hover:bg-gray-200 focus:outline-none focus:bg-white focus:border-primary-400"
@@ -191,13 +191,13 @@ let renderSignInWithEmail = (
         <label
           className="inline-block tracking-wide text-gray-900 text-xs font-semibold"
           htmlFor="password">
-          {"Password" |> str}
+          {"Senha" |> str}
         </label>
         <button
           disabled=saving
           onClick={_ => saving ? () : setView(_ => ForgotPassword)}
           className="text-primary-400 text-center text-xs font-semibold hover:text-primary-600 cursor-pointer whitespace-no-wrap hover:underline inline">
-          {"Set a New Password" |> str}
+          {"Defina a nova senha" |> str}
         </button>
       </div>
       <input
@@ -207,7 +207,7 @@ let renderSignInWithEmail = (
         disabled=saving
         type_="password"
         onChange={event => setPassword(ReactEvent.Form.target(event)["value"])}
-        placeholder="Type your password"
+        placeholder="Digite a sua senha"
       />
     </div>
     <div
@@ -223,7 +223,7 @@ let renderSignInWithEmail = (
         <label
           className="block pl-2 font-semibold cursor-pointer text-xs select-none whitespace-no-wrap"
           htmlFor="sharedDevice">
-          {"Are you using a shared device?" |> str}
+          {"Está usando um dispositivo compartilhado?" |> str}
         </label>
       </div>
     </div>
@@ -234,14 +234,14 @@ let renderSignInWithEmail = (
             onClick={_ => signInWithPassword(email, password, setSaving, sharedDevice)}
             className="btn btn-success btn-large text-center w-full">
             {saving ? <FaIcon classes="fas fa-spinner fa-spin mr-2" /> : ReasonReact.null}
-            <span> {(saving ? "Signing in" : "Sign in with password") |> str} </span>
+            <span> {(saving ? "Entrando" : "Entrar com senha") |> str} </span>
           </button>
         : <button
             disabled={saving || validEmail(email)}
             onClick={_ => sendSignInEmail(email, setView, setSaving, sharedDevice)}
             className="btn btn-primary btn-large text-center w-full">
             {saving ? <FaIcon classes="fas fa-spinner fa-spin mr-2" /> : ReasonReact.null}
-            <span> {(saving ? "Signing in" : "Email me a link to sign in") |> str} </span>
+            <span> {(saving ? "Entrando" : "Envie-me um link para fazer login") |> str} </span>
           </button>}
     </div>
   </div>
@@ -249,14 +249,14 @@ let renderSignInWithEmail = (
 let renderSignInEmailSent = () =>
   <div className="max-w-sm mx-auto">
     <p className="mt-4 text-center">
-      {"It should reach you in less than a minute. Click the link in the email, and you'll be signed in." |> str}
+      {"Deve chegar até você em menos de um minuto. Clique no link do e-mail e você estará conectado." |> str}
     </p>
   </div>
 
 let renderForgotPassword = (email, saving, setEmail, setSaving, setView) =>
   <div className="max-w-sm mx-auto md:px-9 pb-4">
     <div className="text-sm mt-2 text-center pb-3">
-      {"Enter your email for password recovery" |> str}
+      {"Digite seu e-mail para recuperação de senha" |> str}
     </div>
     <label
       className="inline-block tracking-wide text-gray-900 text-xs font-semibold" htmlFor="email">
@@ -276,7 +276,7 @@ let renderForgotPassword = (email, saving, setEmail, setSaving, setView) =>
       onClick={_ => sendResetPasswordEmail(email, setView, setSaving)}
       className="btn btn-primary btn-large text-center w-full mt-4 mr-2">
       {saving ? <FaIcon classes="fas fa-spinner fa-spin mr-2" /> : ReasonReact.null}
-      <span> {(saving ? "Dispatching email" : "Send Email") |> str} </span>
+      <span> {(saving ? "Enviando e-mail" : "Enviar Email") |> str} </span>
     </button>
   </div>
 
@@ -337,7 +337,7 @@ let make = (~schoolName, ~fqdn, ~oauthHost) => {
             disabled=saving
             onClick={_ => setView(_ => FederatedSignIn)}
             className="w-full p-3 text-primary-500 leading-snug rounded-lg underline cursor-pointer text-sm text-center font-semibold hover:bg-gray-200 focus:bg-gray-200 focus:outline-none">
-            {"Sign in with Google, Facebook, or Github" |> str}
+            {"Entrar com Google, Facebook, ou Github" |> str}
           </button>
         </div>
       | (None, SignInWithPassword)

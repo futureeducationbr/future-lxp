@@ -117,13 +117,13 @@ let secondaryNav = (courses, userRole, selectedOption) =>
               "/school/courses/" ++ (courseId ++ "/students"),
               courseSelection,
               Students,
-              "Students",
+              "Alunos",
             ),
             secondaryNavOption(
               "/school/courses/" ++ (courseId ++ "/coaches"),
               courseSelection,
               CourseCoaches,
-              "Coaches",
+              "Mentores",
             ),
             secondaryNavOption(
               "/school/courses/" ++ (courseId ++ "/exports"),
@@ -135,7 +135,7 @@ let secondaryNav = (courses, userRole, selectedOption) =>
               "/school/courses/" ++ (courseId ++ "/authors"),
               courseSelection,
               Authors,
-              "Authors",
+              "Autores",
             ),
             secondaryNavOption(
               "/school/courses/" ++ (courseId ++ "/certificates"),
@@ -323,15 +323,15 @@ let make = (
             hasNotifications
           />
         </div>
-        {bottomLink("/dashboard", shrunk, "fas fa-home", "Dashboard")}
+        {bottomLink("/dashboard", shrunk, "fas fa-home", "Meus Cursos")}
         <li>
           <a
-            title=?{shrunk ? Some("Sign Out") : None}
+            title=?{shrunk ? Some("Sair") : None}
             className={bottomLinkClasses(shrunk)}
             rel="nofollow"
             href="/users/sign_out">
             <i className="fas fa-sign-out-alt fa-fw text-lg" />
-            {shrunk ? React.null : <span className="ml-2"> {"Sign Out" |> str} </span>}
+            {shrunk ? React.null : <span className="ml-2"> {"Sair" |> str} </span>}
           </a>
         </li>
       </ul>

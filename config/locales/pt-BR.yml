@@ -136,7 +136,7 @@ pt-BR:
         completed: Concluido
         locked: Bloqueado
         pending: Pendente
-        pending_review: Revisão pendente
+        pending_review: Avaliação pendente
         rejected: Rejeitado
     CoursesReport__Overview:
       attempted: ' Tentativa'
@@ -149,8 +149,8 @@ pt-BR:
       quiz: Questionário
       schedule_coaching_session: Agende uma sessão de coaching
       targets_completed: 'Completed: %{targetsCount}'
-      targets_overview: Visão geral dos módulos
-      targets_pending_review: 'Revisão pendente: %{targetsCount}'
+      targets_overview: Visão geral das aulas
+      targets_pending_review: 'Avaliação pendente: %{targetsCount}'
     CoursesReport__SubmissionsList:
       completed: Concluido
       filter_by_another_level: Filter by another level
@@ -159,7 +159,7 @@ pt-BR:
       filter_by_level_or_status: Filter by level, or by status
       load_more: Carregar mais...
       no_submissions_to_show: 'Nenhum envio para mostrar '
-      pending_review: Revisão pendente
+      pending_review: Avaliação pendente
       rejected: Rejeitado
       sort_by: 'Ordenar por:'
       status: Status
@@ -199,13 +199,13 @@ pt-BR:
       personal_coaches: Personal Coaches
       quiz: Quiz
       submissions: Submissões
-      targets: ' Módulos'
-      targets_overview: Visão geral dos módulos
+      targets: ' Aulas'
+      targets_overview: Visão geral das aulas
       team_coaches: Team Coaches
       total_targets_completed: Total de módulos concluídos
     CurriculumEditor:
       create_level: Criar Nível
-      create_target_group: Criar módulo
+      create_target_group: Criar Aula
       edit_selected_level: Edit selected level
     CurriculumEditor__ContentBlockCreator:
       button_labels:

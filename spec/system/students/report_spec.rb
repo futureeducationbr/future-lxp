@@ -76,11 +76,11 @@ feature "Course students report", js: true do
     click_link student.name
 
     expect(page).to have_text(student.name)
-    expect(page).to have_text('N&iacute;vel de progresso')
+    expect(page).to have_text('Nível de progresso')
     expect(page).to have_selector('.student-overlay__student-level', count: course.levels.where.not(number: 0).count)
 
     # Targets Overview
-    expect(page).to have_text('Vis&atilde;o Geral')
+    expect(page).to have_text('Visao Geral')
 
     within("div[aria-label='target-completion-status']") do
       expect(page).to have_content('Total Targets Completed')

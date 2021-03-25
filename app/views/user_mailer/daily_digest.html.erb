@@ -27,7 +27,7 @@
     <p style="margin-top: 10px;">
 
       Há <%= article(pending_submissions_count) %> <strong><%= pending_submissions_count %></strong>
-      um novo <%= 'submission'.pluralize(pending_submissions_count) %> para revisão
+      novo(s) <%= 'submission'.pluralize(pending_submissions_count) %> para avaliação
       em <%= pluralize(@updates[:coach].length, 'course') %>
       onde você é um mentor:
     </p>

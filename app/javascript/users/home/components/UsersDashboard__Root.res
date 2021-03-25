@@ -33,7 +33,7 @@ let headerSectiom = (userName, userTitle, avatarUrl, showUserEdit) =>
     {showUserEdit
       ? <a className="btn" href="/user/edit">
           <i className="fas fa-edit text-xs md:text-sm mr-2" />
-          <span> {"Edit Profile" |> str} </span>
+          <span> {"Alterar Perfil" |> str} </span>
         </a>
       : React.null}
   </div>
@@ -148,16 +148,16 @@ let courseLinks = (course, currentSchoolAdmin, communities) => {
         )
       : React.null}
     {cta != #ViewCourse
-      ? courseLink(studentLink(courseId, "curriculum"), "View Curriculum", "fas fa-book")
+      ? courseLink(studentLink(courseId, "curriculum"), "Ver Currículo", "fas fa-book")
       : React.null}
     {course |> Course.enableLeaderboard
-      ? courseLink(studentLink(courseId, "leaderboard"), "Leaderboard", "fas fa-calendar-alt")
+      ? courseLink(studentLink(courseId, "leaderboard"), "Classificação", "fas fa-calendar-alt")
       : React.null}
     {course |> Course.review && cta != #ReviewSubmissions
-      ? courseLink(studentLink(courseId, "review"), "Review Submissions", "fas fa-check-square")
+      ? courseLink(studentLink(courseId, "review"), "Avaliar", "fas fa-check-square")
       : React.null}
     {course |> Course.review
-      ? courseLink(studentLink(courseId, "students"), "My Students", "fas fa-user-friends")
+      ? courseLink(studentLink(courseId, "students"), "Meus Alunos", "fas fa-user-friends")
       : React.null}
     {communityLinks(course |> Course.linkedCommunities, communities)}
   </div>
