@@ -113,9 +113,9 @@ pt-BR:
     CoursesCurriculum__Overlay:
       close_button: Fechar
       completion_tab_complete: Completo
-      completion_tab_completed: Concluído
+      completion_tab_completed: Concluido
       completion_tab_locked: Bloqueado
-      completion_tab_mark_complete: Marcar como Concluído
+      completion_tab_mark_complete: Marcar como Concluido
       completion_tab_quiz_result: Resultado do questionário
       completion_tab_submissions: Envios e feedback
       completion_tab_take_quiz: Faça o teste
@@ -126,14 +126,14 @@ pt-BR:
       pending_team_members_notice: 'You have team members who are yet to complete this target:'
       preview_mode_text: You are currently looking at a preview of this course.
       previous_target_button: Lição Anterior
-      scroll_to_top: Role para cima
+      scroll_to_top: Ir para o topo
     CoursesCurriculum__TargetStatus:
       access_locked: Your access to this course has ended.
       course_locked: The course has ended and submissions are disabled for all target!
       level_locked: You must level up to complete this target.
       prerequisites_incomplete: This target has pre-requisites that are incomplete.
       status:
-        completed: Concluído
+        completed: Concluido
         locked: Bloqueado
         pending: Pendente
         pending_review: Revisão pendente
@@ -142,7 +142,7 @@ pt-BR:
       attempted: ' Tentativa'
       average_grades: Notas médias
       average_quiz_score: Average Quiz Score
-      course_completed: Curso concluído!
+      course_completed: Curso Concluido!
       incomplete_targets: 'Incompleto: %{targetsCount}'
       level_progress: Progresso
       personal_coaches: Personal Coaches
@@ -152,7 +152,7 @@ pt-BR:
       targets_overview: Visão geral dos módulos
       targets_pending_review: 'Revisão pendente: %{targetsCount}'
     CoursesReport__SubmissionsList:
-      completed: Concluído
+      completed: Concluido
       filter_by_another_level: Filter by another level
       filter_by_another_level_or_status: Filter by another level, or by status
       filter_by_level: Filter by level
@@ -191,7 +191,7 @@ pt-BR:
       average_grades: Notas médias
       average_quiz_score: Pontuação média do questionário
       close_student_report: Fechar relatório do aluno
-      course_completed: Curso concluído!
+      course_completed: Curso Concluido!
       dropped_out_at: This student dropped out of the course on %{date}.
       level_progress: Progresso na aprendizagem
       notes: Notas

@@ -126,7 +126,7 @@ en:
       pending_team_members_notice: 'You have team members who are yet to complete this target:'
       preview_mode_text: You are currently looking at a preview of this course.
       previous_target_button: Lição Anterior
-      scroll_to_top: Role para cima
+      scroll_to_top: Ir para o topo
     CoursesCurriculum__TargetStatus:
       access_locked: Your access to this course has ended.
       course_locked: The course has ended and submissions are disabled for all target!
@@ -148,7 +148,7 @@ en:
       personal_coaches: Personal Coaches
       quiz: Questionário
       schedule_coaching_session: Agende uma sessão de coaching
-      targets_completed: 'Completed: %{targetsCount}'
+      targets_completed: 'Concluído: %{targetsCount}'
       targets_overview: Visão geral dos módulos
       targets_pending_review: 'Revisão pendente: %{targetsCount}'
     CoursesReport__SubmissionsList:

@@ -40,20 +40,20 @@ let actionButtons = (community, targetId) => {
       title={"Browse all topics about this target in the " ++ (communityName ++ " community")}
       href={linkToCommunity(communityId, targetId)}
       className="btn btn-default mr-3">
-      {"Go to community" |> str}
+      Ir para comunidade
     </a>
     <a
       title={"Create a topic in the " ++ (communityName ++ " community")}
       href={linkToNewPost(communityId, targetId)}
       className="btn btn-primary">
-      {"Create a topic" |> str}
+      Criar um tópico
     </a>
   </div>
 }
 
 let communityTitle = community =>
   <h5 className="font-bold">
-    {"Topics from " ++ ((community |> Community.name) ++ " community") |> str}
+    {"Topicos da comunidade de " ++ ((community |> Community.name)) |> str}
   </h5>
 
 @react.component

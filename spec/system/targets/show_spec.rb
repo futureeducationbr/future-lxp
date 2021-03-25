@@ -148,7 +148,7 @@ feature 'Target Overlay', js: true do
     expect { last_submission.reload }.to raise_exception(ActiveRecord::RecordNotFound)
 
     # ...and the complete section should be accessible again.
-    expect(page).to have_selector('.course-overlay__body-tab-item', text: 'Concluído')
+    expect(page).to have_selector('.course-overlay__body-tab-item', text: 'Concluido')
   end
 
   scenario "student visits the target's link with a mangled ID" do
@@ -166,7 +166,7 @@ feature 'Target Overlay', js: true do
       sign_in_user student.user, referrer: target_path(target_l1)
 
       # There should be a mark as complete button on the learn page.
-      expect(page).to have_button('Marcar como Concluído')
+      expect(page).to have_button('Marcar como Concluido')
 
       # Completion instructions should be show on learn section for auto-verified targets
       expect(page).to have_text('Antes de marcar como completo')
@@ -176,16 +176,16 @@ feature 'Target Overlay', js: true do
       expect(page).not_to have_selector('.complete-button-selected')
 
       # Clicking the mark as complete tab option should highlight the button.
-      find('.course-overlay__body-tab-item', text: 'Marcar como Concluído').click
+      find('.course-overlay__body-tab-item', text: 'Marcar como Concluido').click
       expect(page).to have_selector('.complete-button-selected')
 
-      click_button 'Marcar como Concluído'
+      click_button 'Marcar como Concluido'
 
       # The button should be replaced with a 'completed' marker.
-      expect(page).to have_selector('.complete-button-selected', text: 'Concluído')
+      expect(page).to have_selector('.complete-button-selected', text: 'Concluido')
 
       # The target should be marked as passed.
-      expect(page).to have_selector('.course-overlay__header-title-card', text: 'Concluído')
+      expect(page).to have_selector('.course-overlay__header-title-card', text: 'Concluido')
 
       # Since this is a team target, other students shouldn't be listed as pending.
       expect(page).not_to have_content('Você tem membros da equipe que ainda não completaram esta meta')

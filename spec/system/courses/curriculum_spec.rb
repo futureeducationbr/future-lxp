@@ -174,7 +174,7 @@ feature "Student's view of Course Curriculum", js: true do
 
     # Non-reviewed targets that do not have prerequisites should be unlocked for completion.
     click_link l5_non_reviewed_target.title
-    click_button 'Marcar como concluído'
+    click_button 'Marcar como concluido'
 
     expect(page).to have_text('Target has been marked as complete')
 
@@ -187,7 +187,7 @@ feature "Student's view of Course Curriculum", js: true do
     click_link l5_non_reviewed_target_with_prerequisite.title
 
     expect(page).not_to have_text('This target has pre-requisites that are incomplete.')
-    expect(page).to have_button 'Marcar como concluído'
+    expect(page).to have_button 'Marcar como concluido'
 
     click_button 'Fechar'
 
