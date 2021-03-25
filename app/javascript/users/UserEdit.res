@@ -378,8 +378,8 @@ let make = (
             <p className="font-semibold">
               {(
                 state.hasCurrentPassword
-                  ? "Change your current password"
-                  : "Set password for your account"
+                  ? "Mudar a sua senha atual"
+                  : "Defina a nova senha"
               ) |> str}
             </p>
             {state.hasCurrentPassword
@@ -487,13 +487,13 @@ let make = (
           <div className="w-full md:w-1/3 pr-4">
             <h3 className="text-lg font-semibold"> {"Conta" |> str} </h3>
             <p className="mt-1 text-sm text-gray-700">
-              {"Manage your account in this school" |> str}
+              {"Gerencie a sua conta" |> str}
             </p>
           </div>
           <div className="mt-5 md:mt-0 w-full md:w-2/3">
             <p className="font-semibold text-red-700"> {"Apagar minha conta" |> str} </p>
             <p className="text-sm text-gray-700 mt-1">
-              {"Deleting your user account removes all your data from this school. Replies to posts in communities and feedback to students (if user has a coach profile) will not be deleted. Admin rights need to be revoked if you are an admin in this school.  " |> str}
+              {"Excluir sua conta de usuário remove todos os seus dados desta escola. Respostas a postagens em comunidades e feedback para alunos (se o usuário tiver um perfil de mentor) não serão excluídos.  " |> str}
             </p>
             <div className="mt-4">
               {isSchoolAdmin || hasValidDeleteAccountToken

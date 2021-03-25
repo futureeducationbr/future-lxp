@@ -222,7 +222,7 @@ let teamCard = (
 
 let showEmpty = (filter, loading, updateFilterCB) =>
   loading == Loading.NotLoading && filter |> Filter.isEmpty
-    ? <div className="text-center"> {"No students here." |> str} </div>
+    ? <div className="text-center"> {"Nenhum aluno por enquanto." |> str} </div>
     : <div className="flex">
         <div className="w-1/2 px-3">
           <p className="text-xl font-semibold mt-4"> {"Sorry, no results found." |> str} </p>
@@ -232,7 +232,7 @@ let showEmpty = (filter, loading, updateFilterCB) =>
           </ul>
           <button
             className="btn btn-default mt-4" onClick={_ => updateFilterCB(filter |> Filter.clear)}>
-            {"Clear Filter" |> str}
+            {"Limpar Filtro" |> str}
           </button>
         </div>
         <div className="w-1/2"> <img className="w-full" src=notFoundIcon /> </div>

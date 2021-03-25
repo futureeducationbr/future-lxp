@@ -569,12 +569,12 @@ let make = (~communityId, ~target, ~topicCategories) => {
         <div
           className="flex py-4 px-4 md:px-6 w-full bg-yellow-100 border border-dashed border-yellow-400 rounded justify-between items-center">
           <p className="w-3/5 md:w-4/5 font-semibold text-sm">
-            {"Target: " ++ Target.title(target) |> str}
+            {"Aula: " ++ Target.title(target) |> str}
           </p>
           <a
             className="no-underline bg-yellow-100 border border-yellow-400 px-3 py-2 hover:bg-yellow-200 rounded-lg cursor-pointer text-xs font-semibold"
             href={"/communities/" ++ communityId}>
-            {"Clear Filter" |> str}
+            {"Limpar Filtro" |> str}
           </a>
         </div>
       </div>

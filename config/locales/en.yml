@@ -80,7 +80,7 @@ en:
       level_locked_explanation: You can access the content on %{date}.
       level_locked_for_students_notice: This level is still locked for students, and will be unlocked on <strong>%{date}</strong>.
       level_locked_notice: The level is currently locked!
-      milestone_targets: Aula
+      milestone_targets: MÓDULO
       nav_next_level: Próximo Nível
       nav_previous_level: Nível Anterior
     CoursesCurriculum__Learn:
