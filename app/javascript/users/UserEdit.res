@@ -322,7 +322,7 @@ let make = (
                   rows=3
                   onChange={event => send(UpdateAbout(ReactEvent.Form.target(event)["value"]))}
                   className="appearance-none block text-sm w-full shadow-sm border border-gray-400 rounded px-4 py-2 my-2 leading-relaxed focus:outline-none focus:border-gray-500"
-                  placeholder="Uma breve introdução sobre você"
+                  placeholder="Descreva sobre voce"
                 />
               </div>
             </div>
@@ -369,7 +369,7 @@ let make = (
         </div>
         <div className="flex flex-col md:flex-row mt-10 md:mt-12">
           <div className="w-full md:w-1/3 pr-4">
-            <h3 className="text-lg font-semibold"> {"Segurança" |> str} </h3>
+            <h3 className="text-lg font-semibold"> {"Segurancsa" |> str} </h3>
             <p className="mt-1 text-sm text-gray-700">
               {"Atualize suas credenciais de login." |> str}
             </p>
@@ -439,21 +439,21 @@ let make = (
         </div>
         <div className="flex flex-col md:flex-row mt-10 md:mt-12">
           <div className="w-full md:w-1/3 pr-4">
-            <h3 className="text-lg font-semibold"> {"Notificações" |> str} </h3>
+            <h3 className="text-lg font-semibold"> {"Notificacoes" |> str} </h3>
             <p className="mt-1 text-sm text-gray-700">
-              {"Atualize as configurações de notificações por e-mail." |> str}
+              {"Atualize as configuracoes de notificacoes por e-mail." |> str}
             </p>
           </div>
           <div className="mt-5 md:mt-0 w-full md:w-2/3">
-            <p className="font-semibold"> {"Community Digest" |> str} </p>
+            <p className="font-semibold"> {"Resumo das Comunidades" |> str} </p>
             <p className="text-sm text-gray-700">
-              {"Os e-mails de resumo da comunidade contêm novas perguntas de suas comunidades e uma seleção de perguntas não respondidas da semana passada." |> str}
+              {"Os e-mails de resumo da comunidade contem novas perguntas de suas comunidades e uma selecao de perguntas nao respondidas da semana passada." |> str}
             </p>
             <div className="mt-6">
               <div className="flex items-center">
                 <Radio
                   id="daily_mail_enable"
-                  label="Envie-me um email diário"
+                  label="Envie-me um email diario"
                   onChange={event =>
                     send(UpdateDailyDigest(ReactEvent.Form.target(event)["checked"]))}
                   checked=state.dailyDigest
@@ -477,7 +477,7 @@ let make = (
           disabled={saveDisabled(state)}
           onClick={updateUser(state, send)}
           className="btn btn-primary">
-          {"Salvar Mudanças" |> str}
+          {"Salvar Perfil" |> str}
         </button>
       </div>
     </div>
@@ -493,7 +493,7 @@ let make = (
           <div className="mt-5 md:mt-0 w-full md:w-2/3">
             <p className="font-semibold text-red-700"> {"Apagar minha conta" |> str} </p>
             <p className="text-sm text-gray-700 mt-1">
-              {"Excluir sua conta de usuário remove todos os seus dados desta escola. Respostas a postagens em comunidades e feedback para alunos (se o usuário tiver um perfil de mentor) não serão excluídos.  " |> str}
+              {"Excluir sua conta de usuario remove todos os seus dados desta escola. Respostas a postagens em comunidades e feedback para alunos (se o usuario tiver um perfil de mentor) nao serao excluidos.  " |> str}
             </p>
             <div className="mt-4">
               {isSchoolAdmin || hasValidDeleteAccountToken

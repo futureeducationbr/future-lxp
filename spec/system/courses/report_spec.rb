@@ -152,7 +152,7 @@ feature 'Students view performance report and submissions overview', js: true do
     end
 
     # Switching tabs should preserve already loaded submissions
-    click_button 'Visão Geral'
+    click_button 'Geral'
     click_button 'Envios'
 
     within("div[aria-label='student-submissions']") do

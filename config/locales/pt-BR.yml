@@ -328,15 +328,15 @@ pt-BR:
       button_add_new_students: Adicionar novos estudantes
       button_all_students: Todos Estudantes
       button_inactive_students: Inactive Students
-      sort_criterion_label: 'Sort by:'
+      sort_criterion_label: 'Ordenar por:'
       sort_criterion_last_created: Last Created
       sort_criterion_last_updated: Last Updated
       sort_criterion_name: Nome
     StudentsEditor__Search:
       filter_input_label: 'Filtar por:'
-      filter_input_placeholder: Type name, tag or level
+      filter_input_placeholder: Digite o nome, tag ou nivel
     TopicsShow__LikeManager:
-      like_button_tooltip: Like this post
+      like_button_tooltip: Curtir esta postagem
     TopicsShow__PostShow:
       delete_post_confirm_dialog: Are you sure you want to delete the post? This cannot be undone.
       delete_reply_string: Delete Reply
@@ -345,21 +345,21 @@ pt-BR:
       deleted_user_name: Deleted User
       edit_post_string: Alterar post
       edit_reply_string: Alterar resposta
-      go_to_solution_button: Go to solution
-      history_button_text: History
-      last_edited_by_label: 'Last edited by '
+      go_to_solution_button: Ir para a solução
+      history_button_text: Histótico
+      last_edited_by_label: 'Última edição por '
       mark_as_solution_label: Marcar como solucionado
       new_reply_button: Responder
       solution_icon_label: Solucionado
     TopicsShow__Root:
       edit_topic_button: Alterar tópico
       linked_target_label: 'Linked Target: '
-      lock_topic_button: Lock Topic
+      lock_topic_button: Bloquear
       locked_topic_notice: This topic thread has been locked; no new replies can be posted.
-      topic_category_label: 'Topic Category: '
-      topic_editor_cancel_button: Cancel
-      unlock_topic_button: Unlock Topic
-      update_topic_button: Update Topic
+      topic_category_label: 'Categoria: '
+      topic_editor_cancel_button: Cancelar
+      unlock_topic_button: Desbloquear
+      update_topic_button: Atualizar
       view_target_button: Ver Aula
     TopicsShow__SubscriptionManager:
       subscribe: Assinar

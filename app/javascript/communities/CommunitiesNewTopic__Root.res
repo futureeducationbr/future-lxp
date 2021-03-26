@@ -294,7 +294,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
                   <label
                     className="inline-block tracking-wide text-gray-900 text-xs font-semibold mb-2"
                     htmlFor="title">
-                    {"Título" |> str}
+                    {"Titulo" |> str}
                   </label>
                   <input
                     id="title"
@@ -305,7 +305,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
                       let newTitle = ReactEvent.Form.target(event)["value"]
                       updateTitleAndSearch(state, send, communityId, newTitle)
                     }}
-                    placeholder="Título para o novo tópico"
+                    placeholder="Titulo para o novo topico"
                   />
                 </div>
                 {ReactUtils.nullIf(
@@ -342,7 +342,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
               <label
                 className="inline-block tracking-wide text-gray-900 text-xs font-semibold mb-2"
                 htmlFor="body">
-                {"Descrição" |> str}
+                {"Descricao" |> str}
               </label>
               <div className="w-full flex flex-col">
                 <MarkdownEditor
@@ -350,7 +350,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
                   textareaId="body"
                   onChange={markdown => send(UpdateBody(markdown))}
                   value=state.body
-                  placeholder="Se você estiver fazendo uma pergunta, tente ser o mais descritivo possível para tornar mais fácil para outras pessoas postarem as respostas. Você pode usar o Markdown para formatar este texto."
+                  placeholder="Se voce estiver fazendo uma pergunta, tente ser o mais descritivo possivel para tornar mais facil para outras pessoas postarem as respostas. Voce pode usar o Markdown para formatar este texto."
                   profile=Markdown.QuestionAndAnswer
                   maxLength=10000
                 />

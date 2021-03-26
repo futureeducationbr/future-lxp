@@ -214,12 +214,12 @@ let make = (
           : React.null}
         {ReactUtils.nullUnless(
           {
-            let tip = <div className="text-center"> {"Mark as solution" |> str} </div>
+            let tip = <div className="text-center"> {"Marcar como solucionado" |> str} </div>
             <div
               className="hidden md:flex md:flex-col items-center text-center md:w-14 pr-3 md:pr-4 md:mt-4">
               <Tooltip tip position=#Top>
                 <button
-                  ariaLabel="Mark as solution"
+                  ariaLabel="Marcar como solucionado"
                   onClick={_ => markPostAsSolution(post |> Post.id, markPostAsSolutionCB)}
                   className="mark-as-solution__button bg-gray-100 flex items-center text-center rounded-full p-2 md:p-3 hover:bg-gray-200 text-gray-700">
                   <PfIcon className="if i-check-solid text-sm lg:text-base" />
@@ -398,15 +398,15 @@ let make = (
                 navigateToEditor()
               }}
               id={"reply-button-" ++ Post.id(post)}
-              ariaLabel={isFirstPost ? "Add reply to topic" : "Add reply to post " ++ Post.id(post)}
+              ariaLabel={isFirstPost ? "Adicionar resposta ao topico" : "Add reply to post " ++ Post.id(post)}
               className="bg-gray-100 lg:border lg:bg-gray-200 p-2 rounded text-xs font-semibold focus:border-primary-400 hover:bg-gray-300">
-              <FaIcon classes="fas fa-reply mr-2" /> {"Reply" |> str}
+              <FaIcon classes="fas fa-reply mr-2" /> {"Responder" |> str}
             </button>
           </div>
         </div>
         {showReplies
           ? <div
-              ariaLabel={"Replies to post " ++ Post.id(post)}
+              ariaLabel={"Respostas a postagem " ++ Post.id(post)}
               className="lg:pl-10 pt-2 topics-post-show__replies-container">
               {repliesToPost
               |> Array.map(post => <TopicsShow__PostReply key={post |> Post.id} post users />)

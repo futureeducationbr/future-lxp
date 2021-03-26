@@ -250,7 +250,7 @@ let make = (
         | SchoolAdmin =>
           <ul>
             <li>
-              {topLink(selectedOption, Overview, "/school", shrunk, "fas fa-eye", "Visão Geral")}
+              {topLink(selectedOption, Overview, "/school", shrunk, "fas fa-eye", "Geral")}
             </li>
             <li>
               {topLink(

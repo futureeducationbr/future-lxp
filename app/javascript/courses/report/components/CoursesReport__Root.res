@@ -142,7 +142,7 @@ let make = (~studentId, ~levels, ~coaches, ~teamStudentIds) => {
             <button
               className={buttonClasses(state.selectedTab == #Overview)}
               onClick={_ => send(SelectOverviewTab)}>
-              {"Visão Geral" |> str}
+              {"Geral" |> str}
             </button>
             <button
               className={buttonClasses(state.selectedTab == #Submissions)}

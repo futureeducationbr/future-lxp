@@ -231,7 +231,7 @@ let make = (
           )}
           <div>
             <MarkdownEditor
-              placeholder="Type in your reply. You can use Markdown to format your response."
+              placeholder="Digite sua resposta. Voce pode usar o Markdown para formatar sua resposta."
               textareaId="new-reply"
               onChange=updateMarkdownCB
               value=state.body
