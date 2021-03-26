@@ -89,10 +89,10 @@ let renderIcon = view => {
 
 let headerText = (view, schoolName) =>
   switch view {
-  | FederatedSignIn => "Sign in to " ++ schoolName
-  | SignInWithPassword => "Continue with email"
-  | SignInEmailSent => "We've sent you a magic link!"
-  | ForgotPassword => "Reset password"
+  | FederatedSignIn => "Entrar na " ++ schoolName
+  | SignInWithPassword => "Continuar com email"
+  | SignInEmailSent => "Enviamos a voce um link magico!"
+  | ForgotPassword => "Redefinir senha"
   }
 
 let federatedLoginUrl = (oauthHost, fqdn, provider) =>
@@ -174,7 +174,7 @@ let renderSignInWithEmail = (
     <div>
       <label
         className="inline-block tracking-wide text-gray-900 text-xs font-semibold" htmlFor="email">
-        {"Endereço de Email" |> str}
+        {"Email" |> str}
       </label>
       <input
         className="appearance-none h-10 mt-1 block w-full text-gray-800 border border-gray-400 rounded py-2 px-4 text-sm bg-gray-100 hover:bg-gray-200 focus:outline-none focus:bg-white focus:border-primary-400"
@@ -223,7 +223,7 @@ let renderSignInWithEmail = (
         <label
           className="block pl-2 font-semibold cursor-pointer text-xs select-none whitespace-no-wrap"
           htmlFor="sharedDevice">
-          {"Está usando um dispositivo compartilhado?" |> str}
+          {"Usando um dispositivo compartilhado?" |> str}
         </label>
       </div>
     </div>
@@ -256,7 +256,7 @@ let renderSignInEmailSent = () =>
 let renderForgotPassword = (email, saving, setEmail, setSaving, setView) =>
   <div className="max-w-sm mx-auto md:px-9 pb-4">
     <div className="text-sm mt-2 text-center pb-3">
-      {"Digite seu e-mail para recuperação de senha" |> str}
+      {"Digite seu e-mail para recuperar a sua senha" |> str}
     </div>
     <label
       className="inline-block tracking-wide text-gray-900 text-xs font-semibold" htmlFor="email">
