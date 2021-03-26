@@ -26,13 +26,13 @@ module StartupFeedbackModule
 
     def slack_message(founder)
       formatted_reference_url = @startup_feedback.reference_url.present? ? "<#{@startup_feedback.reference_url}|recent update>" : "recent update"
-      salutation = "Hey! You have some feedback from #{@startup_feedback.faculty.name} on your #{formatted_reference_url}.\n"
+      salutation = "Ei! Você tem um feedback de #{@startup_feedback.faculty.name} em seu #{formatted_reference_url}.\n"
       feedback_url = Rails.application.routes.url_helpers.student_url(founder.id, show_feedback: @startup_feedback.id)
       team_id = Rails.application.secrets.slack.dig(:team_ids, :public_slack)
       faculty_user_id = @startup_feedback.faculty.slack_user_id
       coach_url = "slack://user?team=#{team_id}&id=#{faculty_user_id}"
-      feedback_text = "<#{feedback_url}|Click here> to view the feedback.\n"
-      ping_faculty = "<#{coach_url}|Discuss with Coach> about this feedback."
+      feedback_text = "<#{feedback_url}|Clique aqui> para ver o feedback.\n"
+      ping_faculty = "<#{coach_url}|Discuta com o mentor> sobre este feeback."
       salutation + feedback_text + ping_faculty
     end
 

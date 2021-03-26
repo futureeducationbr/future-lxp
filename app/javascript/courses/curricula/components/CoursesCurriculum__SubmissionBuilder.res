@@ -16,9 +16,9 @@ let buttonContents = (formState, checklist) => {
   }
 
   let text = switch formState {
-  | Attaching => "Attaching..."
-  | Saving => "Submitting..."
-  | Ready => checklist |> ArrayUtils.isEmpty ? "Complete" : "Submit"
+  | Attaching => "Anexando..."
+  | Saving => "Enviando..."
+  | Ready => checklist |> ArrayUtils.isEmpty ? "Concluido" : "Enviar"
   } |> str
 
   <span> icon text </span>
@@ -127,9 +127,9 @@ let setAttaching = (send, bool) => send(bool ? SetAttaching : SetReady)
 
 let statusText = formState =>
   switch formState {
-  | Attaching => "Attaching..."
-  | Saving => "Submitting..."
-  | Ready => "Submit"
+  | Attaching => "Anexando..."
+  | Saving => "Enviando..."
+  | Ready => "Enviar"
   }
 
 let tooltipText = preview =>

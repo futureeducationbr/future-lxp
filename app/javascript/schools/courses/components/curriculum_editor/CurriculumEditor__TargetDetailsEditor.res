@@ -104,7 +104,7 @@ let loadTargetDetails = (targetId, send) =>
   }) |> ignore
 
 let defaultChecklist = [
-  ChecklistItem.make(~title="Describe your submission", ~kind=LongText, ~optional=false),
+  ChecklistItem.make(~title="Descreva seu envio", ~kind=LongText, ~optional=false),
 ]
 
 let computeMethodOfCompletion = targetDetails => {

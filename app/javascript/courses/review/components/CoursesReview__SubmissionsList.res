@@ -157,7 +157,7 @@ let make = (
           className="p-4 md:px-6 md:py-5 border-b bg-white flex flex-col sm:flex-row items-center justify-between">
           <div className="flex flex-col w-full sm:w-auto">
             <h2 className="font-semibold text-sm lg:text-base leading-tight">
-              {"Submission #" ++ (submissionNumber |> string_of_int) |> str}
+              {"Envio #" ++ (submissionNumber |> string_of_int) |> str}
             </h2>
             <span className="text-xs text-gray-800 pt-px">
               {overlaySubmission

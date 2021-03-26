@@ -46,7 +46,7 @@ let showFeedback = feedback => feedback |> Array.mapi((index, f) =>
           }}
         </div>
         <div>
-          <p className="text-xs leading-tight"> {"Feedback from:" |> str} </p>
+          <p className="text-xs leading-tight"> {"Feedback de:" |> str} </p>
           <div>
             <h4 className="font-semibold text-base leading-tight block md:inline-flex self-end">
               {f |> Feedback.coachName |> str}
@@ -97,7 +97,7 @@ let make = (
                 <DisablingCover disabled=state.saving>
                   <CoursesReview__FeedbackEditor
                     feedback=state.newFeedback
-                    label="Add feedback"
+                    label="Adicionar feedback"
                     updateFeedbackCB={updateFeedbackCB(setState)}
                     reviewChecklist
                     updateReviewChecklistCB
@@ -111,7 +111,7 @@ let make = (
                     className="btn btn-success border border-green-600 w-full md:w-auto"
                     onClick={_ =>
                       createFeedback(submissionId, state.newFeedback, setState, addFeedbackCB)}>
-                    {"Share Feedback" |> str}
+                    {"Compartilhar Feedback" |> str}
                   </button>
                 </div>
               </div>
@@ -120,8 +120,8 @@ let make = (
                   onClick={_ => setState(state => {...state, showFeedbackEditor: true})}
                   className="btn btn-primary-ghost cursor-pointer shadow hover:shadow-lg w-full md:w-auto">
                   {switch feedback {
-                  | [] => "Add feedback"
-                  | _ => "Add another feedback"
+                  | [] => "Adicionar Feedback"
+                  | _ => "Adicionar outro Feedback"
                   } |> str}
                 </button>
               </div>}

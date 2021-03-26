@@ -132,7 +132,7 @@ en:
       access_locked: Your access to this course has ended.
       course_locked: The course has ended and submissions are disabled for all target!
       level_locked: You must level up to complete this target.
-      prerequisites_incomplete: This target has pre-requisites that are incomplete.
+      prerequisites_incomplete: Você precisa concluir a aula anterior para avançar.
       status:
         completed: Concluído
         locked: Bloqueado
@@ -147,7 +147,7 @@ en:
       course_completed: Curso concluído!
       incomplete_targets: 'Incompleto: %{targetsCount}'
       level_progress: Progresso
-      personal_coaches: Personal Coaches
+      personal_coaches: Meus Mentores
       quiz: Questionário
       schedule_coaching_session: Agende uma sessão de coaching
       targets_completed: 'Concluído: %{targetsCount}'

@@ -19,14 +19,14 @@ class AddChecklistToTargets < ActiveRecord::Migration[6.0]
 
   def default_checklist
     description = {
-      title: "Describe your submission",
+      title: "Descreva seu envio",
       kind: "longText",
       optional: false,
     }
 
     link =
       {
-        title: "Attach a link",
+        title: "Anexa um link",
         optional: true,
         kind: "link",
 
@@ -34,7 +34,7 @@ class AddChecklistToTargets < ActiveRecord::Migration[6.0]
 
     file =
       {
-        title: "Attach files",
+        title: "Anexar arquivos",
         optional: true,
         kind: "files",
       }

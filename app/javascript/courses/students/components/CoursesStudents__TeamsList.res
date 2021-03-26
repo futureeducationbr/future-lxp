@@ -64,7 +64,7 @@ let showStudent = (team, levels, teamCoaches) => {
       className="w-2/5 flex items-center justify-end md:justify-between p-3 md:p-4">
       <CoursesStudents__TeamCoaches
         title={<div className="mb-1 font-semibold text-gray-800 text-tiny uppercase">
-          {"Personal Coaches" |> str}
+          {"Meus Mentores" |> str}
         </div>}
         className="hidden md:inline-block"
         coaches=teamCoaches

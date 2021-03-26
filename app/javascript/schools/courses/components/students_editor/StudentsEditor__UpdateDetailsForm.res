@@ -328,7 +328,7 @@ let make = (~student, ~team, ~teamTags, ~courseCoaches, ~updateFormCB) => {
       <div className="mt-5">
         <div className="border-b pb-4 mb-2 mt-5 ">
           <span className="inline-block mr-1 text-xs font-semibold">
-            {(isSingleStudent ? "Personal Coaches" : "Team Coaches") |> str}
+            {(isSingleStudent ? "Meus Mentores" : "Mentores da Equipe") |> str}
           </span>
           {teamCoachesEditor(courseCoaches, state, send)}
         </div>

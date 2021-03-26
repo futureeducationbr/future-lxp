@@ -127,7 +127,7 @@ let make = (~target, ~targetDetails, ~addSubmissionCB, ~preview) => {
                 setSaving,
                 addSubmissionCB,
               )}>
-              {str("Submit Quiz")}
+              {str("Enviar")}
             </button>
           : {
               let nextQuestion = currentQuestion |> QuizQuestion.nextQuestion(quizQuestions)
@@ -140,7 +140,7 @@ let make = (~target, ~targetDetails, ~addSubmissionCB, ~preview) => {
                   )
                   setSelectedAnswer(_ => None)
                 }}>
-                {str("Next Question")}
+                {str("Próxima pergunta")}
               </button>
             }}
       </div>

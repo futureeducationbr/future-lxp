@@ -104,7 +104,7 @@ feature 'Students view performance report and submissions overview', js: true do
     end
 
     # Coaches assigned to student
-    expect(page).to have_content('Personal Coaches')
+    expect(page).to have_content('Meus Mentores')
     expect(page).to have_content(team_coach.name)
     expect(page).to_not have_content(course_coach.name)
 

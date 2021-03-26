@@ -145,7 +145,7 @@ pt-BR:
       course_completed: Curso Concluido!
       incomplete_targets: 'Incompleto: %{targetsCount}'
       level_progress: Progresso
-      personal_coaches: Personal Coaches
+      personal_coaches: Meus Mentores
       quiz: Questionário
       schedule_coaching_session: Agende uma sessão de coaching
       targets_completed: 'Completed: %{targetsCount}'
@@ -196,7 +196,7 @@ pt-BR:
       level_progress: Progresso na aprendizagem
       notes: Notas
       other_team_members: Outros membros do time
-      personal_coaches: Personal Coaches
+      personal_coaches: Meus Mentores
       quiz: Quiz
       submissions: Submissões
       targets: ' Aulas'
