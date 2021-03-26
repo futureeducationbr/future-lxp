@@ -140,7 +140,7 @@ en:
         pending_review: Avaliação pendente
         rejected: Rejeitado
     CoursesReport__Overview:
-      report_tab: Relatório
+      report_tab: Relatórios
       attempted: ' Tentativa'
       average_grades: Notas médias
       average_quiz_score: Average Quiz Score
