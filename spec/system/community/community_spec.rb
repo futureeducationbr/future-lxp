@@ -69,12 +69,12 @@ feature 'Community', js: true do
     expect(page).to have_text(community.name)
 
     click_link 'Novo Tópico'
-    expect(page).to have_text('Crie um novo tópico de discussão')
+    expect(page).to have_text('Crie um novo topico de discussao')
     fill_in 'Title', with: topic_title
     replace_markdown topic_body
     click_button 'Criar Tópico'
 
-    expect(page).not_to have_text('Crie um novo tópico de discussão')
+    expect(page).not_to have_text('Crie um novo topico de discussao')
     expect(page).to have_text(topic_title)
     expect(page).to have_text(topic_body)
     expect(community.topics.reload.find_by(title: topic_title).first_post.body).to eq(topic_body)

@@ -283,7 +283,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
         | None => React.null
         }}
         <h4 className="max-w-3xl w-full mx-auto pb-2 mt-2 px-3 lg:px-0">
-          {"Crie um novo tópico de discussão" |> str}
+          {"Crie um novo topico de discussao" |> str}
         </h4>
         <div className="md:px-3">
           <div

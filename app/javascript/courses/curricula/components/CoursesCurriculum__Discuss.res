@@ -16,7 +16,7 @@ let topicCard = topic => {
     key=topicId
     className="flex justify-between items-center px-5 py-4 bg-white border-t">
     <span className="text-sm font-semibold"> {topic |> Community.topicTitle |> str} </span>
-    <a href=topicLink className="btn btn-primary-ghost btn-small"> {"View" |> str} </a>
+    <a href=topicLink className="btn btn-primary-ghost btn-small"> {"Ver" |> str} </a>
   </div>
 }
 
@@ -25,9 +25,9 @@ let handleEmpty = () =>
     <i className="fa fa-comments text-5xl text-gray-600 mb-2 " />
     <div className="text-center">
       <h4 className="font-bold">
-        {"Não houve nenhuma discussão recente sobre esta aula." |> str}
+        {"Nao houve nenhuma discussao recente sobre esta aula." |> str}
       </h4>
-      <p> {"Use a comunidade para tirar suas dúvidas e ajudar seus colegas!" |> str} </p>
+      <p> {"Use a comunidade para tirar suas duvidas e ajudar seus colegas!" |> str} </p>
     </div>
   </div>
 
@@ -46,7 +46,7 @@ let actionButtons = (community, targetId) => {
       title={"Criar um tópico na comunidade " ++ (communityName ++ " ")}
       href={linkToNewPost(communityId, targetId)}
       className="btn btn-primary">
-      {"Criar um tópico" |> str}
+      {"Criar um topico" |> str}
     </a>
   </div>
 }
