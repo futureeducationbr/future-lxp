@@ -46,7 +46,7 @@ let statusBar = (~color, ~text) => {
 }
 
 let submissionStatusIcon = (~passed) => {
-  let text = passed ? "Completed" : "Rejected"
+  let text = passed ? "Concluído" : "Rejeitado"
   let color = passed ? "green" : "red"
 
   <div className="max-w-fc">
@@ -112,7 +112,7 @@ let submissions = (target, targetStatus, targetDetails, evaluationCriteria, coac
         </h2>
         <div
           className="text-xs font-semibold bg-gray-100 inline-block px-3 py-1 mr-2 rounded-t-lg border-t border-r border-l text-gray-800 leading-tight">
-          <span className="hidden md:inline"> {str("Submitted on ")} </span>
+          <span className="hidden md:inline"> {str("Enviado em ")} </span>
           {submission |> Submission.createdAtPretty |> str}
         </div>
       </div>
@@ -125,7 +125,7 @@ let submissions = (target, targetStatus, targetDetails, evaluationCriteria, coac
           />
         </div>
         {switch submission |> Submission.status {
-        | MarkedAsComplete => statusBar(~color="green", ~text="Completed")
+        | MarkedAsComplete => statusBar(~color="green", ~text="Concluído")
         | Pending =>
           <div
             className="bg-white p-3 md:px-6 md:py-4 flex border-t justify-between items-center w-full">
@@ -238,7 +238,7 @@ let make = (
 
   <div>
     <div className="flex justify-between items-end border-b pb-2">
-      <h4 className="text-base md:text-xl"> {"Your Submissions" |> str} </h4>
+      <h4 className="text-base md:text-xl"> {"Seus envios" |> str} </h4>
       {targetStatus |> TargetStatus.canSubmit(~resubmittable=target |> Target.resubmittable)
         ? switch showSubmissionForm {
           | true =>

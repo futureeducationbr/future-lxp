@@ -280,10 +280,10 @@ let make = (~reviewChecklist, ~updateReviewChecklistCB, ~closeEditModeCB, ~targe
               updateReviewChecklistCB,
             )}
           className="btn btn-success w-1/2 md:w-auto">
-          {"Save Checklist" |> str}
+          {"Salvar Checklist" |> str}
         </button>
         <button className="btn btn-subtle w-1/2 md:w-auto mr-4" onClick={_ => closeEditModeCB()}>
-          {"Cancel" |> str}
+          {"Cancelar" |> str}
         </button>
       </div>
     </DisablingCover>

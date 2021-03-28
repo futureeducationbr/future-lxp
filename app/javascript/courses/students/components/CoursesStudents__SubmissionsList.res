@@ -132,7 +132,7 @@ let showSubmission = (submissions, levels) =>
             </div>
             <div className="mt-1 ml-px text-xs text-gray-900">
               <span className="ml-1">
-                {"Submitted on " ++ (submission |> Submission.createdAtPretty) |> str}
+                {"Enviado em " ++ (submission |> Submission.createdAtPretty) |> str}
               </span>
             </div>
           </div>

@@ -22,7 +22,7 @@
 
 <% content_for :body do %>
   <p>
-    Please <%= link_to 'clique aqui', login_url%> para entrar na sua conta <%= @school_name%>.
+    Por favor <%= link_to 'clique aqui', login_url%> para entrar na sua conta <%= @school_name%>.
   </p>
 
   <%= render 'mailers/link_fallback', url: login_url%>

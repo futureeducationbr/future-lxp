@@ -14,7 +14,7 @@ type action =
   | SelectFile(string, list<string>)
   | ResetForm
 
-let defaultTitle = "Choose file to upload"
+let defaultTitle = "Escolha o arquivo para enviar"
 
 let reducer = (state, action) =>
   switch action {

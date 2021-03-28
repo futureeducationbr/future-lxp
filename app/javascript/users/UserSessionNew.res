@@ -91,7 +91,7 @@ let headerText = (view, schoolName) =>
   switch view {
   | FederatedSignIn => "Entrar na " ++ schoolName
   | SignInWithPassword => "Continuar com email"
-  | SignInEmailSent => "Enviamos a voce um link magico!"
+  | SignInEmailSent => "Enviamos para o seu email um link de acesso!"
   | ForgotPassword => "Redefinir senha"
   }
 
@@ -249,7 +249,7 @@ let renderSignInWithEmail = (
 let renderSignInEmailSent = () =>
   <div className="max-w-sm mx-auto">
     <p className="mt-4 text-center">
-      {"Deve chegar até você em menos de um minuto. Clique no link do e-mail e você estará conectado." |> str}
+      {"Deve chegar em menos de um minuto. Clique no link do e-mail para se conectar a sua conta." |> str}
     </p>
   </div>
 
