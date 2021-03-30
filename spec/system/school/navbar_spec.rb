@@ -22,7 +22,7 @@ feature 'School Admin Navbar', js: true do
 
     # There should be additional links on the navbar.
     expect(page).to have_link('Mentores', href: '/school/coaches')
-    expect(page).to have_link('Configurações', href: '/school/customize')
+    expect(page).to have_link('Configuracoes', href: '/school/customize')
     expect(page).to have_link('Cursos', href: '/school/courses')
     expect(page).to have_link('Comunidades', href: '/school/communities')
 

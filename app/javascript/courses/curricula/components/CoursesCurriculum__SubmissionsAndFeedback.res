@@ -46,7 +46,7 @@ let statusBar = (~color, ~text) => {
 }
 
 let submissionStatusIcon = (~passed) => {
-  let text = passed ? "Concluído" : "Rejeitado"
+  let text = passed ? "Concluido" : "Rejeitado"
   let color = passed ? "green" : "red"
 
   <div className="max-w-fc">
@@ -125,7 +125,7 @@ let submissions = (target, targetStatus, targetDetails, evaluationCriteria, coac
           />
         </div>
         {switch submission |> Submission.status {
-        | MarkedAsComplete => statusBar(~color="green", ~text="Concluído")
+        | MarkedAsComplete => statusBar(~color="green", ~text="Concluido")
         | Pending =>
           <div
             className="bg-white p-3 md:px-6 md:py-4 flex border-t justify-between items-center w-full">
@@ -135,7 +135,7 @@ let submissions = (target, targetStatus, targetDetails, evaluationCriteria, coac
                 <i className="fas fa-circle fa-stack-2x" />
                 <i className="fas fa-hourglass-half fa-stack-1x fa-inverse" />
               </span>
-              {"Pending Review" |> str}
+              {"Avaliação pendente" |> str}
             </div>
             {switch targetStatus |> TargetStatus.status {
             | PendingReview =>

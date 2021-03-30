@@ -108,7 +108,7 @@ let secondaryNav = (courses, userRole, selectedOption) =>
           "/school/courses/" ++ (courseId ++ "/curriculum"),
           courseSelection,
           Curriculum,
-          "Currículo",
+          "Curriculo",
         )}
         {switch userRole {
         | SchoolAdmin =>
@@ -269,7 +269,7 @@ let make = (
                 "/school/customize",
                 shrunk,
                 "fas fa-cog",
-                "Configurações",
+                "Configuracoes",
               )}
             </li>
             <li>

@@ -446,11 +446,11 @@ en:
         team: Team
   mutations:
     auto_verify_submission:
-      success_notification: Target has been marked as complete.
+      success_notification: Aula marcada como concluída.
     create_target:
       success_notification: Target created successfully.
     create_topic_subscription:
-      success_notification: You will be notified about all the updates.
+      success_notification: Você será notificado sobre todas as atualizações.
     delete_certificate:
       success_notification: Certificate has been deleted.
     issue_certificate:

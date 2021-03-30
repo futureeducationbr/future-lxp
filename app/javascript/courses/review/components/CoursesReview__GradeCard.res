@@ -267,9 +267,9 @@ let gradeStatusClasses = (color, status) =>
 
 let submissionStatusIcon = (status, overlaySubmission, send) => {
   let (text, color) = switch status {
-  | Graded(passed) => passed ? ("Completed", "green") : ("Rejected", "red")
-  | Grading => ("Reviewing", "orange")
-  | Ungraded => ("Pending Review", "gray")
+  | Graded(passed) => passed ? ("Concluido", "green") : ("Rejeitado", "red")
+  | Grading => ("Em revisão", "orange")
+  | Ungraded => ("Revisão pendente", "gray")
   }
 
   <div
@@ -363,7 +363,7 @@ let showFeedbackForm = (grades, reviewChecklist, updateReviewChecklistCB, state,
   | [] =>
     <CoursesReview__FeedbackEditor
       feedback=state.newFeedback
-      label="Add Your Feedback"
+      label="Inclua o seu feedback"
       updateFeedbackCB={feedback => send(UpdateFeedback(feedback))}
       reviewChecklist
       updateReviewChecklistCB
