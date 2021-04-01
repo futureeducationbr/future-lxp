@@ -20,7 +20,7 @@ let handleClick = (targetId, setStatus, undoSubmissionCB, event) => {
 
   if {
     open Webapi.Dom
-    window |> Window.confirm("Are you sure you want to delete this submission?")
+    window |> Window.confirm("Tem certeza de que deseja excluir este envio?")
   } {
     setStatus(_ => Undoing)
 
@@ -31,8 +31,8 @@ let handleClick = (targetId, setStatus, undoSubmissionCB, event) => {
         undoSubmissionCB()
       } else {
         Notification.notice(
-          "Could not undo submission",
-          "Please reload the page and check the status of the submission before trying again.",
+          "Não foi possível desfazer",
+          "Atualize a página e verifique o status do envio antes de tentar novamente.",
         )
         setStatus(_ => Errored)
       }
@@ -40,8 +40,8 @@ let handleClick = (targetId, setStatus, undoSubmissionCB, event) => {
     })
     |> Js.Promise.catch(_ => {
       Notification.error(
-        "Unexpected Error",
-        "An unexpected error occured, and our team has been notified about this. Please reload the page before trying again.",
+        "Erro inesperado",
+        "Ocorreu um erro inesperado e sua equipe foi notificada sobre isso. Atualize a página antes de tentar novamente.",
       )
       setStatus(_ => Errored)
       Js.Promise.resolve()
@@ -54,15 +54,15 @@ let handleClick = (targetId, setStatus, undoSubmissionCB, event) => {
 
 let buttonContents = status =>
   switch status {
-  | Undoing => <span> <FaIcon classes="fas fa-spinner fa-spin mr-2" /> {"Undoing..." |> str} </span>
+  | Undoing => <span> <FaIcon classes="fas fa-spinner fa-spin mr-2" /> {"Desfazendo..." |> str} </span>
   | Pending =>
     <span>
       <FaIcon classes="fas fa-undo mr-2" />
-      <span className="hidden md:inline"> {"Undo submission" |> str} </span>
-      <span className="md:hidden"> {"Undo" |> str} </span>
+      <span className="hidden md:inline"> {"Desfazer envio" |> str} </span>
+      <span className="md:hidden"> {"Desfazer" |> str} </span>
     </span>
   | Errored =>
-    <span> <FaIcon classes="fas fa-exclamation-triangle mr-2" /> {"Error!" |> str} </span>
+    <span> <FaIcon classes="fas fa-exclamation-triangle mr-2" /> {"Erro!" |> str} </span>
   }
 
 let isDisabled = status =>
@@ -87,7 +87,7 @@ let buttonClasses = status => {
 let make = (~undoSubmissionCB, ~targetId) => {
   let (status, setStatus) = React.useState(() => Pending)
   <button
-    title="Delete this submission"
+    title="Apagar este envio"
     disabled={status |> isDisabled}
     className={buttonClasses(status)}
     onClick={handleClick(targetId, setStatus, undoSubmissionCB)}>

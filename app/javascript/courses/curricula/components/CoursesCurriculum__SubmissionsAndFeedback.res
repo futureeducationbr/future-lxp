@@ -246,8 +246,8 @@ let make = (
               className="btn btn-subtle"
               onClick={handleAddAnotherSubmission(setShowSubmissionForm)}>
               <PfIcon className="if i-times-regular text-lg mr-2" />
-              <span className="hidden md:inline"> {"Cancel" |> str} </span>
-              <span className="md:hidden"> {"Cancel" |> str} </span>
+              <span className="hidden md:inline"> {"Cancelar" |> str} </span>
+              <span className="md:hidden"> {"Cancelar" |> str} </span>
             </button>
           | false =>
             <button

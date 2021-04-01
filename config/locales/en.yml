@@ -113,7 +113,7 @@ en:
     CoursesCurriculum__Overlay:
       curriculum_tab: Currículo
       close_button: Fechar
-      completion_tab_complete: Completo
+      completion_tab_complete: Entregar atividade
       completion_tab_completed: Concluído
       completion_tab_locked: Bloqueado
       completion_tab_mark_complete: Marcar como Concluído
@@ -142,7 +142,7 @@ en:
     CoursesReport__Overview:
       report_tab: Relatórios
       attempted: ' Tentativa'
-      average_grades: Notas médias
+      average_grades: Notas avaliativas
       average_quiz_score: Average Quiz Score
       course_completed: Curso concluído!
       incomplete_targets: 'Incompleto: %{targetsCount}'
@@ -190,7 +190,7 @@ en:
     CoursesStudents__StudentOverlay:
       access_ended_at: This student's access to the course ended on %{date}.
       attempted: ' Tentativa'
-      average_grades: Notas médias
+      average_grades: Notas avaliativas
       average_quiz_score: Pontuação média do questionário
       close_student_report: Fechar relatório do aluno
       course_completed: Curso concluído!
