@@ -289,7 +289,7 @@ let make = (
           <div className="w-full md:w-1/3 pr-4">
             <h3 className="text-lg font-semibold"> {"Atualizar Perfil" |> str} </h3>
             <p className="mt-1 text-sm text-gray-700">
-              {"Mantenha os seus dados atualizados sempre que possível." |> str}
+              {"Mantenha os seus dados sempre atualizados." |> str}
             </p>
           </div>
           <div className="mt-5 md:mt-0 w-full md:w-2/3">
@@ -369,7 +369,7 @@ let make = (
         </div>
         <div className="flex flex-col md:flex-row mt-10 md:mt-12">
           <div className="w-full md:w-1/3 pr-4">
-            <h3 className="text-lg font-semibold"> {"Segurancsa" |> str} </h3>
+            <h3 className="text-lg font-semibold"> {"Seguranca" |> str} </h3>
             <p className="mt-1 text-sm text-gray-700">
               {"Atualize suas credenciais de login." |> str}
             </p>
@@ -462,7 +462,7 @@ let make = (
               <div className="mt-4 flex items-center">
                 <Radio
                   id="daily_mail_disable"
-                  label="Disable"
+                  label="Não receber"
                   onChange={event =>
                     send(UpdateDailyDigest(!ReactEvent.Form.target(event)["checked"]))}
                   checked={!state.dailyDigest}
