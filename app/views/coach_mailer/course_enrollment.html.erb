@@ -22,13 +22,13 @@
 
 <% content_for :body do %>
   <p>
-  Você foi adicionado como um treinador no curso <strong> <%= @course.name%> </strong>, 
-  em <%= @school.name%>. Isso permite que você analise os envios dos alunos, atribua notas e forneça feedback sobre 
+  Você foi adicionado como um treinador no curso <strong> <%= @course.name %> </strong>, 
+  em <%= @school.name %>. Isso permite que você analise os envios dos alunos, atribua notas e forneça feedback sobre 
   a aprendizagem deles.
   </p>
 
   <p>
-    Use o link acima para fazer login em <%= @school.name%> e ver os envios de seus alunos.
+    Use o link acima para fazer login em <%= @school.name %> e ver os envios de seus alunos.
   </p>
 
   <%= render 'mailers/link_fallback', url: sign_in_link %>
