@@ -267,6 +267,7 @@ en:
       create_target: Criar Aula
       milestone_targets: Aulas
     Notifications__List:
+      notifications_title: Notificações
       button_load_more: Carregar mais notificações...
       empty_notifications: Você ainda não tem notificações!
       filter:
