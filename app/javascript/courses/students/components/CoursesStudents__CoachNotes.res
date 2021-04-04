@@ -61,7 +61,7 @@ let make = (~studentId, ~coachNotes, ~hasArchivedNotes, ~addNoteCB, ~removeNoteC
   <div className="mt-3 text-sm">
     <label
       htmlFor="course-students__coach-notes-new-note" className="font-semibold text-sm block mb-1">
-      {"Add a New Note" |> str}
+      {"Adicionar nova nota" |> str}
     </label>
     <DisablingCover disabled=state.saving message="Saving...">
       <MarkdownEditor
@@ -77,18 +77,18 @@ let make = (~studentId, ~coachNotes, ~hasArchivedNotes, ~addNoteCB, ~removeNoteC
       onClick={_ => saveNote(studentId, setState, state, addNoteCB)}
       className="btn btn-primary mt-2">
       {state.saving
-        ? saveNoteButtonText("Saving", "fas fa-spinner")
-        : saveNoteButtonText("Save Note", "")}
+        ? saveNoteButtonText("Salvando", "fas fa-spinner")
+        : saveNoteButtonText("Salvar Nota", "")}
     </button>
     <div>
-      <h6 className="font-semibold mt-6"> {"All Notes" |> str} </h6>
+      <h6 className="font-semibold mt-6"> {"Todas as notas" |> str} </h6>
       {coachNotes |> ArrayUtils.isEmpty
         ? <div
             className="bg-gray-200 rounded text-center p-4 md:p-6 items-center justify-center mt-2">
             <i className="fas fa-sticky-note text-gray-400 text-4xl" />
             <p className="text-xs font-semibold text-gray-700 mt-2">
               {(
-                hasArchivedNotes ? "This student has some archived notes." : "No notes here!"
+                hasArchivedNotes ? "This student has some archived notes." : "Nenhuma nota por enquanto!"
               ) |> str}
             </p>
           </div>

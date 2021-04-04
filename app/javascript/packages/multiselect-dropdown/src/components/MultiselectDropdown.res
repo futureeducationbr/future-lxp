@@ -138,7 +138,7 @@ module Make = (Selectable: Selectable) => {
     <div
       className="multiselect-dropdown__search-dropdown w-full absolute border border-gray-400 bg-white mt-1 rounded-lg shadow-lg py-2 z-50">
       <p className="text-gray-700 italic mx-4 text-xs border-b pb-1 mb-2">
-        {str("Suggestions:")}
+        {str("Sugestões:")}
       </p>
       children
     </div>
@@ -152,7 +152,7 @@ module Make = (Selectable: Selectable) => {
   @react.component
   let make = (
     ~id=?,
-    ~placeholder="Search",
+    ~placeholder="Procurar",
     ~onChange,
     ~value,
     ~unselected,
@@ -160,7 +160,7 @@ module Make = (Selectable: Selectable) => {
     ~onSelect,
     ~onDeselect,
     ~labelSuffix=": ",
-    ~emptyMessage="No results found",
+    ~emptyMessage="Nenhum resultado encontrado",
     ~hint=?,
     ~defaultOptions=[],
   ) => {

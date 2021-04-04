@@ -157,7 +157,7 @@ en:
       completed: Concluído
       filter_by_another_level: Filter by another level
       filter_by_another_level_or_status: Filtrar por aula ou status
-      filter_by_level: Filter by level
+      filter_by_level: Filtrar por nível
       filter_by_level_or_status: Filtrar por aula ou status
       load_more: Carregar mais...
       no_submissions_to_show: 'Nenhum envio para mostrar '
@@ -177,11 +177,11 @@ en:
       filter_by: 'Filtrar por:'
       filter_by_another_level: Filter by another level
       filter_by_another_level_or_submissions_assigned: Filter by another level, or only show submissions assigned to a coach
-      filter_by_level: Filter by level
-      filter_by_level_or_submissions_assigned: Filter by level, or only show submissions assigned to a coach
-      me: Me
-      now_showing_submissions_assigned_to: Now showing submissions assigned to %{name}.
-      now_showing_submissions_from_all_students: Now showing submissions from all students in this course.
+      filter_by_level: Filtrar por nível
+      filter_by_level_or_submissions_assigned: Filtre por nível ou mostre apenas os envios atribuídos a um mentor
+      me: Mim
+      now_showing_submissions_assigned_to: Agora mostrando os envios atribuídos a %{name}.
+      now_showing_submissions_from_all_students: Agora mostrando os envios de todos os alunos deste curso.
       pending: Pendente
       reviewed: Avaliado
       reviewed_at: Avaliado em
@@ -198,7 +198,7 @@ en:
       level_progress: Progresso na aprendizagem
       notes: Notas
       other_team_members: Outros membros do time
-      personal_coaches: Personal Coaches
+      personal_coaches: Mentores
       quiz: Quiz
       submissions: Submissões
       targets: ' Aulas'

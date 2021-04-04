@@ -200,7 +200,7 @@ let showSubmissions = (submissions, selectedTab, levels) => {
   submissions |> ArrayUtils.isEmpty
     ? <div className="course-review__submissions-empty text-lg font-semibold text-center py-4">
         <h5 className="py-4 mt-4 bg-gray-200 text-gray-800 font-semibold">
-          {"No submissions found" |> str}
+          {"Nenhum envio encontrado" |> str}
         </h5>
         <img className="w-3/4 md:w-1/2 mx-auto mt-2" src=imageSrc />
       </div>
