@@ -134,10 +134,10 @@ let statusText = formState =>
 
 let tooltipText = preview =>
   if preview {
-    <span> {"You are accessing the preview mode" |> str} <br /> {"for this course" |> str} </span>
+    <span> {"Voce esta acessando em modo de visualizacao" |> str} <br /> {"para este curso" |> str} </span>
   } else {
     <span>
-      {"Please complete all the required" |> str} <br /> {"steps to submit this target" |> str}
+      {"Complete todas as atividades requeridas" |> str} <br /> {"para completar esse modulo" |> str}
     </span>
   }
 
@@ -148,7 +148,7 @@ let make = (~target, ~addSubmissionCB, ~preview, ~checklist) => {
     <DisablingCover disabled={isBusy(state.formState)} message={statusText(state.formState)}>
       {state.checklist |> ArrayUtils.isEmpty
         ? <div className="text-center">
-            {"This target has no actions. Click submit to complete the target" |> str}
+            {"Este modulo nao tem mais atividades. Clique em enviar para finalizar." |> str}
           </div>
         : state.checklist
           |> Array.mapi((index, checklistItem) =>
