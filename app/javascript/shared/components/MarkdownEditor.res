@@ -476,7 +476,7 @@ let footer = (fileUpload, oldValue, state, send, onChange) => {
               </span>
             | None =>
               <span>
-                <i className="far fa-file-image mr-2" /> {"Click here to attach a file." |> str}
+                <i className="far fa-file-image mr-2" /> {"Clique aqui para anexar um arquivo." |> str}
               </span>
             }}
           </label>
