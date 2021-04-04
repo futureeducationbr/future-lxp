@@ -440,19 +440,19 @@ let noteForm = (overlaySubmission, teamSubmission, note, send) =>
         {switch note {
         | Some(_) =>
           <span className="ml-2 md:ml-3 tracking-wide">
-            <label htmlFor=textareaId> {"Write a Note" |> str} </label> help
+            <label htmlFor=textareaId> {"Escrever uma Nota" |> str} </label> help
           </span>
         | None =>
           <div className="ml-2 md:ml-3 tracking-wide flex justify-between items-center w-full">
             <span>
               <span>
-                {"Would you like to write a note about this " ++ (noteAbout ++ "?") |> str}
+                {"Você gostaria de escrever uma nota sobre isso " ++ (noteAbout ++ "?") |> str}
               </span>
               help
             </span>
             <button
               className="btn btn-small btn-primary-ghost ml-1" onClick={_ => send(UpdateNote(""))}>
-              {"Write a Note" |> str}
+              {"Escrever uma nota" |> str}
             </button>
           </div>
         }}
@@ -466,7 +466,7 @@ let noteForm = (overlaySubmission, teamSubmission, note, send) =>
             value=note
             onChange={value => send(UpdateNote(value))}
             profile=Markdown.Permissive
-            placeholder="Did you notice something while reviewing this submission?"
+            placeholder="Você percebeu algo ao revisar este envio?"
           />
         </div>
       | None => React.null

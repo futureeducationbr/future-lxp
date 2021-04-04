@@ -30,7 +30,7 @@ let make = (
               className="inline-flex w-10 h-10 border border-white items-center justify-center rounded-full bg-primary-100 text-primary-500">
               <i className="fas fa-list" />
             </span>
-            <span className="ml-3"> {"Show Review Checklist" |> str} </span>
+            <span className="ml-3"> {"Ver Revisão do Checklist" |> str} </span>
           </button>
         </div>
       }}
@@ -48,7 +48,7 @@ let make = (
           value=feedback
           profile=Markdown.Permissive
           maxLength=10000
-          placeholder="This feedback will be emailed to students when you finish grading."
+          placeholder="Este feedback será enviado aos alunos por e-mail quando você terminar de avaliar."
         />
       </div>
     </div>

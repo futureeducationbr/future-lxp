@@ -59,11 +59,11 @@ let showStatus = status =>
   switch (status: ChecklistItem.status) {
   | Passed =>
     <div className="bg-green-200 rounded px-1 py-px text-green-800 text-tiny">
-      {"Correct" |> str}
+      {"Correta" |> str}
     </div>
   | Failed =>
     <div className="bg-red-200 rounded px-1 py-px text-red-800 text-tiny">
-      {"Incorrect" |> str}
+      {"Incorreta" |> str}
     </div>
   | NoAnswer => React.null
   }
@@ -101,7 +101,7 @@ let statusButton = (index, status, callback, checklist) =>
       <span className="w-8 p-2 border-r border-gray-500 flex items-center justify-center">
         <PfIcon className={statusButtonIcon(status == ChecklistItem.Failed)} />
       </span>
-      <span className="p-2"> {"Mark as incorrect" |> str} </span>
+      <span className="p-2"> {"Marcar como incorreta" |> str} </span>
     </button>
   </div>
 

@@ -145,7 +145,7 @@ let make = (~reviewChecklist, ~updateReviewChecklistCB, ~closeEditModeCB, ~targe
                 className="checklist-editor__checklist-item-title h-11 text-sm focus:outline-none focus:bg-white focus:border-primary-300"
                 id="checklist_title"
                 type_="text"
-                placeholder="Add an item to the checklist"
+                placeholder="Adicionar item na lista"
                 value={reviewChecklistItem |> ReviewChecklistItem.title}
                 onChange={event =>
                   updateChecklistItemTitle(
@@ -161,7 +161,7 @@ let make = (~reviewChecklist, ~updateReviewChecklistCB, ~closeEditModeCB, ~targe
               />
             </div>
             <button
-              title="Remove checklist item"
+              title="Remover item da lista"
               className="bg-gray-200 p-2 w-11 border border-gray-400 text-gray-700 rounded ml-2 hover:text-red-600 hover:bg-red-100 focus:outline-none"
               onClick={_ => removeChecklistItem(itemIndex, setState)}>
               <i className="fas fa-trash-alt" />
@@ -190,7 +190,7 @@ let make = (~reviewChecklist, ~updateReviewChecklistCB, ~closeEditModeCB, ~targe
                         className="checklist-editor__checklist-result-item-title h-10 pr-12 focus:outline-none focus:bg-white focus:border-primary-300"
                         id={"result_" ++ ((resultIndex |> string_of_int) ++ "_title")}
                         type_="text"
-                        placeholder="Add a result for this check"
+                        placeholder="Adicione um resultado para esta verificacao"
                         value={resultItem |> ReviewChecklistResult.title}
                         onChange={event =>
                           updateChecklistResultTitle(
@@ -224,7 +224,7 @@ let make = (~reviewChecklist, ~updateReviewChecklistCB, ~closeEditModeCB, ~targe
                       className="appearance-none border border-gray-400 bg-transparent rounded-b text-xs align-top py-2 px-4 leading-relaxed w-full focus:outline-none focus:bg-white focus:border-primary-300"
                       id={"result_" ++ ((resultIndex |> string_of_int) ++ "_feedback")}
                       type_="text"
-                      placeholder="Add feedback (optional)"
+                      placeholder="Adicionar feedback (opcional)"
                       value=feedback
                       onChange={event =>
                         updateChecklistResultFeedback(
@@ -237,7 +237,7 @@ let make = (~reviewChecklist, ~updateReviewChecklistCB, ~closeEditModeCB, ~targe
                         )}
                     />
                     <School__InputGroupError
-                      message="A check's result cannot be blank"
+                      message="O resultado nao pode ficar em branco"
                       active={resultItem |> ReviewChecklistResult.title |> invalidTitle}
                     />
                   </div>
@@ -249,12 +249,12 @@ let make = (~reviewChecklist, ~updateReviewChecklistCB, ~closeEditModeCB, ~targe
               onClick={_ => addEmptyResultItem(reviewChecklistItem, itemIndex, setState)}
               className="checklist-editor__add-result-btn ml-2 md:ml-4 mt-3 flex items-center focus:outline-none">
               <span
-                title="Add Result"
+                title="Adicionar Resultado"
                 className="checklist-editor__add-result-btn-check flex-shrink-0 rounded border border-gray-400 bg-gray-100 w-4 h-4 mr-2"
               />
               <span
                 className="checklist-editor__add-result-btn-text flex items-center text-sm font-semibold bg-gray-200 px-3 py-1 rounded border border-dashed border-gray-600">
-                <i className="fas fa-plus text-xs mr-2" /> {"Add Result" |> str}
+                <i className="fas fa-plus text-xs mr-2" /> {"Adicionar Resultado" |> str}
               </span>
             </button>
           </div>
@@ -266,7 +266,7 @@ let make = (~reviewChecklist, ~updateReviewChecklistCB, ~closeEditModeCB, ~targe
           className="flex items-center text-sm font-semibold bg-gray-200 rounded border border-dashed border-gray-600 w-full hover:text-primary-500 hover:bg-white hover:border-primary-500 hover:shadow-md focus:outline-none"
           onClick={_ => addEmptyChecklistItem(setState)}>
           <span className="bg-gray-300 py-2 w-10"> <i className="fas fa-plus text-sm" /> </span>
-          <span className="px-3 py-2"> {"Add Checklist Item" |> str} </span>
+          <span className="px-3 py-2"> {"Adicionar Item" |> str} </span>
         </button>
       </div>
       <div className="py-2 mt-4 flex flex-row-reverse">
