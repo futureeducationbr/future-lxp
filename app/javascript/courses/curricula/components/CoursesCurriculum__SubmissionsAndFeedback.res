@@ -135,7 +135,7 @@ let submissions = (target, targetStatus, targetDetails, evaluationCriteria, coac
                 <i className="fas fa-circle fa-stack-2x" />
                 <i className="fas fa-hourglass-half fa-stack-1x fa-inverse" />
               </span>
-              {"Avaliação pendente" |> str}
+              {"Revisao pendente" |> str}
             </div>
             {switch targetStatus |> TargetStatus.status {
             | PendingReview =>

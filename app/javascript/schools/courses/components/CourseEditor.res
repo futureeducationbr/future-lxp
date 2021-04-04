@@ -145,7 +145,7 @@ let make = () => {
                         href={"/courses/" ++ (course |> Course.id)}
                         target="_blank"
                         className="text-sm font-semibold cursor-pointer ml-2 text-primary-500">
-                        {"Ver página pública" |> str}
+                        {"Ver pagina publica" |> str}
                       </a>
                     </div>
                   </div>
