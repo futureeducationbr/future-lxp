@@ -26,10 +26,10 @@ let handleEmpty = setState =>
     </span>
     <span className="block text-left ml-4">
       <span className="block text-base font-semibold text-primary-500">
-        {"Criar um Padrão de Checklist" |> str}
+        {"Criar um Modelo de Checklist" |> str}
       </span>
       <span className="text-sm block">
-        {"Prepare-se para sua revisão criando uma lista de verificação" |> str}
+        {"Crie um modelo para facilitar o seu feedback" |> str}
       </span>
     </span>
   </button>

@@ -268,8 +268,8 @@ let gradeStatusClasses = (color, status) =>
 let submissionStatusIcon = (status, overlaySubmission, send) => {
   let (text, color) = switch status {
   | Graded(passed) => passed ? ("Concluido", "green") : ("Rejeitado", "red")
-  | Grading => ("Em revisão", "orange")
-  | Ungraded => ("Revisão pendente", "gray")
+  | Grading => ("Em revisao", "orange")
+  | Ungraded => ("Revisao pendente", "gray")
   }
 
   <div
@@ -446,7 +446,7 @@ let noteForm = (overlaySubmission, teamSubmission, note, send) =>
           <div className="ml-2 md:ml-3 tracking-wide flex justify-between items-center w-full">
             <span>
               <span>
-                {"Você gostaria de escrever uma nota sobre isso " ++ (noteAbout ++ "?") |> str}
+                {"Gostaria de escrever uma nota sobre isso " ++ (noteAbout ++ "?") |> str}
               </span>
               help
             </span>

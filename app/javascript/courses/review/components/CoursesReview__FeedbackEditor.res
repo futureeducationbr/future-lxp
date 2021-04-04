@@ -48,7 +48,7 @@ let make = (
           value=feedback
           profile=Markdown.Permissive
           maxLength=10000
-          placeholder="Este feedback será enviado aos alunos por e-mail quando você terminar de avaliar."
+          placeholder="Este feedback sera enviado aos alunos por e-mail quando voce terminar de avaliar."
         />
       </div>
     </div>
