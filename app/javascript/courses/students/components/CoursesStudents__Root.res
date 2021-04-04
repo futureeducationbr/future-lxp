@@ -230,7 +230,7 @@ module Selectable = {
     switch t {
     | Level(level) => level |> Level.name
     | AssignedToCoach(coach, currentCoachId) =>
-      coach |> Coach.id == currentCoachId ? "Me" : coach |> Coach.name
+      coach |> Coach.id == currentCoachId ? "Mim" : coach |> Coach.name
     | NameOrEmail(search) => search
     | CoachNotes(on) => on ? "Tem notas" : "Não tem notas"
     | Tag(tag) => tag

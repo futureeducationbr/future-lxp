@@ -409,9 +409,9 @@ let computeStatus = (
 let submitButtonText = (feedback, grades) =>
   switch (feedback != "", grades |> ArrayUtils.isNotEmpty) {
   | (false, false)
-  | (false, true) => "Save grades"
+  | (false, true) => "Salvar"
   | (true, false)
-  | (true, true) => "Save grades & send feedback"
+  | (true, true) => "Salvar e enviar feedback"
   }
 
 let noteForm = (overlaySubmission, teamSubmission, note, send) =>
@@ -527,7 +527,7 @@ let make = (
         {noteForm(overlaySubmission, teamSubmission, state.note, send)}
         <h5 className="font-semibold text-sm flex items-center mt-4 md:mt-6">
           <Icon className="if i-tachometer-regular text-gray-800 text-base" />
-          <span className="ml-2 md:ml-3 tracking-wide"> {"Atividades enviadas" |> str} </span>
+          <span className="ml-2 md:ml-3 tracking-wide"> {"Desempenho da Aprendizagem" |> str} </span>
         </h5>
         <div
           className="flex md:flex-row flex-col border md:ml-7 bg-gray-100 p-2 md:p-4 rounded-lg mt-2">
