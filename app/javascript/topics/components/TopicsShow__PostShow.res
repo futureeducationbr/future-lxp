@@ -287,7 +287,7 @@ let make = (
                           } |> str}
                         </span>
                         <span>
-                          {" on " ++ editedAt->DateFns.format("do MMMM, yyyy HH:mm") |> str}
+                          {" em " ++ editedAt->DateFns.format("do MMMM, yyyy HH:mm") |> str}
                         </span>
                       </div>
                     </div>

@@ -327,7 +327,7 @@ let submissionStatusIcon = (status, overlaySubmission, send) => {
         <button
           onClick={_ =>
             WindowUtils.confirm(
-              "Tem certeza de que deseja remover essas notas? Isso retornará o envio ao estado de 'Revisão pendente'.",
+              "Tem certeza de que deseja remover essas notas? Isso retornara o envio ao estado de 'Revisao pendente'.",
               () => OverlaySubmission.id(overlaySubmission)->undoGrading(send),
             )}
           className="btn btn-danger btn-small">
