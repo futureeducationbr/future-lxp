@@ -18,7 +18,7 @@ let makeFromJs = data =>
 let empty = () => [make(~title="", ~result=[CoursesReview__ReviewChecklistResult.empty()])]
 
 let emptyTemplate = () => [
-  make(~title="Default checklist", ~result=CoursesReview__ReviewChecklistResult.emptyTemplate()),
+  make(~title="Modelo de checklist", ~result=CoursesReview__ReviewChecklistResult.emptyTemplate()),
 ]
 
 let updateTitle = (title, t) => make(~title, ~result=t.result)

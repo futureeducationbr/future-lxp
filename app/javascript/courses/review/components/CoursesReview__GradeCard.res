@@ -466,7 +466,7 @@ let noteForm = (overlaySubmission, teamSubmission, note, send) =>
             value=note
             onChange={value => send(UpdateNote(value))}
             profile=Markdown.Permissive
-            placeholder="Você percebeu algo ao revisar este envio?"
+            placeholder="Oriente a aprendizagem oferecendo um feedback detalhado"
           />
         </div>
       | None => React.null

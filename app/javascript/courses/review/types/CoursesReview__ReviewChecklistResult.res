@@ -10,8 +10,8 @@ let make = (~title, ~feedback) => {title: title, feedback: feedback}
 let makeFromJs = data => data |> Js.Array.map(r => make(~title=r["title"], ~feedback=r["feedback"]))
 
 let emptyTemplate = () => [
-  make(~title="Yes", ~feedback=Some("Sample feedback for yes")),
-  make(~title="No", ~feedback=Some("Sample feedback for no")),
+  make(~title="Sim", ~feedback=Some("Modelo de feedback sim")),
+  make(~title="Não", ~feedback=Some("Modelo de feedback não")),
 ]
 
 let empty = () => make(~title="", ~feedback=None)
