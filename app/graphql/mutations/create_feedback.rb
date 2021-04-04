@@ -12,7 +12,7 @@ module Mutations
 
       if mutator.valid?
         mutator.create_feedback
-        mutator.notify(:success, "Feedback Sent", "Your feedback will be e-mailed to the student.")
+        mutator.notify(:success, "Feedback Enviado", "Seu feedback será enviado por e-mail para o aluno.")
         { success: true }
       else
         mutator.notify_errors

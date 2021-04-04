@@ -18,7 +18,7 @@ let showFeedbackSent = feedbackSent =>
   feedbackSent
     ? <div
         className="bg-primary-100 text-primary-600 border border-transparent font-semibold px-3 py-px rounded mr-3">
-        {"Feedback Sent" |> str}
+        {"Feedback Enviado" |> str}
       </div>
     : React.null
 

@@ -7,7 +7,7 @@ class UserMailer < SchoolMailer
     @post = post
     @addressee = addressee
     @school = addressee.school
-    simple_roadie_mail(addressee.email, 'New reply for your post')
+    simple_roadie_mail(addressee.email, 'Nova resposta a sua postagem')
   end
 
   # Mail sent daily to users when there are new questions posted in communities where they have access.
@@ -18,7 +18,7 @@ class UserMailer < SchoolMailer
     @user = user
     @updates = updates
     @school = user.school
-    subject = "#{user.school.name}: Daily Digest - #{Time.zone.now.strftime('%b %-d, %Y')}"
+    subject = "#{user.school.name}: Resumo diário - #{Time.zone.now.strftime('%b %-d, %Y')}"
     simple_roadie_mail(user.email, subject)
   end
 

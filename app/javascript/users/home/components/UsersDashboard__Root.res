@@ -113,9 +113,9 @@ let ctaFooter = (course, currentSchoolAdmin) => {
 
   switch callToAction(course, currentSchoolAdmin) {
   | #ViewCourse => ctaButton("Ver Curso", studentLink(courseId, "curriculum"))
-  | #EditCourse => ctaButton("Alterar Currículo", "/school/courses/" ++ (courseId ++ "/curriculum"))
-  | #ReviewSubmissions => ctaButton("Revisar Submissões", studentLink(courseId, "review"))
-  | #DroppedOut => ctaText("Dropped out", "fas fa-user-slash")
+  | #EditCourse => ctaButton("Alterar Curriculo", "/school/courses/" ++ (courseId ++ "/curriculum"))
+  | #ReviewSubmissions => ctaButton("Revisar Envios", studentLink(courseId, "review"))
+  | #DroppedOut => ctaText("Não inscrito", "fas fa-user-slash")
   | #CourseEnded => ctaText("Curso concluído", "fas fa-history")
   }
 }
@@ -148,7 +148,7 @@ let courseLinks = (course, currentSchoolAdmin, communities) => {
         )
       : React.null}
     {cta != #ViewCourse
-      ? courseLink(studentLink(courseId, "curriculum"), "Ver Currículo", "fas fa-book")
+      ? courseLink(studentLink(courseId, "curriculum"), "Ver Curriculo", "fas fa-book")
       : React.null}
     {course |> Course.enableLeaderboard
       ? courseLink(studentLink(courseId, "leaderboard"), "Classificação", "fas fa-calendar-alt")
