@@ -6,10 +6,10 @@ let showSubmissionStatus = overlaySubmission => {
     overlaySubmission |> OverlaySubmission.passedAt,
     overlaySubmission |> OverlaySubmission.evaluatorName,
   ) {
-  | (None, None) => ("Revisão pendente", "bg-orange-100 border border-orange-500 text-orange-800 ")
+  | (None, None) => ("Revisao pendente", "bg-orange-100 border border-orange-500 text-orange-800 ")
   | (None, Some(_)) => ("Rejeitado", "bg-red-100 border border-red-500 text-red-700")
   | (Some(_), None)
-  | (Some(_), Some(_)) => ("Concluído", "bg-green-100 border border-green-500 text-green-800")
+  | (Some(_), Some(_)) => ("Concluido", "bg-green-100 border border-green-500 text-green-800")
   }
   <div className={"font-semibold px-3 py-px rounded " ++ classes}> {text |> str} </div>
 }

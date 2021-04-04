@@ -149,7 +149,7 @@ let showSubmissions = (submissions, levels) =>
   submissions |> ArrayUtils.isEmpty
     ? <div className="course-review__reviewed-empty text-lg font-semibold text-center py-4">
         <h5 className="py-4 mt-4 bg-gray-200 text-gray-800 font-semibold">
-          {"Nenhuma avaliação enviada" |> str}
+          {"Nada enviado por enquanto" |> str}
         </h5>
         <img className="w-3/4 md:w-1/2 mx-auto mt-2" src=reviewedEmptyImage />
       </div>

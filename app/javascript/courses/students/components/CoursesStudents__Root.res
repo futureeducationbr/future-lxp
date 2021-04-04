@@ -220,7 +220,7 @@ module Selectable = {
   let label = t =>
     switch t {
     | Level(level) => Some(LevelLabel.format(level |> Level.number |> string_of_int))
-    | AssignedToCoach(_) => Some("Atribuído para")
+    | AssignedToCoach(_) => Some("Atribuido para")
     | NameOrEmail(_) => Some("Nome ou Email")
     | CoachNotes(_) => Some("Notas do mentor")
     | Tag(_) => Some("Etiquetado como")
@@ -374,7 +374,7 @@ let restoreFilterNotice = (send, currentCoach, message) =>
     <button
       className="px-2 py-1 rounded text-xs overflow-hidden border border-gray-300 bg-gray-200 text-gray-800 border-gray-300 bg-gray-200 hover:bg-gray-300 mt-1 md:mt-0"
       onClick={_ => send(SelectCoach(currentCoach))}>
-      {"Atribuído a: Mim" |> str} <i className="fas fa-level-up-alt ml-2" />
+      {"Atribuido a: Mim" |> str} <i className="fas fa-level-up-alt ml-2" />
     </button>
   </div>
 
@@ -387,7 +387,7 @@ let restoreAssignedToMeFilter = (state, send, currentTeamCoach) =>
       restoreFilterNotice(
         send,
         currentCoach,
-        "Agora mostrando alunos atribuídos a " ++ ((selectedCoach |> Coach.name) ++ "."),
+        "Agora mostrando alunos atribuidos a " ++ ((selectedCoach |> Coach.name) ++ "."),
       )
     }
   , React.null)

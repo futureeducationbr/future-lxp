@@ -119,9 +119,9 @@ let submissionStatus = submission => {
   let (className, text) = if submission |> IndexSubmission.pendingReview {
     (classes ++ "bg-orange-100 text-orange-600", submission |> IndexSubmission.timeDistance)
   } else if submission |> IndexSubmission.failed {
-    (classes ++ "bg-red-100 border-red-500 text-red-800", "Rejected")
+    (classes ++ "bg-red-100 border-red-500 text-red-800", "Rejeitado")
   } else {
-    (classes ++ "bg-green-100 border-green-500 text-green-800", "Completed")
+    (classes ++ "bg-green-100 border-green-500 text-green-800", "Concluido")
   }
 
   <div className> {text |> str} </div>
@@ -169,18 +169,18 @@ let showSubmission = (submissions, levels) =>
             {switch submission |> IndexSubmission.teamName {
             | Some(name) =>
               <span>
-                {str("Submitted by team: ")} <span className="font-semibold"> {str(name)} </span>
+                {str("Enviado pelo time: ")} <span className="font-semibold"> {str(name)} </span>
               </span>
             | None =>
               <span>
-                {str("Submitted by: ")}
+                {str("Enviado por: ")}
                 <span className="font-semibold">
                   {IndexSubmission.userNames(submission)->str}
                 </span>
               </span>
             }}
             <span className="ml-1">
-              {"on " ++ (submission |> IndexSubmission.createdAtPretty) |> str}
+              {"em " ++ (submission |> IndexSubmission.createdAtPretty) |> str}
             </span>
           </div>
         </div>

@@ -282,7 +282,7 @@ let submissionStatusIcon = (status, overlaySubmission, send) => {
         <div
           className="bg-gray-200 block md:flex flex-col w-full justify-between rounded-lg pt-3 mr-2 mt-4 md:mt-0">
           <div>
-            <p className="text-xs px-3"> {"Evaluated By" |> str} </p>
+            <p className="text-xs px-3"> {"Avaliado Por" |> str} </p>
             <p className="text-sm font-semibold px-3 pb-3">
               {switch overlaySubmission |> OverlaySubmission.evaluatorName {
               | Some(name) => name |> str
@@ -327,11 +327,11 @@ let submissionStatusIcon = (status, overlaySubmission, send) => {
         <button
           onClick={_ =>
             WindowUtils.confirm(
-              "Are you sure you want to remove these grades? This will return the submission to a 'Pending Review' state.",
+              "Tem certeza de que deseja remover essas notas? Isso retornará o envio ao estado de 'Revisão pendente'.",
               () => OverlaySubmission.id(overlaySubmission)->undoGrading(send),
             )}
           className="btn btn-danger btn-small">
-          <i className="fas fa-undo" /> <span className="ml-2"> {"Undo Grading" |> str} </span>
+          <i className="fas fa-undo" /> <span className="ml-2"> {"Desfazer avaliacao" |> str} </span>
         </button>
       </div>
     | (None, Graded(_))
@@ -527,7 +527,7 @@ let make = (
         {noteForm(overlaySubmission, teamSubmission, state.note, send)}
         <h5 className="font-semibold text-sm flex items-center mt-4 md:mt-6">
           <Icon className="if i-tachometer-regular text-gray-800 text-base" />
-          <span className="ml-2 md:ml-3 tracking-wide"> {"Grade Card" |> str} </span>
+          <span className="ml-2 md:ml-3 tracking-wide"> {"Atividades enviadas" |> str} </span>
         </h5>
         <div
           className="flex md:flex-row flex-col border md:ml-7 bg-gray-100 p-2 md:p-4 rounded-lg mt-2">

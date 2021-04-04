@@ -49,7 +49,7 @@ let make = (
         <PfIcon
           className="if i-check-square-alt-regular text-gray-800 text-base md:text-lg inline-block"
         />
-        <span className="ml-2 md:ml-3 tracking-wide"> {"Review Checklist" |> str} </span>
+        <span className="ml-2 md:ml-3 tracking-wide"> {"Revisar Checklist" |> str} </span>
       </h5>
     </div>
     <div className="mt-2 md:ml-7">

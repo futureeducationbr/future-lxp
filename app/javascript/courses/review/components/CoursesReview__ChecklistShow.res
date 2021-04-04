@@ -110,7 +110,7 @@ let make = (~reviewChecklist, ~feedback, ~updateFeedbackCB, ~showEditorCB) => {
         className="btn btn-primary btn-large w-full "
         disabled={selection |> ListUtils.isEmpty}
         onClick={_ => generateFeedback(reviewChecklist, selection, feedback, updateFeedbackCB)}>
-        {"Generate Feedback" |> str}
+        {"Gerar Feedback" |> str}
       </button>
     </div>
   </div>
