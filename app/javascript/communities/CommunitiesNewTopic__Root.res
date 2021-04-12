@@ -276,7 +276,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
             <div
               className="flex py-4 px-4 md:px-5 w-full bg-white border border-primary-500  shadow-md rounded-lg justify-between items-center mb-2">
               <p className="w-3/5 md:w-4/5 text-sm">
-                <span className="font-semibold block text-xs"> {"Linked Target: " |> str} </span>
+                <span className="font-semibold block text-xs"> {"Vinculado a: " |> str} </span>
                 <span> {target |> TopicsShow__LinkedTarget.title |> str} </span>
               </p>
               <a href="./new_topic" className="btn btn-default"> {"Limpar" |> str} </a>

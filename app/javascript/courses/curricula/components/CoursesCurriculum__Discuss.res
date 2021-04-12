@@ -2,6 +2,8 @@ let str = React.string
 
 open CoursesCurriculum__Types
 
+let t = I18n.t(~scope="components.CoursesCurriculum__Discuss")
+
 let linkToCommunity = (communityId, targetId) =>
   "/communities/" ++ (communityId ++ ("?target_id=" ++ targetId))
 
@@ -25,9 +27,9 @@ let handleEmpty = () =>
     <i className="fa fa-comments text-5xl text-gray-600 mb-2 " />
     <div className="text-center">
       <h4 className="font-bold">
-        {"Nao houve nenhuma discussao recente sobre esta aula." |> str}
+        {t("description_no_discuss") |> str}
       </h4>
-      <p> {"Use a comunidade para tirar suas duvidas e ajudar seus colegas!" |> str} </p>
+      <p> {t("description_sub_discuss") |> str} </p>
     </div>
   </div>
 
@@ -46,7 +48,7 @@ let actionButtons = (community, targetId) => {
       title={"Criar um tópico na comunidade " ++ (communityName ++ " ")}
       href={linkToNewPost(communityId, targetId)}
       className="btn btn-primary">
-      {"Criar um topico" |> str}
+      {t("create_new_topic") |> str}
     </a>
   </div>
 }

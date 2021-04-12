@@ -88,6 +88,10 @@ en:
       milestone_targets: MÓDULO
       nav_next_level: Próximo Nível
       nav_previous_level: Nível Anterior
+    CoursesCurriculum__Discuss:
+      description_no_discuss: Não houve nenhuma discussão recente sobre esta aula.
+      description_sub_discuss: Use a comunidade para tirar suas duvidas e ajudar seus colegas!
+      create_new_topic: Criar um tópico
     CoursesCurriculum__Learn:
       edit_target_button: Alterar conteúdo
     CoursesCurriculum__LevelUpButton:
@@ -356,7 +360,7 @@ en:
       go_to_solution_button: Ir para a solução
       history_button_text: Historico
       last_edited_by_label: 'Última edição por '
-      mark_as_solution_label: Marcar como solucionado
+      mark_as_solution_label: Marcar como melhor resposta
       new_reply_button: Responder
       solution_icon_label: Solucionado
     TopicsShow__Root:
