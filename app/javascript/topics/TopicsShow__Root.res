@@ -484,7 +484,7 @@ let make = (
         </div>
         <h5 className="pt-4 pb-2 lg:ml-14 border-b">
           {Inflector.pluralize(
-            "Reply",
+            "Respostas",
             ~count=Array.length(state.replies),
             ~inclusive=true,
             (),

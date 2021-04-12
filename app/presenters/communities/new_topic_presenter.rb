@@ -13,7 +13,7 @@ module Communities
     end
 
     def page_title
-      "New Topic | #{@community.name} Community"
+      "Novo Tópico | #{@community.name} Comunidade"
     end
 
     def topic_categories

@@ -7,7 +7,7 @@ module TimelineEvents
     end
 
     def page_title
-      "Submission for | #{@submission.target.title}"
+      "Envios para | #{@submission.target.title}"
     end
 
     def markdown_prop(markdown)

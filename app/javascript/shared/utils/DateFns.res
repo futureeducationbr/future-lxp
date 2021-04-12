@@ -23,7 +23,7 @@ type formatDistanceStrictOptions = {
 }
 
 // TODO: This function should return the user's actual / selected timezone.
-let currentTimeZone = () => "Asia/Kolkata"
+let currentTimeZone = () => "America/Sao_Paulo"
 
 // TODO: This function should return either "HH:mm", or "h:mm a" depending on user's preferred time format.
 let selectedTimeFormat = () => "HH:mm"

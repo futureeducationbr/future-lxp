@@ -2,7 +2,7 @@ module Users
   module Sessions
     class NewPresenter < ApplicationPresenter
       def page_title
-        "Sign In | #{school_name}"
+        "Entrar | #{school_name}"
       end
 
       private

@@ -7,7 +7,7 @@ module Users
       end
 
       def page_title
-        "Reset Password | #{school_name}"
+        "Redefinir senha | #{school_name}"
       end
 
       private

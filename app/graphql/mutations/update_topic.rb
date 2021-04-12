@@ -12,7 +12,7 @@ module Mutations
       mutator = UpdateTopicMutator.new(context, params)
 
       success = if mutator.valid?
-        mutator.notify(:success, 'Done!', 'Topic updated successfully!')
+        mutator.notify(:success, 'Feito!', 'Tópico atualizado com sucesso!')
         mutator.update_topic
         true
       else

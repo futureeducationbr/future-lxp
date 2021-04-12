@@ -208,11 +208,11 @@ let topicsList = (topicCategories, topics) =>
                     <span className="font-semibold mr-2">
                       {switch Topic.creatorName(topic) {
                       | Some(name) => " " ++ (name ++ " ")
-                      | None => "Unknown "
+                      | None => "Desconhecido "
                       } |> str}
                     </span>
                     <span className="hidden md:inline-block md:mr-2">
-                      {"on " ++ Topic.createdAt(topic)->DateFns.formatPreset(~year=true, ()) |> str}
+                      {"em " ++ Topic.createdAt(topic)->DateFns.formatPreset(~year=true, ()) |> str}
                     </span>
                     <span className="inline-block md:mt-0 md:px-2 md:border-l border-gray-400">
                       {switch Topic.lastActivityAt(topic) {

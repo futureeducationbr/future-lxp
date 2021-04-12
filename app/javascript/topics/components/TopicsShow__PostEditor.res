@@ -136,7 +136,7 @@ let savePost = (
       |> ignore
     }
   } else {
-    Notification.error("Empty", "Reply cant be blank")
+    Notification.error("Empty", "A resposta não pode ficar em branco")
   }
 }
 

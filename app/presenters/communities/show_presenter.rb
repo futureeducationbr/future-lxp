@@ -16,7 +16,7 @@ module Communities
     end
 
     def page_title
-      "#{@community.name} Community | #{current_school.name}"
+      "#{@community.name} Comunidade | #{current_school.name}"
     end
 
     private

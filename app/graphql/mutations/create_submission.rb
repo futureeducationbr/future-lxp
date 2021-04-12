@@ -13,7 +13,7 @@ module Mutations
       mutator = CreateSubmissionMutator.new(context, params)
 
       if mutator.valid?
-        mutator.notify(:success, "Done!", "Your submission has been queued for review.")
+        mutator.notify(:success, "Feito!", "Seu envio está na fila para revisão.")
         { submission: mutator.create_submission, level_up_eligibility: mutator.level_up_eligibility }
       else
         mutator.notify_errors

@@ -4,7 +4,7 @@ class ErrorPresenter < ApplicationPresenter
   end
 
   def site_name
-    @site_name ||= current_school.present? ? current_school.name : 'Pupilfirst'
+    @site_name ||= current_school.present? ? current_school.name : 'Future Education'
   end
 
   def contact_email

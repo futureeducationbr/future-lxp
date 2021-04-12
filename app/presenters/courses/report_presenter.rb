@@ -6,7 +6,7 @@ module Courses
     end
 
     def page_title
-      "Student Report | #{@course.name} | #{current_school.name}"
+      "Relatório | #{@course.name} | #{current_school.name}"
     end
 
     def props

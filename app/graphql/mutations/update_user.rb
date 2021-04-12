@@ -15,7 +15,7 @@ module Mutations
       mutator = UpdateUserMutator.new(context, params)
 
       success = if mutator.valid?
-        mutator.notify(:success, 'Done!', 'Profile updated successfully!')
+        mutator.notify(:success, 'Feito!', 'Perfil atualizado com sucesso!')
         mutator.update_user
         true
       else

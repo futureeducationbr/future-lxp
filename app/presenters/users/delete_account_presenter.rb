@@ -6,7 +6,7 @@ module Users
     end
 
     def page_title
-      "Delete Account | #{current_school.name}"
+      "Apagar conta | #{current_school.name}"
     end
 
     private

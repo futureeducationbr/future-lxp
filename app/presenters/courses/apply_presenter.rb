@@ -6,7 +6,7 @@ module Courses
     end
 
     def page_title
-      "Enroll to #{@course.name} | #{current_school.name}"
+      "Inscreva-se para #{@course.name} | #{current_school.name}"
     end
 
     def props

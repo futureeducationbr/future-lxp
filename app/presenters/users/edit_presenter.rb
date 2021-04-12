@@ -1,7 +1,7 @@
 module Users
   class EditPresenter < ApplicationPresenter
     def page_title
-      "User Profile | #{current_school.name}"
+      "Perfil | #{current_school.name}"
     end
 
     def props
