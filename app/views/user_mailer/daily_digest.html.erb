@@ -3,7 +3,7 @@
   recipient_name = @user.name
 
   def article(count)
-    count > 1 ? 'are' : 'is'
+    count > 1 ? 'Há' : 'Há'
   end
 %>
 
@@ -26,10 +26,10 @@
     <% pending_submissions_count = @updates[:coach].map { |s| s[:pending_submissions] }.sum %>
     <p style="margin-top: 10px;">
 
-      Há <%= article(pending_submissions_count) %> <strong><%= pending_submissions_count %></strong>
-      novo(s) <%= 'submission'.pluralize(pending_submissions_count) %> para avaliação
-      em <%= pluralize(@updates[:coach].length, 'course') %>
-      onde você é um mentor:
+      <%= article(pending_submissions_count) %> <strong><%= pending_submissions_count %></strong>
+      novo(s) <%= 'envios'.pluralize(pending_submissions_count) %> para avaliação
+      em <%= pluralize(@updates[:coach].length, 'curso') %>
+      onde você é mentor:
     </p>
 
     <ul style="padding: 0; margin-top: 0; margin-left: 30px; list-style-type: circle;">
@@ -38,7 +38,7 @@
           <%= link_to "#{stats[:course_name]}:", review_course_url(stats[:course_id]), style: 'color: #6025C0; border-radius: 8px; padding: 0px;' %>
           <span><strong><%= stats[:pending_submissions] %></strong>
             <% if stats[:is_team_coach] %>
-              <%= stats[:pending_submissions_for_coach] == 0 ? '(nenhum dos quais é atribuído a você)' : "(#{stats[:pending_submissions_for_coach]} atribuído a você)" %>
+              <%= stats[:pending_submissions_for_coach] == 0 ? '(nenhum dos quais é atribuído a você)' : "(#{stats[:pending_submissions_for_coach]} atribuídos a você)" %>
             <% end %>
           </span>
         </li>
@@ -80,15 +80,15 @@
       </div>
       <div style="font-size: 75%; border-bottom: 1px solid lightgray; margin-bottom: 4px; padding-bottom: 4px;">
         <%= link_to topic[:community_name], community_url(topic[:community_id]) %>,
-        <%= pluralize(topic[:views], 'view') %>,
-        <%= pluralize(topic[:replies], 'reply') %>,
-        asked <%= pluralize(topic[:days_ago], 'day') %> ago.
+        <%= pluralize(topic[:views], 'visualizar') %>,
+        <%= pluralize(topic[:replies], 'responder') %>,
+        asked <%= pluralize(topic[:days_ago], 'dia') %> atrás.
       </div>
     <% end %>
   <% end %>
 
   <p style="font-size: 75%; text-align: center; margin-top: 15px;">
-  Você pode controlar esses e-mails acessando <%= link_to "your profile edit page", edit_user_url %>.
+  Você pode controlar esses e-mails acessando <%= link_to "seu perfil", edit_user_url %>.
   </p>
 <% end %>
 

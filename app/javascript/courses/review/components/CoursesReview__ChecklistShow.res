@@ -67,7 +67,7 @@ let make = (~reviewChecklist, ~feedback, ~updateFeedbackCB, ~showEditorCB) => {
       <button
         className="flex items-center btn btn-small btn-primary-ghost" onClick={_ => showEditorCB()}>
         <i className="far fa-edit" />
-        <span className="ml-2 leading-tight"> {"Edit Checklist" |> str} </span>
+        <span className="ml-2 leading-tight"> {"Editar Checklist" |> str} </span>
       </button>
     </div>
     {reviewChecklist
