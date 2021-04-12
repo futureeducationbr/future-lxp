@@ -10,6 +10,11 @@ en:
       filter_result_empty: Os filtros que você aplicou não correspondem a nenhum treinador. Por favor, troque o filtro e tente novamente.
       filter_search_string_course: ensina o curso %{name}
       heading: Mentores
+    CommunitiesNewTopic__Root:
+      new_topic_main_title: Crie um novo tópico de discussão
+      new_topic_title: Título
+      new_topic_description: Descrição
+      new_topic_submit: Criar Tópico
     CommunitiesShow__Root:
       all_categories_button: Todas as categorias
       button_load_more: Carregar Mais...
@@ -24,8 +29,8 @@ en:
       topic_last_updated_text: Última atualização
       topic_posted_by_text: Postado por
       topic_stats_likes: Like
-      topic_stats_replies: Responder
-      topic_stats_views: Visualizar
+      topic_stats_replies: Respostas
+      topic_stats_views: Visualizações
       topics_fully_loaded_text: Mostrando %{total_topics} tópicos
       topics_partially_loaded_text: Mostrando %{loaded_topics_count} de %{total_topics} tópicos
     CourseCertificates__CreateDrawer:

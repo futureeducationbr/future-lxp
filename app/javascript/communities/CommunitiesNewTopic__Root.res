@@ -2,6 +2,8 @@ let str = React.string
 
 open CommunitiesNewTopic__Types
 
+let t = I18n.t(~scope="components.CommunitiesNewTopic__Root")
+
 type similar = {
   search: string,
   suggestions: array<TopicSuggestion.t>,
@@ -163,7 +165,7 @@ let handleCreateTopic = (state, send, communityId, target, topicCategory, event)
     |> Js.Promise.then_(response => {
       switch response["createTopic"]["topicId"] {
       | Some(topicId) =>
-        Notification.success("Done!", "Redirecting to new topic now...")
+        Notification.success("Feito!", "Redirecionando para um novo tópico agora...")
         redirectToNewTopic(topicId, state.title)
 
       | None => send(FailSaving)
@@ -173,12 +175,12 @@ let handleCreateTopic = (state, send, communityId, target, topicCategory, event)
     })
     |> Js.Promise.catch(error => {
       Js.log(error)
-      Notification.error("Unexpected Error!", "Please reload the page before trying to post again.")
+      Notification.error("Erro inesperado!", "Por favor recarregue a página antes de tentar postar novamente.")
       Js.Promise.resolve()
     })
     |> ignore
   } else {
-    Notification.error("Missing Info!", "Topic title and body must be present.")
+    Notification.error("Informação incorreta!", "O título e o corpo do tópico devem estar presentes.")
   }
 }
 
@@ -188,7 +190,7 @@ let suggestions = state => {
   suggestions |> ArrayUtils.isNotEmpty
     ? <div className="pt-3">
         <span className="tracking-wide text-gray-900 text-xs font-semibold">
-          {"Similar Topics" |> str}
+          {"Tópicos similares" |> str}
         </span>
         {state.searching
           ? <span className="ml-2"> <FaIcon classes="fa fa-spinner fa-pulse" /> </span>
@@ -197,9 +199,9 @@ let suggestions = state => {
           let askedOn =
             suggestion->TopicSuggestion.createdAt->DateFns.formatPreset(~short=true, ~year=true, ())
           let (answersText, answersClasses) = switch suggestion |> TopicSuggestion.repliesCount {
-          | 0 => ("No replies", "bg-gray-300 text-gray-700")
-          | 1 => ("1 reply", "bg-green-500 text-white")
-          | n => ((n |> string_of_int) ++ " replies", "bg-green-500 text-white")
+          | 0 => ("Sem resposta", "bg-gray-300 text-gray-700")
+          | 1 => ("1 resposta", "bg-green-500 text-white")
+          | n => ((n |> string_of_int) ++ " respostas", "bg-green-500 text-white")
           }
 
           <a
@@ -216,7 +218,7 @@ let suggestions = state => {
                 {suggestion |> TopicSuggestion.title |> str}
               </h5>
               <p className="text-xs mt-1 leading-tight text-gray-800">
-                {"Asked on " ++ askedOn |> str}
+                {"Questionado sobre " ++ askedOn |> str}
               </p>
             </div>
             <div
@@ -283,7 +285,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
         | None => React.null
         }}
         <h4 className="max-w-3xl w-full mx-auto pb-2 mt-2 px-3 lg:px-0">
-          {"Crie um novo topico de discussao" |> str}
+          {t("new_topic_main_title") |> str}
         </h4>
         <div className="md:px-3">
           <div
@@ -294,7 +296,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
                   <label
                     className="inline-block tracking-wide text-gray-900 text-xs font-semibold mb-2"
                     htmlFor="title">
-                    {"Titulo" |> str}
+                    {t("new_topic_title") |> str}
                   </label>
                   <input
                     id="title"
@@ -305,7 +307,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
                       let newTitle = ReactEvent.Form.target(event)["value"]
                       updateTitleAndSearch(state, send, communityId, newTitle)
                     }}
-                    placeholder="Titulo para o novo topico"
+                    placeholder="Descreva o novo topico"
                   />
                 </div>
                 {ReactUtils.nullIf(
@@ -342,7 +344,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
               <label
                 className="inline-block tracking-wide text-gray-900 text-xs font-semibold mb-2"
                 htmlFor="body">
-                {"Descricao" |> str}
+                {t("new_topic_description") |> str}
               </label>
               <div className="w-full flex flex-col">
                 <MarkdownEditor
@@ -370,7 +372,7 @@ let make = (~communityId, ~target, ~topicCategories) => {
                         state.selectedCategory,
                       )}
                       className="btn btn-primary border border-transparent w-full md:w-auto">
-                      {"Criar Topico" |> str}
+                      {t("new_topic_submit") |> str}
                     </button>
                   </div>
                 </div>
