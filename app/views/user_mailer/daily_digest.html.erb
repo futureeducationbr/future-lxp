@@ -68,7 +68,7 @@
 
   <% if @updates[:community_reactivated].present? %>
     <p style="margin-top: 15px;">
-    Tópicos mais antigos e populares que viram novas atividades:
+    Tópicos mais antigos e populares com novas atividades:
     </p>
 
     <% @updates[:community_reactivated].each do |topic| %>
@@ -80,9 +80,9 @@
       </div>
       <div style="font-size: 75%; border-bottom: 1px solid lightgray; margin-bottom: 4px; padding-bottom: 4px;">
         <%= link_to topic[:community_name], community_url(topic[:community_id]) %>,
-        <%= pluralize(topic[:views], 'visualizar') %>,
-        <%= pluralize(topic[:replies], 'responder') %>,
-        asked <%= pluralize(topic[:days_ago], 'dia') %> atrás.
+        <%= pluralize(topic[:views], 'visualizações') %>,
+        <%= pluralize(topic[:replies], 'respostas') %>,
+        criado há <%= pluralize(topic[:days_ago], 'dias') %> atrás.
       </div>
     <% end %>
   <% end %>

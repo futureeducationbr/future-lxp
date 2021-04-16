@@ -1,4 +1,5 @@
 let str = React.string
+let t = I18n.t(~scope="components.UserEdit")
 
 type state = {
   name: string,
@@ -111,7 +112,7 @@ let uploadAvatar = (send, formData) => {
     "/user/upload_avatar",
     formData,
     json => {
-      Notification.success("Done!", "Avatar uploaded successfully.")
+      Notification.success("Feito!", "Avatar carregado com sucesso.")
       let avatarUrl = json |> field("avatarUrl", string)
       send(UpdateAvatarUrl(Some(avatarUrl)))
     },
@@ -221,7 +222,7 @@ let confirmDeletionWindow = (state, send) =>
         let body =
           <div ariaLabel="Confirm dialog for account deletion">
             <p className="text-sm text-center sm:text-left text-gray-700">
-              {"Are you sure you want to delete your account? This will initiate the process to permanently remove your data from our servers." |> str}
+              {"Tem certeza que deseja deletar sua conta?" |> str}
             </p>
             <div className="mt-3">
               <label htmlFor="email" className="block text-sm font-semibold">
@@ -322,7 +323,7 @@ let make = (
                   rows=3
                   onChange={event => send(UpdateAbout(ReactEvent.Form.target(event)["value"]))}
                   className="appearance-none block text-sm w-full shadow-sm border border-gray-400 rounded px-4 py-2 my-2 leading-relaxed focus:outline-none focus:border-gray-500"
-                  placeholder="Descreva sobre voce"
+                  placeholder="Descreva sobre algo"
                 />
               </div>
             </div>
@@ -369,7 +370,7 @@ let make = (
         </div>
         <div className="flex flex-col md:flex-row mt-10 md:mt-12">
           <div className="w-full md:w-1/3 pr-4">
-            <h3 className="text-lg font-semibold"> {"Seguranca" |> str} </h3>
+            <h3 className="text-lg font-semibold"> {t("security_title") |> str} </h3>
             <p className="mt-1 text-sm text-gray-700">
               {"Atualize suas credenciais de login." |> str}
             </p>
@@ -431,7 +432,7 @@ let make = (
                 placeholder="Confirme a nova senha"
               />
               <School__InputGroupError
-                message="New password and confirmation should match and must have atleast 8 characters"
+                message="A nova senha e a confirmação devem corresponder e devem ter pelo menos 8 caracteres"
                 active={hasInvalidPassword(state)}
               />
             </div>
@@ -439,15 +440,15 @@ let make = (
         </div>
         <div className="flex flex-col md:flex-row mt-10 md:mt-12">
           <div className="w-full md:w-1/3 pr-4">
-            <h3 className="text-lg font-semibold"> {"Notificacoes" |> str} </h3>
+            <h3 className="text-lg font-semibold"> {t("notification_title") |> str} </h3>
             <p className="mt-1 text-sm text-gray-700">
-              {"Atualize as configuracoes de notificacoes por e-mail." |> str}
+              {t("notification_description") |> str}
             </p>
           </div>
           <div className="mt-5 md:mt-0 w-full md:w-2/3">
             <p className="font-semibold"> {"Resumo das Comunidades" |> str} </p>
             <p className="text-sm text-gray-700">
-              {"Os e-mails de resumo da comunidade contem novas perguntas de suas comunidades e uma selecao de perguntas nao respondidas da semana passada." |> str}
+              {t("notification_resume") |> str}
             </p>
             <div className="mt-6">
               <div className="flex items-center">
@@ -462,7 +463,7 @@ let make = (
               <div className="mt-4 flex items-center">
                 <Radio
                   id="daily_mail_disable"
-                  label="Não receber"
+                  label="Parar de receber"
                   onChange={event =>
                     send(UpdateDailyDigest(!ReactEvent.Form.target(event)["checked"]))}
                   checked={!state.dailyDigest}
@@ -491,9 +492,9 @@ let make = (
             </p>
           </div>
           <div className="mt-5 md:mt-0 w-full md:w-2/3">
-            <p className="font-semibold text-red-700"> {"Apagar minha conta" |> str} </p>
+            <p className="font-semibold text-red-700"> {"Apagar minha conta e cancelar minha assinatura" |> str} </p>
             <p className="text-sm text-gray-700 mt-1">
-              {"Excluir sua conta de usuario remove todos os seus dados desta escola. Respostas a postagens em comunidades e feedback para alunos (se o usuario tiver um perfil de mentor) nao serao excluidos.  " |> str}
+              {t("close_account_description") |> str}
             </p>
             <div className="mt-4">
               {isSchoolAdmin || hasValidDeleteAccountToken

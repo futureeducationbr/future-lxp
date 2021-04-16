@@ -1,5 +1,12 @@
 en:
   components:
+    UserEdit:
+      close_account_description: Excluir sua conta de usuário remove todos os seus dados desta escola e cancelar o seu acesso aos cursos imediatamente. Respostas a postagens em comunidades e feedback para alunos (se o usuário tiver um perfil de mentor) não serão excluídos. 
+      notification_title: Notificações
+      cancel_digest: Não receber
+      notification_description: Atualize as configurações de notificações por e-mail.
+      notification_resume: Os e-mails de resumo da comunidade contem novas perguntas de suas comunidades e uma seleção de perguntas não respondidas da semana passada.
+      security_title: Segurança
     CoachesIndex__Root:
       button_about: Sobre
       button_connect: Conectar
