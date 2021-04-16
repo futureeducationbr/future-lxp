@@ -4,6 +4,8 @@ let str = React.string
 
 module Course = StudentCourse__Course
 
+let tc = I18n.t(~scope="components.StudentCourse__Header")
+
 let courseOptions = courses => courses |> List.map(course => {
     let courseId = course |> Course.id
     <a
