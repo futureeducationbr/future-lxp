@@ -1,7 +1,7 @@
 en:
   components:
     UserEdit:
-      close_account_description: Excluir sua conta de usuário remove todos os seus dados desta escola e cancelar o seu acesso aos cursos imediatamente. Respostas a postagens em comunidades e feedback para alunos (se o usuário tiver um perfil de mentor) não serão excluídos. 
+      close_account_description: Excluir sua conta de usuário remove todos os seus dados e cancela o seu acesso aos cursos imediatamente. Respostas a postagens em comunidades e feedback para alunos (se o usuário tiver um perfil de mentor) não serão excluídos. 
       notification_title: Notificações
       cancel_digest: Não receber
       notification_description: Atualize as configurações de notificações por e-mail.
@@ -304,6 +304,8 @@ en:
       mark_all_as_read_button: Marcar todas como lidas
       notifications_fully_loaded_text: Showing all %{total_notifications} notifications
       notifications_partially_loaded_text: Showing %{loaded_notifications_count} of %{total_notifications} notifications
+    StudentCourse__Header:
+      review: Avaliação
     StudentTopNav:
       sign_in: Entrar
       sign_out: Sair

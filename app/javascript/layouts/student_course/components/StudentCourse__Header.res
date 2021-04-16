@@ -101,7 +101,7 @@ let make = (~currentCourseId, ~courses, ~additionalLinks, ~coverImage) => {
             | "curriculum" => ("Aulas", "curriculum")
             | "calendar" => ("Calendario", "calendar")
             | "leaderboard" => ("Classificacao", "leaderboard")
-            | "review" => ("Avaliacao", "review")
+            | "review" => (tc("review"), "review")
             | "students" => ("Alunos", "students")
             | "report" => ("Desempenho", "report")
             | _unknown => ("Unknown", "")

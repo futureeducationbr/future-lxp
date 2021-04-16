@@ -432,7 +432,7 @@ let make = (
                 placeholder="Confirme a nova senha"
               />
               <School__InputGroupError
-                message="A nova senha e a confirmação devem corresponder e devem ter pelo menos 8 caracteres"
+                message="A nova senha e a confirmacao devem corresponder e ter pelo menos 8 caracteres"
                 active={hasInvalidPassword(state)}
               />
             </div>
