@@ -26,10 +26,10 @@ module Users
 
     def failure
       if oauth_origin.present?
-        message = "Authentication was denied by #{oauth_origin[:provider].capitalize}. Please try again."
+        message = "A autenticação foi negada para #{oauth_origin[:provider].capitalize}. Tente novamente."
         redirect_to oauth_error_url(host: oauth_origin[:fqdn], error: message)
       else
-        flash[:error] = 'Authentication was denied. Please try again.'
+        flash[:error] = 'A autenticação foi negada. Tente novamente.'
         redirect_to new_user_session_path
       end
     end
@@ -62,7 +62,7 @@ module Users
         # Redirect user to sign in at the origin domain with newly generated token.
         redirect_to user_token_url(token_url_options)
       else
-        redirect_to oauth_error_url(host: oauth_origin[:fqdn], error: "Your email address: #{@email} is unregistered.")
+        redirect_to oauth_error_url(host: oauth_origin[:fqdn], error: "Seu endereço de email: #{@email} não está registrado.")
       end
     end
 

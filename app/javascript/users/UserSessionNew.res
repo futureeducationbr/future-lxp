@@ -23,7 +23,6 @@ type views =
 type omniauthProvider =
   | Google
   | Facebook
-  | Github
   | Developer
 
 let handleErrorCB = (setSaving, ()) => setSaving(_ => false)
@@ -108,10 +107,10 @@ let federatedLoginUrl = (oauthHost, fqdn, provider) =>
   ("?fqdn=" ++ fqdn))))
 
 let buttonText = provider =>
-  "Continue " ++
+  "Continuar " ++
   switch provider {
-  | Google => "with Google"
-  | Facebook => "with Facebook"
+  | Google => "com Google"
+  | Facebook => "com Facebook"
   | Github => "with Github"
   | Developer => "as Developer"
   }
@@ -320,14 +319,14 @@ let make = (~schoolName, ~fqdn, ~oauthHost) => {
         <div className="max-w-sm mx-auto md:px-9">
           <span
             className="federated-signin-in__seperator block relative z-10 text-center text-xs text-gray-600 font-semibold">
-            <span className="bg-white px-2"> {"OR" |> str} </span>
+            <span className="bg-white px-2"> {"OU" |> str} </span>
           </span>
           <button
             disabled=saving
             onClick={_ => setView(_ => SignInWithPassword)}
             className="flex justify-center items-center px-3 py-2 leading-snug border border-gray-400 text-primary-500 hover:bg-gray-100 hover:border-primary-500 focus:bg-gray-200 focus::border-primary-500 focus:outline-none rounded-lg cursor-pointer font-semibold mt-4 w-full">
             <span className="w-1/5 text-right text-lg"> <FaIcon classes="fas fa-envelope" /> </span>
-            <span className="w-4/5 pl-3 text-left"> {"Continue with email" |> str} </span>
+            <span className="w-4/5 pl-3 text-left"> {"Continuar com email" |> str} </span>
           </button>
         </div>
       | (Some(_), SignInWithPassword)

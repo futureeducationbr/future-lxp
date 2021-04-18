@@ -348,7 +348,7 @@ let completeSection = (
     | (Pending, Evaluated) =>
       [
         <CoursesCurriculum__CompletionInstructions
-          key="completion-instructions" targetDetails title="Instructions"
+          key="completion-instructions" targetDetails title="Instruções"
         />,
         <CoursesCurriculum__SubmissionBuilder
           key="courses-curriculum-submission-form"
@@ -361,7 +361,7 @@ let completeSection = (
     | (Pending, TakeQuiz) =>
       [
         <CoursesCurriculum__CompletionInstructions
-          key="completion-instructions" targetDetails title="Instructions"
+          key="completion-instructions" targetDetails title="Instruções"
         />,
         <CoursesCurriculum__Quiz
           key="courses-curriculum-quiz"
