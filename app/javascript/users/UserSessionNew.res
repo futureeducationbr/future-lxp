@@ -23,6 +23,7 @@ type views =
 type omniauthProvider =
   | Google
   | Facebook
+  | Github
   | Developer
 
 let handleErrorCB = (setSaving, ()) => setSaving(_ => false)
@@ -133,7 +134,7 @@ let iconClasses = provider =>
   }
 
 let providers = () => {
-  let defaultProvides = [Google, Facebook, Github]
+  let defaultProvides = [Google, Facebook]
   DomUtils.isDevelopment() ? defaultProvides |> Array.append([Developer]) : defaultProvides
 }
 let renderFederatedlogin = (fqdn, oauthHost) =>
@@ -336,7 +337,7 @@ let make = (~schoolName, ~fqdn, ~oauthHost) => {
             disabled=saving
             onClick={_ => setView(_ => FederatedSignIn)}
             className="w-full p-3 text-primary-500 leading-snug rounded-lg underline cursor-pointer text-sm text-center font-semibold hover:bg-gray-200 focus:bg-gray-200 focus:outline-none">
-            {"Entrar com Google, Facebook, ou Github" |> str}
+            {"Entrar com Google ou Facebook" |> str}
           </button>
         </div>
       | (None, SignInWithPassword)
