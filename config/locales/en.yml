@@ -89,9 +89,9 @@ en:
       issued_certificate_button: View Certificate
       issued_certificate_heading: Congratulations! You have been issued a certificate.
       level_locked: Nível bloqueado
-      level_locked_explanation: You can access the content on %{date}.
-      level_locked_for_students_notice: This level is still locked for students, and will be unlocked on <strong>%{date}</strong>.
-      level_locked_notice: The level is currently locked!
+      level_locked_explanation: Você poderá acessar o conteúdo em %{date}.
+      level_locked_for_students_notice: Este nível ainda está bloqueado para alunos e será desbloqueado em <strong>%{date}</strong>.
+      level_locked_notice: O nível está atualmente bloqueado!
       milestone_targets: MÓDULO
       nav_next_level: Próximo Nível
       nav_previous_level: Nível Anterior
